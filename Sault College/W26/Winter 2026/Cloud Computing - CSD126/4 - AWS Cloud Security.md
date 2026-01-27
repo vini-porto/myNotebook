@@ -279,7 +279,7 @@ Customers maintain complete control over their content and are responsible for:
 - **Answer**: Customer
 - Customer controls access to their content
 
-## Key Insight: RDS vs. EC2 Database
+# Key Insight: RDS vs. EC2 Database
 
 **Database on EC2**: Customer applies Oracle software upgrades and patches.
 
@@ -293,9 +293,9 @@ Customers maintain complete control over their content and are responsible for:
 - Monitoring
 - Hardware scaling
 
-## AWS Identity and Access Management (IAM)
+# AWS Identity and Access Management (IAM)
 
-### What is IAM?
+## What is IAM?
 
 **[[AWS IAM]]**: Allows you to control access to compute, storage, database, and application services in the AWS Cloud.
 
@@ -306,7 +306,7 @@ Customers maintain complete control over their content and are responsible for:
 
 **Centralized management**: Tool for managing access to launching, configuring, managing, and terminating resources in your AWS account.
 
-### Granular Control
+## Granular Control
 
 **[[Granular Access Control]]**: Ability to specify exactly which API calls users are authorized to make to each service.
 
@@ -327,11 +327,11 @@ Customers maintain complete control over their content and are responsible for:
 
 **Cost**: IAM is a feature of your AWS account offered at **no additional charge**.
 
-## IAM: Essential Components
+# IAM: Essential Components
 
 Understanding the four IAM components is critical for securing your AWS account:
 
-### IAM User
+## IAM User
 
 **[[IAM User]]**: A person or application defined in an AWS account that must make API calls to AWS products.
 
@@ -342,7 +342,7 @@ Understanding the four IAM components is critical for securing your AWS account:
 - Credentials different from AWS account root user credentials
 - Defined in one and only one AWS account
 
-### IAM Group
+## IAM Group
 
 **[[IAM Group]]**: A collection of IAM users.
 
@@ -350,7 +350,7 @@ Understanding the four IAM components is critical for securing your AWS account:
 
 **Benefit**: Assign permissions to groups rather than individual users.
 
-### IAM Policy
+## IAM Policy
 
 **[[IAM Policy]]**: A document that defines permissions to determine what users can do in the AWS account.
 
@@ -358,13 +358,13 @@ Understanding the four IAM components is critical for securing your AWS account:
 
 **Can also**: Explicitly deny access.
 
-### IAM Role
+## IAM Role
 
 **[[IAM Role]]**: A tool for granting temporary access to specific AWS resources in an AWS account.
 
 **Key characteristic**: Not uniquely associated with one person—assumable by anyone who needs it.
 
-## Authentication: Proving Identity
+# Authentication: Proving Identity
 
 **[[Authentication]]**: The process of proving identity.
 
@@ -372,7 +372,7 @@ Understanding the four IAM components is critical for securing your AWS account:
 
 **Concept**: A user or system must first prove their identity before gaining access to AWS resources.
 
-### Types of Access
+## Types of Access
 
 When defining an IAM user, select which type of access the user is permitted:
 
@@ -394,7 +394,7 @@ When defining an IAM user, select which type of access the user is permitted:
 
 **Flexibility**: Can assign programmatic access only, console access only, or both.
 
-## Multi-Factor Authentication (MFA)
+# Multi-Factor Authentication (MFA)
 
 **[[Multi-Factor Authentication]]** (MFA): Additional security layer beyond username and password.
 
@@ -402,7 +402,7 @@ When defining an IAM user, select which type of access the user is permitted:
 
 **Strong recommendation**: Enable MFA for increased security.
 
-### MFA Token Options
+## MFA Token Options
 
 **[[Virtual MFA Applications]]**:
 
@@ -413,13 +413,13 @@ When defining an IAM user, select which type of access the user is permitted:
 
 **[[Hardware MFA Device]]**: Key fob or display card.
 
-## Authorization: What Actions Are Permitted
+# Authorization: What Actions Are Permitted
 
-**[[Authorization]]**: The process of determining what permissions a user, service, or application should be granted.
+**Authorization:** The process of determining what permissions a user, service, or application should be granted.
 
 **Process flow**: After a user is authenticated, they must be authorized to access AWS services.
 
-### Default Permissions
+## Default Permissions
 
 **Default state**: IAM users have **no permissions** to access any resources or data in an AWS account by default.
 
@@ -429,9 +429,9 @@ When defining an IAM user, select which type of access the user is permitted:
 
 **Policy content**: Lists permissions that allow or deny access to resources in the AWS account.
 
-## IAM Authorization Principles
+# IAM Authorization Principles
 
-### How Permissions Work
+## How Permissions Work
 
 **No default permissions**: All actions in the account are denied by default (**[[Implicit Deny]]**) unless explicitly allowed.
 
@@ -439,7 +439,7 @@ When defining an IAM user, select which type of access the user is permitted:
 
 **[[Explicit Deny]]**: Any actions explicitly denied are **always denied** (takes precedence over allow).
 
-### Principle of Least Privilege
+## Principle of Least Privilege
 
 **[[Principle of Least Privilege]]**: Important security concept—grant only the minimal user privileges needed based on user requirements.
 
@@ -452,15 +452,15 @@ When defining an IAM user, select which type of access the user is permitted:
 
 **Reasoning**: More secure than starting with broad permissions and later trying to restrict them.
 
-### Global Scope
+## Global Scope
 
 **Important note**: IAM service configurations are **global**.
 
 **Not Region-specific**: Settings are not defined at an AWS Region level—IAM settings apply across all AWS Regions.
 
-## IAM Policies
+# IAM Policies
 
-### What is an IAM Policy?
+## What is an IAM Policy?
 
 **[[IAM Policy]]**: A formal statement of permissions granted to an entity.
 
