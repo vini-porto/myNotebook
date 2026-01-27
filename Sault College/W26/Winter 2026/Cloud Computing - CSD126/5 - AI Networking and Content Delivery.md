@@ -225,7 +225,39 @@ Here is a summary of the differences between security groups and network ACLs:
 - Security groups support allow rules only, but network ACLs support both allow and deny rules.
 - Security groups are stateful, but network ACLs are stateless.
 - For security groups, all rules are evaluated before the decision is made to allow traffic. For network ACLs, rules are evaluated in number order before the decision is made to allow traffic.
-## Activity: Design a VP
+## Activity: Design a VPC
+
+Now,it’s your turn! In this scenario, you are a small business owner with a website that is hosted on an AmazonElastic Compute Cloud (Amazon EC2)instance. You have customer data that is stored on a backend database that you want to keep private.
+
+See if you can design a VPC that meets the following requirements:
+- Your web server and database server must be in separate subnets.
+- The first address of your network must be 10.0.0.0. Each subnet must have 256 IPv4 addresses.•Your customers must always be able to access your web server.•Your database server must be able to access the internet to make patch updates.•Your architecture must be highly available and use at least one custom firewall layer
+
+# Section 5: Amazon Route 53
+
+## Amazon Route 5
+
+Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed to give developers and businesses areliable and cost-effective way to route users to internet applications by translating names (like www.example.com) into the numeric IP addresses (like 192.0.2.1) that computers use to connect to each other. In addition, Amazon Route 53 is fully compliant with IPv6.
+
+Amazon Route 53 effectively connects user requests to infrastructure running in AWS—such as Amazon EC2 instances, Elastic Load Balancing load balancers, or Amazon S3 buckets—and can also be used to route users to infrastructure that is outside of AWS.
+
+You can use Amazon Route 53 to configure DNS health checks so you that can route traffic to healthy endpoints or independently monitor the health of your application and its endpoints.
+
+Amazon Route 53 traffic flow helps you manage traffic globally through several routing types, which can be combined with DNS failover to enable various low-latency, fault-tolerant architectures. You can use Amazon Route 53 traffic flow’s simple visual editor to manage how your users are routed to your application’s endpoints—whether in a single AWS Region or distributed around the globe.
+
+Amazon Route 53 also offers Domain Name Registration—you can purchase and manage domain names (like example.com), and Amazon Route 53 will automatically configure DNS settings for your domains.
+
+## Amazon Route 53 DNS resolution
+
+Here is thebasic pattern that Amazon Route 53 follows when a user initiates a DNS request. The DNS resolver checks with your domain in Route 53, gets the IP address, and returns it to the user.
+
+## Amazon Route 53 supported routing
+
+Amazon Route 53 supports several types of routing policies, which determine how Amazon Route 53 responds to queries:
+
+- Simple routing (round robin)–Use for a single resource that performs a given function for your domain (such as a web server that serves content for the example.comwebsite).
+- Weighted round robin routing –Use to route traffic to multiple resources in proportions that you specify. Enables you to assign weights to resource record sets to specify the frequency with which different responses are served. You might want to use this capability to do A/B testing, which is when you send a small portion of traffic to a server where you made a software change. For instance, suppose you have two record sets that are associated with one DNS name: one with weight 3 and one with weight 1. In this case, 75 percent of the time, Amazon Route 53 will return the record set with weight 3, and 25 percent of the time, Amazon Route 53 will return the record set with weight 1. Weights can be any number between 0 and 255.
+- Latency routing (LBR) –Use when you have resources in multiple AWS Regions and you want to route traffic to the Region that provides the best latency. Latency routing works by routing your customers to the AWS endpoint (for example, Amazon EC2 instances, Elastic IP addresses, or load balancers) that provides the fastest experience based on actual performance measurements of the different AWS Regions where your application runs. •Geolocation routing –Use when you want to route traffic based on the location of your users. When you use geolocation routing, you can localize your content and present some or all of your website in the language of your users. You can also use geolocation routing to restrict the distribution of content to only the locations where you have distribution rights. Another possible use is for balancing the load across endpoints in a predictable, easy-to-manage way, so that each user location is consistently routed to the same endpoint.
 
 
 
