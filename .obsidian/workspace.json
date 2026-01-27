@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "87000db7516cd30c",
+    "id": "47a5ad604e11be1c",
     "type": "split",
     "children": [
       {
-        "id": "ae084ecdca090f1a",
+        "id": "f7d9c971389e0b66",
         "type": "tabs",
         "children": [
           {
-            "id": "00c3799a1be9b531",
+            "id": "2cf6f87a8d934aea",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -16,22 +16,145 @@
               "icon": "lucide-file",
               "title": "New tab"
             }
+          },
+          {
+            "id": "d40777d896fbc937",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Subnetting.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Subnetting"
+            }
+          },
+          {
+            "id": "16f1a5d51c00d95b",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.3"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.10.3"
+            }
+          },
+          {
+            "id": "55c356aed01d4588",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.6"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.10.6"
+            }
+          },
+          {
+            "id": "c19ca054e42cb01e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sault College/W26/Winter 2026/Databases I - CSD123/1 - Introduction to Databases.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1 - Introduction to Databases"
+            }
+          },
+          {
+            "id": "ec2362c8e73ad1c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sault College/W26/Winter 2026/Databases I - CSD123/2 - Talking to Your Data - SQL Basics.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2 - Talking to Your Data - SQL Basics"
+            }
+          },
+          {
+            "id": "b4bf1a19a3065147",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sault College/W26/Winter 2026/Databases I - CSD123/2- AI raw generated text.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2- AI raw generated text"
+            }
+          },
+          {
+            "id": "54cf3d2cc1d15e94",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SQL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SQL"
+            }
+          },
+          {
+            "id": "7777a8b549a3369e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sault College/W26/Winter 2026/Cloud Computing - CSD126/5 - AI Networking and Content Delivery.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5 - AI Networking and Content Delivery"
+            }
+          },
+          {
+            "id": "080ab345b328b093",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Type definition.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Type definition"
+            }
           }
-        ]
+        ],
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "f640c37435db22de",
+    "id": "b43ed8ef6c855b66",
     "type": "split",
     "children": [
       {
-        "id": "d66d43f565ee2f00",
+        "id": "21890d7094446f8a",
         "type": "tabs",
         "children": [
           {
-            "id": "f61fbf1e3292e4ff",
+            "id": "315c83aaff31e835",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +167,7 @@
             }
           },
           {
-            "id": "013b18ae2a8015c3",
+            "id": "56cc834018be2fc1",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +184,7 @@
             }
           },
           {
-            "id": "9023e835049779c0",
+            "id": "c4435d9464e61936",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -74,22 +197,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
-    "id": "9f5692d372db7f7c",
+    "id": "25633665bbc170a3",
     "type": "split",
     "children": [
       {
-        "id": "d4c84b5ba8d4046e",
+        "id": "2598bdca9a3c7a22",
         "type": "tabs",
         "children": [
           {
-            "id": "1abc7d20d6941003",
+            "id": "b6b35e470c9379b8",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Sault College/W26/Winter 2026/Databases I - CSD123/2 - Talking to Your Data - SQL Basics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,24 +223,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for 2 - Talking to Your Data - SQL Basics"
             }
           },
           {
-            "id": "195c47531b62bdc2",
+            "id": "be496329ff98aa57",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Sault College/F25/CSD112/Cisco CLI - Network Equipment.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from Cisco CLI - Network Equipment"
             }
           },
           {
-            "id": "f211a596a7ef602f",
+            "id": "86a353ecf5e85a91",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,31 +256,18 @@
             }
           },
           {
-            "id": "2bdeebd41ad42e28",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
-          },
-          {
-            "id": "8d64911cc18664e6",
+            "id": "aa80de77852bd6af",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "Sault College/F25/CSD112/Cisco CLI - Network Equipment.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Cisco CLI - Network Equipment"
             }
           }
         ]
@@ -167,15 +279,64 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-importer:Open Importer": false
     }
   },
-  "active": "00c3799a1be9b531",
-  "lastOpenFiles": []
+  "active": "7777a8b549a3369e",
+  "lastOpenFiles": [
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/5 - AI Networking and Content Delivery.md",
+    "Sault College/W26/Winter 2026/Databases I - CSD123/3 - AI The Relational Model.md",
+    "Sault College/W26/Winter 2026/Databases I - CSD123/2- AI raw generated text.md",
+    "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Agentic AI & TuringBots.md",
+    "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Raw AI - Agentic AI & TuringBots.md",
+    "Sault College/W26/Winter 2026/Programming Concepts - CSD121/2 - AI Namespaces in Java.md",
+    "Type definition.md",
+    "Sault College/W26/Winter 2026/Bussiness Aplications/Excel.md",
+    "Classes.md",
+    "Interfaces.md",
+    "Enums.md",
+    "Python.md",
+    "structs.md",
+    "Records.md",
+    "Structs.md",
+    "Dot Operator.md",
+    "Namespaces.md",
+    "Compiled Language.md",
+    "functions.md",
+    "Shadowing.md",
+    "JDK.md",
+    "Scope.md",
+    "class.md",
+    "Sault College/W26/Winter 2026/Programming Concepts - CSD121/1 - Intoduction to Java.md",
+    "Tokens.md",
+    "Sault College/W26/Winter 2026/Bussiness Aplications",
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/Untitled",
+    "Sault College/W26/Winter 2026/Programming Concepts - CSD121",
+    "Sault College/W26/Winter 2026/Emerging Technology - CSD125",
+    "Pasted image 20260107101322.png",
+    "Pasted image 20260107100759.png",
+    "Pasted image 20260107100742.png",
+    "Sault College/W26/Winter 2026/Introduction to Web Development",
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126",
+    "Sault College/W26/Winter 2026/Databases I - CSD123",
+    "Sault College/W26/Winter 2026",
+    "Sault College/W26/Spring 2025",
+    "image 1 2.png",
+    "image 2.png",
+    "image 1 6.png",
+    "image 1 5.png",
+    "image 1 4.png",
+    "image 1 3.png",
+    "image 1.png",
+    "Notion"
+  ]
 }

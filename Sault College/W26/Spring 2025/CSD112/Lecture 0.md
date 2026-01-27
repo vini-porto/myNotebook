@@ -1,0 +1,1 @@
+PC #1 / PC #2 > Ethernet Network (cable) > Siwtch > Router > Internet

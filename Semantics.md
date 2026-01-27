@@ -1,0 +1,1 @@
+Semantics is the branch of linguistics and logic concerned with the relationship between signs (words, phrases, symbols) and what they represent in the real world.
