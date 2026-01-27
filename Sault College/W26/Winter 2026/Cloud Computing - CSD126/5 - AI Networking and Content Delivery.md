@@ -257,8 +257,41 @@ Amazon Route 53 supports several types of routing policies, which determine how 
 
 - Simple routing (round robin)–Use for a single resource that performs a given function for your domain (such as a web server that serves content for the example.comwebsite).
 - Weighted round robin routing –Use to route traffic to multiple resources in proportions that you specify. Enables you to assign weights to resource record sets to specify the frequency with which different responses are served. You might want to use this capability to do A/B testing, which is when you send a small portion of traffic to a server where you made a software change. For instance, suppose you have two record sets that are associated with one DNS name: one with weight 3 and one with weight 1. In this case, 75 percent of the time, Amazon Route 53 will return the record set with weight 3, and 25 percent of the time, Amazon Route 53 will return the record set with weight 1. Weights can be any number between 0 and 255.
-- Latency routing (LBR) –Use when you have resources in multiple AWS Regions and you want to route traffic to the Region that provides the best latency. Latency routing works by routing your customers to the AWS endpoint (for example, Amazon EC2 instances, Elastic IP addresses, or load balancers) that provides the fastest experience based on actual performance measurements of the different AWS Regions where your application runs. •Geolocation routing –Use when you want to route traffic based on the location of your users. When you use geolocation routing, you can localize your content and present some or all of your website in the language of your users. You can also use geolocation routing to restrict the distribution of content to only the locations where you have distribution rights. Another possible use is for balancing the load across endpoints in a predictable, easy-to-manage way, so that each user location is consistently routed to the same endpoint.
+- Latency routing (LBR) –Use when you have resources in multiple AWS Regions and you want to route traffic to the Region that provides the best latency. Latency routing works by routing your customers to the AWS endpoint (for example, Amazon EC2 instances, Elastic IP addresses, or load balancers) that provides the fastest experience based on actual performance measurements of the different AWS Regions where your application runs.
+- Geolocation routing –Use when you want to route traffic based on the location of your users. When you use geolocation routing, you can localize your content and present some or all of your website in the language of your users. You can also use geolocation routing to restrict the distribution of content to only the locations where you have distribution rights. Another possible use is for balancing the load across endpoints in a predictable, easy-to-manage way, so that each user location is consistently routed to the same endpoint.
+- Geoproximity routing–Use when you want to route traffic based on the location of your resources and, optionally, shift traffic from resources in one location to resources in another
+- Failover routing (DNS failover)–Use when you want to configure active-passive failover. Amazon Route 53 can help detect an outage of your website and redirect your users to alternate locations where your application is operating properly. When you enable this feature, Amazon Route 53 health-checking agents will monitor each locationor endpoint of your application to determine its availability. You can take advantage of this feature to increase the availability of your customer-facing application.
+- Multivalue answer routing–Use when you want Route53 to respond to DNS queries with up to eight healthy records that are selected at random. You can configure Amazon Route53 to return multiple values—such as IP addresses for your web servers—in response to DNS queries. You can specify multiple values for almost any record, but multivalue answer routing also enables you to check the health of each resource so that Route53 returns only values for healthy resources. It's not a substitute for a load balancer, but the ability to return multiple health-checkable IP addresses is a way to use DNS to improve availability and load balancing.
 
+## Use case: Multi-region deployment
+
+Multi-Region deployment is an example use case for Amazon Route 53. With Amazon Route 53, the user is automatically directed to the Elastic Load Balancing load balancer that’s closest to the user.
+
+The benefits of multi-region deployment of Route 53 include:
+- Latency-based routing to the Region
+- Load balancing routing tothe Availability Zone
+
+## Amazon Route 53 DNS failover
+
+Amazon Route 53 enables you to improve the availability of your applications that run on AWS by:
+
+- Configuring backup and failover scenarios for your own applications.
+- Enabling highly available multi-Region architectures on AWS.
+- Creating health checks to monitor the health and performance of your web applications, web servers, and other resources. Each health check that you create can monitor one of the following—the health of a specified resource, such as a web server;the status of other health checks; and the status of an Amazon CloudWatch alarm.
+
+## DNS failover for a multi-tiered web application
+
+This diagram indicates how DNSfailover works in a typical architecture for a multi-tiered web application. Route 53 passes traffic to a load balancer, which then distributes traffic to a fleet of EC2 instances.
+
+You can do the following tasks with Route 53 to ensure high availability:
+1. Create two DNS records for the Canonical Name Record (CNAME) www with a routing policy of Failover Routing. The first record is the primary route policy, which points to the load balancer for your web application. The second record is the secondary route policy, which points to your static Amazon S3 website.
+2. Use Route 53 health checks to make sure that the primary is running. If it is, all traffic defaults to your web application stack. Failover to the static backup site would be triggered if either the web server goes down (or stops responding),or the database instance goes down.
+
+# Section 6: Amazon CloudFront
+
+The purpose of networking is to share information between connected resources. So far in this module, you learned about VPC networking with Amazon VPC. You learned aboutthe different options for connecting your VPC to the internet, to remote networks, to other VPCs, and to AWS services.
+
+Content delivery occurs over networks, too—for example, when you stream a movie from your favorite streaming service. In this final section, you learn about Amazon CloudFront, which is a content delivery network (CDN) service.
 
 
 
