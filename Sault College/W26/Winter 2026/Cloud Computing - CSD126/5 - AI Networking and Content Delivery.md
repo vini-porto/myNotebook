@@ -103,3 +103,5 @@ A route table contains a set of rules(called routes)that directs network traffic
 
 Each subnet in your VPC must be associated with a route table. The main route table is the route table is automatically assigned to your VPC. It controls the routing for all subnets that are not explicitly associated with any other route table. A subnet can be associated with only one route table at a time, but you can associate multiple subnets with the same route table.
 
+# Section 3: VPC networking
+
