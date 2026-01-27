@@ -1,4 +1,4 @@
-# AWS Security
+# What is AWS Cloud Security
 
 **[[AWS Security]]**: Security is the highest priority at Amazon Web Services.
 
@@ -13,9 +13,9 @@
 
 **Dual approach**: AWS security includes both controls in the AWS environment and products/features customers can use to meet their security objectives.
 
-## AWS Shared Responsibility Model
+# AWS Shared Responsibility Model
 
-### Overview
+## Overview
 
 **[[AWS Shared Responsibility Model]]**: Security and compliance are a shared responsibility between AWS and the customer.
 
@@ -29,7 +29,7 @@
 
 **Principle**: The customer remains responsible for some aspects of overall security despite AWS managing much of the infrastructure.
 
-## AWS Responsibility: Security OF the Cloud
+# AWS Responsibility: Security OF the Cloud
 
 **[[Security of the Cloud]]**: AWS operates, manages, and controls components from the software virtualization layer down to the physical security of facilities.
 
@@ -42,7 +42,7 @@
 - Networking
 - Facilities that run AWS Cloud services
 
-### Physical Infrastructure
+# Physical Infrastructure
 
 **[[Physical Security of Data Centers]]**:
 
@@ -54,19 +54,19 @@
 - Video surveillance
 - Disk degaussing and destruction
 
-### Hardware Infrastructure
+## Hardware Infrastructure
 
 **[[Hardware Infrastructure]]**: Servers, storage devices, and other appliances that AWS relies on.
 
 **Management**: AWS maintains and upgrades all physical hardware.
 
-### Software Infrastructure
+## Software Infrastructure
 
 **[[Software Infrastructure]]**: Hosts operating systems, service applications, and virtualization software.
 
 **Layer**: From bare metal host operating system and [[Hypervisor]] virtualization layer upward.
 
-### Network Infrastructure
+## Network Infrastructure
 
 **[[Network Infrastructure]]**: Routers, switches, load balancers, firewalls, and cabling.
 
@@ -77,7 +77,7 @@
 - Provides redundant infrastructure
 - Implements intrusion detection
 
-### Global Infrastructure
+## Global Infrastructure
 
 AWS is responsible for protecting the global infrastructure including:
 
@@ -89,7 +89,7 @@ AWS is responsible for protecting the global infrastructure including:
 
 **Priority**: Protecting this infrastructure is the top priority for AWS.
 
-## Customer Responsibility: Security IN the Cloud
+# Customer Responsibility: Security IN the Cloud
 
 **[[Security in the Cloud]]**: Customers are responsible for security of everything they put in the cloud.
 
@@ -100,7 +100,7 @@ AWS is responsible for protecting the global infrastructure including:
 - Services used
 - Complexity of the system
 
-### Customer Security Tasks
+## Customer Security Tasks
 
 Customers are responsible for:
 
@@ -111,7 +111,7 @@ Customers are responsible for:
 - Network configurations
 - Secure account management
 
-### Critical Content Security Requirements
+## Critical Content Security Requirements
 
 Customers maintain complete control over their content and are responsible for:
 
@@ -132,9 +132,9 @@ Customers maintain complete control over their content and are responsible for:
 
 **Retention of control**: Customers choose what security to implement for their own data, environment, applications, IAM configurations, and operating systems.
 
-## Service Characteristics and Security Responsibility
+# Service Characteristics and Security Responsibility
 
-### Infrastructure as a Service (IaaS)
+## Infrastructure as a Service (IaaS)
 
 **[[IaaS Security Model]]**: Services provide basic building blocks for cloud IT.
 
@@ -152,7 +152,7 @@ Customers maintain complete control over their content and are responsible for:
 
 **Responsibility**: Customer performs all necessary security configuration and management tasks.
 
-### Platform as a Service (PaaS)
+## Platform as a Service (PaaS)
 
 **[[PaaS Security Model]]**: Services remove the need to manage underlying infrastructure.
 
@@ -189,7 +189,7 @@ Customers maintain complete control over their content and are responsible for:
 
 **Characterization**: More like [[Managed Services]] with AWS handling a larger portion of security requirements.
 
-### Software as a Service (SaaS)
+## Software as a Service (SaaS)
 
 **[[SaaS Security Model]]**: Services provide centrally hosted software.
 
@@ -231,13 +231,13 @@ Customers maintain complete control over their content and are responsible for:
 
 ## Shared Responsibility Model Activity
 
-### Scenario Analysis
+## Scenario Analysis
 
 **Deployment**: Customer uses Amazon S3 to store data, configured a VPC, and runs EC2 instance and Oracle database in the VPC.
 
 **Questions**: Who is responsible—AWS or the customer?
 
-### Answers
+## Answers
 
 **1. OS upgrades and patches on EC2 instance**
 
@@ -279,7 +279,7 @@ Customers maintain complete control over their content and are responsible for:
 - **Answer**: Customer
 - Customer controls access to their content
 
-### Key Insight: RDS vs. EC2 Database
+## Key Insight: RDS vs. EC2 Database
 
 **Database on EC2**: Customer applies Oracle software upgrades and patches.
 
