@@ -117,12 +117,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sault College/W26/Winter 2026/Cloud Computing - CSD126/4 - AWS Cloud Security.md",
+                "file": "Sault College/W26/Winter 2026/Cloud Computing - CSD126/3- AWS Global Infrastructure Overview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4 - AWS Cloud Security"
+              "title": "3- AWS Global Infrastructure Overview"
             }
           },
           {
@@ -302,6 +302,8 @@
   },
   "active": "7777a8b549a3369e",
   "lastOpenFiles": [
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - Cloud Economics and Billing.md",
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/4 - AWS Cloud Security.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/5 - AI Networking and Content Delivery.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/3 - AI The Relational Model.md",
@@ -326,8 +328,6 @@
     "JDK.md",
     "Scope.md",
     "class.md",
-    "Sault College/W26/Winter 2026/Programming Concepts - CSD121/1 - Intoduction to Java.md",
-    "Tokens.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/Untitled",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121",
