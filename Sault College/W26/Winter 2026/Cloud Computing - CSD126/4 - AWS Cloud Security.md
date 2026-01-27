@@ -1,6 +1,4 @@
-# AWS Security: Shared Responsibility and Identity Management
-
-## Introduction to AWS Security
+# AWS Security
 
 **[[AWS Security]]**: Security is the highest priority at Amazon Web Services.
 
