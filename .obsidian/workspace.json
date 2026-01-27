@@ -269,13 +269,23 @@
               "icon": "lucide-list",
               "title": "Outline of Cisco CLI - Network Equipment"
             }
+          },
+          {
+            "id": "ba7f4238cbf16f48",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
