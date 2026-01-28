@@ -117,12 +117,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sault College/W26/Winter 2026/Programming Concepts - CSD121/1 - Intoduction to Java.md",
+                "file": "Type definition.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1 - Intoduction to Java"
+              "title": "Type definition"
             }
           },
           {
@@ -172,7 +172,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "java",
+                "query": "statically-typed",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -303,8 +303,8 @@
   },
   "active": "7777a8b549a3369e",
   "lastOpenFiles": [
-    "Compiled Language.md",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121/1 - Intoduction to Java.md",
+    "Compiled Language.md",
     "Hybrid language.md",
     "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Agentic AI & TuringBots.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
