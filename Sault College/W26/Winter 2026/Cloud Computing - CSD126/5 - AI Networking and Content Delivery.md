@@ -1,6 +1,4 @@
-# Networking Basics
-
-## What is a Network?
+# What is a Network?
 
 **[[Computer Network]]**: Two or more client machines connected together to share resources.
 
@@ -8,9 +6,9 @@
 
 **Networking requirements**: Requires a networking device (such as a [[Router]] or [[Switch]]) to connect all clients together and enable communication between them.
 
-## IP Addresses
+# IP Addresses
 
-### What is an IP Address?
+## What is an IP Address?
 
 **[[IP Address]]**: A unique numerical label that identifies each client machine in a network.
 
@@ -24,9 +22,9 @@
 
 **Total size**: The combined total is **32 bits** in binary format.
 
-## IPv4 and IPv6 Addresses
+# IPv4 and IPv6 Addresses
 
-### IPv4 Addresses
+## IPv4 Addresses
 
 **[[IPv4 Address]]**: A 32-bit IP address.
 
@@ -34,7 +32,7 @@
 
 **Limitation**: Limited address space (approximately 4.3 billion addresses)
 
-### IPv6 Addresses
+## IPv6 Addresses
 
 **[[IPv6 Address]]**: A 128-bit IP address that can accommodate more user devices.
 
@@ -48,11 +46,11 @@
 
 **Total size**: The combined total is **128 bits** in binary format.
 
-## Classless Inter-Domain Routing (CIDR)
+# Classless Inter-Domain Routing (CIDR)
 
 **[[CIDR]]** (Classless Inter-Domain Routing): A common method to describe networks.
 
-### CIDR Address Format
+## CIDR Address Format
 
 **Components**:
 
@@ -62,7 +60,7 @@
 
 **Purpose**: Expresses a group of IP addresses that are consecutive to each other.
 
-### CIDR Examples
+## CIDR Examples
 
 **Example 1**: `192.0.2.0/24`
 
@@ -80,7 +78,7 @@
 - **Range**: `192.0.0.0` to `192.0.255.255`
 - **Third and fourth digits**: Can each change from 0 to 255
 
-### Special CIDR Cases
+## Special CIDR Cases
 
 **[[Fixed IP Address]]**: `192.0.2.0/32`
 
@@ -93,7 +91,7 @@
 - Every bit is flexible
 - Represents all possible IP addresses
 
-## OSI Model
+# OSI Model
 
 **[[OSI Model]]** (Open Systems Interconnection): A conceptual model explaining how data travels over a network.
 
@@ -115,9 +113,9 @@
 
 **Note**: [[ICA]] (Independent Computing Architecture) was developed by Citrix Systems to facilitate efficient data transfer between a server and a client.
 
-## Section 2: Amazon VPC
+# Section 2: Amazon VPC
 
-### What is Amazon VPC?
+## What is Amazon VPC?
 
 **[[Amazon VPC]]** (Amazon Virtual Private Cloud): A service that lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources.
 
@@ -130,7 +128,7 @@
 
 **Protocol support**: Both IPv4 and IPv6
 
-### VPC Use Cases
+## VPC Use Cases
 
 **Public subnets**: Create public subnets for web servers with internet access
 
@@ -143,9 +141,9 @@
 
 **Purpose**: Control access to [[Amazon EC2]] instances in each subnet
 
-## VPCs and Subnets
+# VPCs and Subnets
 
-### Virtual Private Clouds
+## Virtual Private Clouds
 
 **[[VPC]]**: A virtual network logically isolated from other virtual networks in the AWS Cloud.
 
@@ -155,7 +153,7 @@
 - Belong to a single [[AWS Region]]
 - Can span multiple [[Availability Zones]]
 
-### Subnets
+## Subnets
 
 **[[Subnet]]**: A range of IP addresses in a VPC.
 
@@ -170,11 +168,11 @@
 
 **[[Private Subnet]]**: Does not have direct access to the internet
 
-## IP Addressing in VPCs
+# IP Addressing in VPCs
 
 **Purpose**: Enable resources in your VPC to communicate with each other and with resources over the internet.
 
-### IPv4 CIDR Blocks
+## IPv4 CIDR Blocks
 
 **When creating a VPC**: You assign an **[[IPv4 CIDR Block]]** (a range of private IPv4 addresses).
 
@@ -185,13 +183,13 @@
 - **Largest**: `/16` (2^16 = 65,536 addresses)
 - **Smallest**: `/28` (2^4 = 16 addresses)
 
-### IPv6 Support
+## IPv6 Support
 
 **Optional**: You can associate an **[[IPv6 CIDR Block]]** with your VPC and subnets.
 
 **Different limits**: IPv6 CIDR blocks have different block size limits than IPv4.
 
-### Subnet CIDR Blocks
+## Subnet CIDR Blocks
 
 **Same size**: Subnet CIDR block can be the same as VPC CIDR block (single subnet in VPC)
 
@@ -199,7 +197,7 @@
 
 **Important rule**: If creating multiple subnets, CIDR blocks **cannot overlap**—no duplicate IP addresses in the same VPC.
 
-## Reserved IP Addresses
+# Reserved IP Addresses
 
 **AWS reservation**: For each CIDR block, AWS reserves **five IP addresses** within that block.
 
@@ -211,7 +209,7 @@
 4. **Future use**
 5. **[[Network Broadcast Address]]**
 
-### Example Calculation
+## Example Calculation
 
 **Subnet**: `10.0.0.0/24`
 
