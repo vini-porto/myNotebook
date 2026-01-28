@@ -217,17 +217,17 @@
 - **Reserved addresses**: 5
 - **Available addresses**: **251**
 
-## Public IP Address Types
+# Public IP Address Types
 
-### Automatic Private IP
+## Automatic Private IP
 
 **Default**: Every instance in a VPC gets a **[[Private IP Address]]** automatically.
 
-### Public IP Address
+## Public IP Address
 
 **[[Public IP Address]]**: Can be assigned when creating an instance by modifying the subnet's auto-assign public IP address properties.
 
-### Elastic IP Address
+## Elastic IP Address
 
 **[[Elastic IP Address]]**: A static and public IPv4 address designed for dynamic cloud computing.
 
@@ -241,7 +241,7 @@
 
 **Cost consideration**: Additional costs may apply—release them when no longer needed.
 
-## Elastic Network Interface
+# Elastic Network Interface
 
 **[[Elastic Network Interface]]**: A virtual network interface you can attach or detach from an instance in a VPC.
 
@@ -249,21 +249,21 @@
 
 **Traffic redirection**: When moved from one instance to another, network traffic is redirected to the new instance.
 
-### Primary Network Interface
+## Primary Network Interface
 
 **Default**: Each instance has a **[[Primary Network Interface]]** assigned a private IPv4 address from the VPC range.
 
 **Cannot detach**: You cannot detach a primary network interface from an instance.
 
-### Additional Network Interfaces
+## Additional Network Interfaces
 
 **Flexibility**: Can create and attach additional network interfaces to any instance.
 
 **Limitation**: The number you can attach varies by [[Instance Type]].
 
-## Route Tables and Routes
+# Route Tables and Routes
 
-### Route Table
+## Route Table
 
 **[[Route Table]]**: Contains a set of rules (called **[[Routes]]**) that direct network traffic from your subnet.
 
@@ -274,7 +274,7 @@
 
 **Default route**: Every route table contains a **[[Local Route]]** for communication within the VPC (cannot be deleted).
 
-### Main Route Table
+## Main Route Table
 
 **[[Main Route Table]]**: Automatically assigned to your VPC.
 
@@ -285,9 +285,9 @@
 - A subnet can be associated with only **one** route table at a time
 - You can associate **multiple** subnets with the same route table
 
-## Section 3: VPC Networking
+# Section 3: VPC Networking
 
-### Internet Gateway
+## Internet Gateway
 
 **[[Internet Gateway]]**: A scalable, redundant, and highly available VPC component allowing communication between instances in your VPC and the internet.
 
@@ -301,11 +301,11 @@
 1. Attach an internet gateway to your VPC
 2. Add a route to the route table to send non-local traffic (`0.0.0.0/0`) through the internet gateway
 
-## NAT Gateway
+# NAT Gateway
 
 **[[NAT Gateway]]** (Network Address Translation Gateway): Enables instances in a private subnet to connect to the internet or other AWS services, but **prevents** the internet from initiating connections with those instances.
 
-### Setting Up a NAT Gateway
+## Setting Up a NAT Gateway
 
 **Requirements**:
 
@@ -316,7 +316,7 @@
 
 **Result**: Instances in private subnets can communicate with the internet.
 
-### NAT Gateway vs. NAT Instance
+## NAT Gateway vs. NAT Instance
 
 **Alternative**: Can use a **[[NAT Instance]]** in a public subnet instead of a NAT gateway.
 
@@ -326,11 +326,11 @@
 - Higher bandwidth
 - Less administrative effort
 
-## VPC Sharing
+# VPC Sharing
 
 **[[VPC Sharing]]**: Enables customers to share subnets with other AWS accounts in the same organization in [[AWS Organizations]].
 
-### How VPC Sharing Works
+## How VPC Sharing Works
 
 **Owner account**: The account that owns the VPC shares one or more subnets
 
@@ -340,7 +340,7 @@
 
 **Participant limitations**: Cannot view, modify, or delete resources belonging to other participants or the VPC owner
 
-### VPC Sharing Benefits
+## VPC Sharing Benefits
 
 **[[Separation of Duties]]**: Centrally controlled VPC structure, routing, IP address allocation
 
