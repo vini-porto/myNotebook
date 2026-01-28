@@ -474,7 +474,7 @@ When defining an IAM user, select which type of access the user is permitted:
 - Which resources to allow actions on
 - What effect will be when user requests access
 
-### Policy Evaluation
+## Policy Evaluation
 
 **Order independence**: The order policies are evaluated has no effect on the outcome.
 
@@ -484,7 +484,7 @@ When defining an IAM user, select which type of access the user is permitted:
 
 **Conflict resolution**: When there is a conflict, the most restrictive policy applies.
 
-### Types of IAM Policies
+## Types of IAM Policies
 
 **1. [[Identity-Based Policies]]**: Permissions policies attached to a principal (identity) such as:
 
@@ -514,7 +514,7 @@ When defining an IAM user, select which type of access the user is permitted:
 
 **Characteristic**: Defined inline only on the resource itself.
 
-## IAM Policy Example
+# IAM Policy Example
 
 **Format**: IAM policy documents are written in JSON.
 

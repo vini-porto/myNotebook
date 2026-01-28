@@ -1,337 +1,1095 @@
-# Section 1: Networking basics
+# Networking Basics
 
-## Networks
+## What is a Network?
 
-A computer network is two or more client machines that are connected together to share resources. A network can be logically partitioned into subnets. Networking requires a networking device (such as a router or switch) to connect all the clients together and enable communication between them.
+**[[Computer Network]]**: Two or more client machines connected together to share resources.
 
-## IP addresses
+**[[Subnets]]**: Networks can be logically partitioned into subnets.
 
-Each client machine in a network has a unique Internet Protocol (IP) address that identifies it. An IP address is a numerical label in decimal format. Machines convert that decimal number to a binary format.
+**Networking requirements**: Requires a networking device (such as a [[Router]] or [[Switch]]) to connect all clients together and enable communication between them.
 
-In this example, the IP address is 192.0.2.0. Each of the four dot (.)-separated numbers of the IP address represents 8 bits in octal number format. That means each of the four numbers can be anything from 0 to 255. The combined total of the four numbers for an IP address is 32 bits in binary format.
+## IP Addresses
 
-## IPv4 and IPv6 addresses
+### What is an IP Address?
 
-A 32-bit IP address is called an IPv4 address.
+**[[IP Address]]**: A unique numerical label that identifies each client machine in a network.
 
-IPv6 addresses, which are 128 bits, are also available. IPv6 addresses can accommodate more user devices.
+**Format**: Decimal format that machines convert to binary.
 
-An IPv6 address is composed of eight groups of four letters and numbers that are separated by colons (:). In this example, the IPv6 address is 2600:1f18:22ba:8c00:ba86:a05e:a5ba:00FF. Each of the eight colon-separated groups of the IPv6 address represents 16 bits in hexadecimal number format. That means each of the eight groups can be anything from 0 to FFFF. The combined total of the eight groups for an IPv6 address is 128 bits in binary format.
+**Example**: `192.0.2.0`
+
+**Structure**: Each of the four dot-separated numbers represents **8 bits** in **[[Octal Number Format]]**.
+
+**Range**: Each of the four numbers can be anything from **0 to 255**.
+
+**Total size**: The combined total is **32 bits** in binary format.
+
+## IPv4 and IPv6 Addresses
+
+### IPv4 Addresses
+
+**[[IPv4 Address]]**: A 32-bit IP address.
+
+**Structure**: Four dot-separated numbers (e.g., `192.0.2.0`)
+
+**Limitation**: Limited address space (approximately 4.3 billion addresses)
+
+### IPv6 Addresses
+
+**[[IPv6 Address]]**: A 128-bit IP address that can accommodate more user devices.
+
+**Structure**: Eight groups of four letters and numbers separated by colons (`:`)
+
+**Example**: `2600:1f18:22ba:8c00:ba86:a05e:a5ba:00FF`
+
+**Format**: Each of the eight colon-separated groups represents **16 bits** in **[[Hexadecimal Number Format]]**.
+
+**Range**: Each group can be anything from **0 to FFFF**.
+
+**Total size**: The combined total is **128 bits** in binary format.
 
 ## Classless Inter-Domain Routing (CIDR)
 
-A common method to describe networks is Classless Inter-Domain Routing (CIDR). The CIDR address is expressed as follows:
+**[[CIDR]]** (Classless Inter-Domain Routing): A common method to describe networks.
 
-- An IP address (which is the first address of the network).
-- Next, a slash character (/)
-- Finally, a number that tells you how many bits of the routing prefix must be fixed or allocated for the network identifier
+### CIDR Address Format
 
-The bits that are not fixed are allowed to change. CIDR is a way to express a group of IP addresses that are consecutive to each other.
+**Components**:
 
-In this example, the CIDR address is 192.0.2.0/24. The last number (24) tells you that the first 24 bits must be fixed. The last 8 bits are flexible, which means that 28(or 256) IP addresses are available for the network, which rangefrom 192.0.2.0 to 192.0.2.255. The fourth decimal digit is allowed to change from 0 to 255.
+1. An IP address (the first address of the network)
+2. A slash character (`/`)
+3. A number telling you how many bits of the [[Routing Prefix]] must be fixed for the network identifier
 
-If the CIDR was 192.0.2.0/16, the last number (16) tells you that the first 16 bits must be fixed. The last 16 bits are flexible, which means that 216(or 65,536) IP addresses are available for the network, ranging from 192.0.0.0 to 192.0.255.255. The third and fourth decimal digits can each change from 0 to 255.
+**Purpose**: Expresses a group of IP addresses that are consecutive to each other.
 
-There are two special cases
-- Fixed IP addresses, in which every bit is fixed, represent a single IP address (for example, 192.0.2.0/32). This type of address is helpful when you want to set up a firewall rule and give access to a specific host.
-- The internet, in which every bit is flexible, is represented as 0.0.0.0
+### CIDR Examples
 
-## Open Systems Interconnection (OSI) model
+**Example 1**: `192.0.2.0/24`
 
-The Open Systems Interconnection (OSI) model is a conceptual model that is usedto explain how data travels over a network. It consists of seven layers and shows the common protocols and addresses that are used to send data at each layer. For example, hubs and switches work at layer 2 (the data link layer). Routers work at layer 3 (the network layer). The OSI model can also be used to understand how communication takes place in a virtual private cloud (VPC), which you will learn about in the next section.
+- **Last number (24)**: First 24 bits must be fixed
+- **Last 8 bits**: Flexible
+- **Available addresses**: 2^8 = **256 IP addresses**
+- **Range**: `192.0.2.0` to `192.0.2.255`
+- **Fourth decimal digit**: Can change from 0 to 255
 
-ICA is Independent Computing Architecture, developed by Citrix Systems to facilitate efficient data transfer between a server and a client.
+**Example 2**: `192.0.2.0/16`
 
-# Section 2: Amazon VPC
+- **Last number (16)**: First 16 bits must be fixed
+- **Last 16 bits**: Flexible
+- **Available addresses**: 2^16 = **65,536 IP addresses**
+- **Range**: `192.0.0.0` to `192.0.255.255`
+- **Third and fourth digits**: Can each change from 0 to 255
 
-Many of the concepts of an on-premises network apply to a cloud-based network, but much of the complexity of setting up a network has been abstracted without sacrificing control, security, and usability. In this section, you learn about Amazon VPC and the fundamental components of a VPC.
+### Special CIDR Cases
 
-## Amazon VPC
+**[[Fixed IP Address]]**: `192.0.2.0/32`
 
-Amazon Virtual Private Cloud (Amazon VPC) is a service that lets you provision a logically isolated section of the AWS Cloud (called a virtual private cloud, or VPC) where you can launch your AWS resources.
+- Every bit is fixed
+- Represents a single IP address
+- Helpful for firewall rules to give access to a specific host
 
-Amazon VPC gives you control over your virtual networking resources, including the selection of your own IP address range, the creation of subnets, and the configuration of route tables and network gateways. You can use both IPv4 and IPv6 in your VPC for secure access to resources and applications.
+**[[The Internet]]**: `0.0.0.0/0`
 
-You can also customize the network configuration for your VPC. For example, you can create a public subnet for your web servers that can access the public internet. You can place your backend systems (such as databases or application servers) in a private subnet with no public internet access.
+- Every bit is flexible
+- Represents all possible IP addresses
 
-Finally, you can use multiple layers of security, including security groups and network access control lists (networkACLs), to help control access to Amazon Elastic Compute Cloud (Amazon EC2) instances in each subnet.
+## OSI Model
 
-## VPCs and subnets
+**[[OSI Model]]** (Open Systems Interconnection): A conceptual model explaining how data travels over a network.
 
-Amazon VPC enables you to provision virtual private clouds (VPCs). A VPCis a virtual network that is logically isolated from other virtual networks in the AWS Cloud. A VPC is dedicated to your account. VPCs belong to a single AWS Region and can span multiple Availability Zones.
+**Structure**: Consists of **seven layers**
 
-After you create a VPC, you can divide it into one or more subnets. A subnetis a range of IP addresses in a VPC. Subnets belong to a single Availability Zone. You can create subnets in different Availability Zones for high availability. Subnets are generally classified as public or private. Public subnets have direct access to the internet, but private subnetsdo not.
+**Purpose**: Shows common protocols and addresses used to send data at each layer.
 
-## IP addressing
+### Layer Examples
 
-IP addresses enable resources in your VPC to communicate with each other and with resources over the internet. When you create a VPC, you assign an IPv4 CIDR block (a range of privateIPv4 addresses) to it. After you create a VPC, you cannot change the address range, so it is important that you choose it carefully. The IPv4 CIDR block might be as large as /16 (which is 216, or 65,536 addresses) or as small as /28 (which is 24, or 16 addresses).
+**Layer 2** ([[Data Link Layer]]):
 
-You can optionally associate an IPv6 CIDR block with your VPC and subnets, and assign IPv6 addresses from that block to the resources in your VPC. IPv6 CIDR blocks have a different block size limit.
+- Hubs and switches operate here
 
-The CIDR block of a subnet can be the same as the CIDR block for a VPC. In this case,the VPC and the subnet are the same size (a single subnet in the VPC). Also, the CIDR block of a subnet can be a subset of the CIDR block for the VPC. This structure enables the definition of multiple subnets. If you create more than one subnet in a VPC, the CIDR blocks of the subnets cannot overlap. You cannot have duplicate IP addresses in the same VPC.
+**Layer 3** ([[Network Layer]]):
 
-## Reserved IP addresses
+- Routers operate here
 
-When you create a subnet, it requires its own CIDR block. For each CIDR block that you specify, AWS reserves five IP addresses within that block, and theseaddresses are not available for use. AWS reserves these IP addresses for:
+**Application**: Can be used to understand communication in a **[[VPC]]** (Virtual Private Cloud).
 
-- Network address
-- VPC local router (internal communications)
-- Domain Name System (DNS) resolution
-- Future use
-- Network broadcast address
+**Note**: [[ICA]] (Independent Computing Architecture) was developed by Citrix Systems to facilitate efficient data transfer between a server and a client.
 
-For example, suppose that you create a subnet with an IPv4 CIDR block of 10.0.0.0/24 (which has 256 total IP addresses). The subnet has 256 IP addresses, but only 251 are available because five are reserved.
+## Section 2: Amazon VPC
 
+### What is Amazon VPC?
 
-## Public IP address type
+**[[Amazon VPC]]** (Amazon Virtual Private Cloud): A service that lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources.
 
-When you create a VPC, every instance in that VPC gets a private IP address automatically. You can also request a public IP address to be assigned when you create the instance by modifying the subnet’s auto-assign public IP address properties.
+**Control provided**:
 
-An Elastic IP address is a static and public IPv4 address that is designed for dynamic cloud computing. You can associate an Elastic IP address with any instance or network interface for any VPC in your account. With an Elastic IP address, you can mask the failure of an instance by rapidly remapping the address to another instance in your VPC. Associating the Elastic IP address with the network interface has an advantage over associating it directly with the instance. You can move all of the attributes of the network interface from one instance to another in a single step.
+- Selection of your own IP address range
+- Creation of subnets
+- Configuration of route tables
+- Configuration of network gateways
 
-Additional costs might apply when you use Elastic IP addresses, so it is important to release them when you no longer need them.
+**Protocol support**: Both IPv4 and IPv6
 
-## Elastic network interfac
+### VPC Use Cases
 
-An elastic network interface is a virtual network interface that you can attach or detach from an instance in a VPC. A network interface's attributes follow it when it is reattached to another instance. When you move a network interface from one instance to another, network traffic is redirected to the new instance.
+**Public subnets**: Create public subnets for web servers with internet access
 
-Each instance in your VPC has a default network interface (the primary network interface) that is assigned a private IPv4 address from the IPv4 address range of your VPC. You cannot detach a primary network interface from an instance. You can create and attach an additional network interface to any instance in your VPC. The number of network interfaces you can attach varies by instance type.
+**Private subnets**: Place backend systems (databases, application servers) in private subnets with no public internet access
 
-##  Route tables and route
+**Security layers**: Use multiple layers of security including:
 
-A route table contains a set of rules(called routes)that directs network traffic from your subnet. Each route specifies a destination and a target. The destination is the destination CIDR block where you want traffic from your subnet to go. The target is the target that the destination traffic is sent through. By default, every route table that you create contains a local route for communication in the VPC. You can customize route tables by adding routes. You cannot delete the local route entry that is used for internal communications.
+- [[Security Groups]]
+- [[Network ACLs]] (Access Control Lists)
 
-Each subnet in your VPC must be associated with a route table. The main route table is the route table is automatically assigned to your VPC. It controls the routing for all subnets that are not explicitly associated with any other route table. A subnet can be associated with only one route table at a time, but you can associate multiple subnets with the same route table.
+**Purpose**: Control access to [[Amazon EC2]] instances in each subnet
 
-# Section 3: VPC networking
+## VPCs and Subnets
 
-## Internet gateway
+### Virtual Private Clouds
 
-An internet gatewayis a scalable, redundant, and highly available VPC component that allows communication between instances in your VPC and the internet. An internet gateway serves two purposes: to provide a target in your VPC route tables for internet-routable traffic, and to perform network address translation for instances that were assigned public IPv4 addresses.
+**[[VPC]]**: A virtual network logically isolated from other virtual networks in the AWS Cloud.
 
-To make a subnet public, you attach an internet gateway to your VPC and add a route to the route table to send non-local traffic through the internet gateway to the internet (0.0.0.0/0)
+**Characteristics**:
 
-## Network address translation (NAT) gateway
+- Dedicated to your account
+- Belong to a single [[AWS Region]]
+- Can span multiple [[Availability Zones]]
 
-A network address translation (NAT) gateway enables instances in a private subnet to connect to the internet or other AWS services, but prevents the internet from initiating a connection with those instances.
+### Subnets
 
-To create a NAT gateway, you must specify the public subnet in which the NAT gateway should reside. You must also specify an Elastic IP address to associate with the NAT gateway when you create it. After you create a NAT gateway, you must update the route table that is associated with one or more of your private subnets to point internet-bound traffic to the NAT gateway. Thus, instances in your private subnets can communicate with the internet.
+**[[Subnet]]**: A range of IP addresses in a VPC.
 
-You can also use a NAT instance in a public subnet in your VPC instead of a NAT gateway. However, a NAT gateway is a managed NAT service that provides better availability, higher bandwidth, and less administrative effort. For common use cases, AWS recommends that you use a NAT gateway instead of a NAT instance.
+**Characteristics**:
 
-## VPC sharing
+- Belong to a single Availability Zone
+- Can create subnets in different AZs for **[[High Availability]]**
 
-VPC sharing enables customers to share subnets with other AWS accounts in the same organization in AWS Organizations. VPC sharing enables multiple AWS accounts to create their application resources—such as Amazon EC2 instances, Amazon Relational Database Service (Amazon RDS) databases, Amazon Redshift clusters, and AWS Lambda functions—into shared, centrally managed VPCs. In this model, the account that owns the VPC (owner) shares one or more subnets with other accounts (participants) that belong to the same organization in AWS Organizations. After a subnet is shared, the participants can view, create, modify, and delete their application resources in the subnets that are shared with them. Participants cannot view, modify, or delete resources that belong to other participants or the VPC owner.
+**Classification**:
 
-VPC sharing offers several benefits:
+**[[Public Subnet]]**: Has direct access to the internet
 
-- Separation of duties –Centrally controlled VPC structure, routing, IP address allocation
-- Ownership –Application owners continue to own resources, accounts, and security groups
-- Security groups –VPC sharing participants can reference the security group IDs of each other
-- Efficiencies –Higher density in subnets, efficient use of VPNs and AWS Direct Connect
-- No hard limits –Hard limits can be avoided—for example, 50 virtual interfaces per AWS Direct Connect connection through simplified network architecture
-- Optimized costs –Costs can be optimized through the reuse of NAT gateways, VPC interface endpoints, and intra-Availability Zone traffic
+**[[Private Subnet]]**: Does not have direct access to the internet
 
-VPC sharing enables you to decouple accounts and networks. You have fewer, larger, centrally managed VPCs. Highly interconnected applications automatically benefit from this approach.
+## IP Addressing in VPCs
 
-## VPC peering
+**Purpose**: Enable resources in your VPC to communicate with each other and with resources over the internet.
 
-A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. Instances in either VPC can communicate with each other as if they are within the same network. You can create a VPC peering connection between your own VPCs, with a VPC in another AWS account, or with a VPC in a different AWS Region.
+### IPv4 CIDR Blocks
 
-When you set up the peering connection, you create rules in your route table to allow the VPCs to communicate with each other through the peering resource. For example, suppose that you have two VPCs. In the route table for VPC A, you set the destination to be the IP address of VPC B and the target to be the peering resource ID. In the route table for VPC B, you set the destination to be the IP address of VPC A and the target to be the peering resource ID.
+**When creating a VPC**: You assign an **[[IPv4 CIDR Block]]** (a range of private IPv4 addresses).
 
-VPC peering has some restrictions:
+**Important limitation**: After you create a VPC, you **cannot change** the address range—choose carefully!
 
-- IP address ranges cannot overlap.
-- Transitive peering is not supported. For example, suppose that you have three VPCs: A, B, and C. VPC A is connected to VPC B, and VPC A is connected to VPC C. However, VPC B is notconnected to VPC C implicitly. To connect VPC B to VPC C, you must explicitly establish that connectivity.
-- You can only have one peering resource between the same two VPCs.
+**Size options**:
+
+- **Largest**: `/16` (2^16 = 65,536 addresses)
+- **Smallest**: `/28` (2^4 = 16 addresses)
+
+### IPv6 Support
+
+**Optional**: You can associate an **[[IPv6 CIDR Block]]** with your VPC and subnets.
+
+**Different limits**: IPv6 CIDR blocks have different block size limits than IPv4.
+
+### Subnet CIDR Blocks
+
+**Same size**: Subnet CIDR block can be the same as VPC CIDR block (single subnet in VPC)
+
+**Subset**: Subnet CIDR block can be a subset of VPC CIDR block (enables multiple subnets)
+
+**Important rule**: If creating multiple subnets, CIDR blocks **cannot overlap**—no duplicate IP addresses in the same VPC.
+
+## Reserved IP Addresses
+
+**AWS reservation**: For each CIDR block, AWS reserves **five IP addresses** within that block.
+
+**Reserved for**:
+
+1. **[[Network Address]]**
+2. **[[VPC Local Router]]** (internal communications)
+3. **[[DNS Resolution]]**
+4. **Future use**
+5. **[[Network Broadcast Address]]**
+
+### Example Calculation
+
+**Subnet**: `10.0.0.0/24`
+
+- **Total IP addresses**: 256
+- **Reserved addresses**: 5
+- **Available addresses**: **251**
+
+## Public IP Address Types
+
+### Automatic Private IP
+
+**Default**: Every instance in a VPC gets a **[[Private IP Address]]** automatically.
+
+### Public IP Address
+
+**[[Public IP Address]]**: Can be assigned when creating an instance by modifying the subnet's auto-assign public IP address properties.
+
+### Elastic IP Address
+
+**[[Elastic IP Address]]**: A static and public IPv4 address designed for dynamic cloud computing.
+
+**Characteristics**:
+
+- Can associate with any instance or network interface
+- Works for any VPC in your account
+- Can mask instance failure by rapidly remapping to another instance
+
+**Advantage of network interface association**: Can move all attributes of the network interface from one instance to another in a single step.
+
+**Cost consideration**: Additional costs may apply—release them when no longer needed.
+
+## Elastic Network Interface
+
+**[[Elastic Network Interface]]**: A virtual network interface you can attach or detach from an instance in a VPC.
+
+**Attribute persistence**: Network interface's attributes follow it when reattached to another instance.
+
+**Traffic redirection**: When moved from one instance to another, network traffic is redirected to the new instance.
+
+### Primary Network Interface
+
+**Default**: Each instance has a **[[Primary Network Interface]]** assigned a private IPv4 address from the VPC range.
+
+**Cannot detach**: You cannot detach a primary network interface from an instance.
+
+### Additional Network Interfaces
+
+**Flexibility**: Can create and attach additional network interfaces to any instance.
+
+**Limitation**: The number you can attach varies by [[Instance Type]].
+
+## Route Tables and Routes
+
+### Route Table
+
+**[[Route Table]]**: Contains a set of rules (called **[[Routes]]**) that direct network traffic from your subnet.
+
+**Route components**:
+
+- **[[Destination]]**: The destination CIDR block where traffic should go
+- **[[Target]]**: The target that the destination traffic is sent through
+
+**Default route**: Every route table contains a **[[Local Route]]** for communication within the VPC (cannot be deleted).
+
+### Main Route Table
+
+**[[Main Route Table]]**: Automatically assigned to your VPC.
+
+**Controls**: Routing for all subnets not explicitly associated with any other route table.
+
+**Association rules**:
+
+- A subnet can be associated with only **one** route table at a time
+- You can associate **multiple** subnets with the same route table
+
+## Section 3: VPC Networking
+
+### Internet Gateway
+
+**[[Internet Gateway]]**: A scalable, redundant, and highly available VPC component allowing communication between instances in your VPC and the internet.
+
+**Two purposes**:
+
+1. Provide a target in VPC route tables for internet-routable traffic
+2. Perform **[[Network Address Translation]]** (NAT) for instances assigned public IPv4 addresses
+
+**Making a subnet public**:
+
+1. Attach an internet gateway to your VPC
+2. Add a route to the route table to send non-local traffic (`0.0.0.0/0`) through the internet gateway
+
+## NAT Gateway
+
+**[[NAT Gateway]]** (Network Address Translation Gateway): Enables instances in a private subnet to connect to the internet or other AWS services, but **prevents** the internet from initiating connections with those instances.
+
+### Setting Up a NAT Gateway
+
+**Requirements**:
+
+1. Must specify the **public subnet** where NAT gateway should reside
+2. Must specify an **[[Elastic IP Address]]** to associate with the NAT gateway
+
+**Configuration**: Must update the route table associated with private subnets to point internet-bound traffic to the NAT gateway.
+
+**Result**: Instances in private subnets can communicate with the internet.
+
+### NAT Gateway vs. NAT Instance
+
+**Alternative**: Can use a **[[NAT Instance]]** in a public subnet instead of a NAT gateway.
+
+**AWS recommendation**: Use a NAT gateway for common use cases because it provides:
+
+- Better availability
+- Higher bandwidth
+- Less administrative effort
+
+## VPC Sharing
+
+**[[VPC Sharing]]**: Enables customers to share subnets with other AWS accounts in the same organization in [[AWS Organizations]].
+
+### How VPC Sharing Works
+
+**Owner account**: The account that owns the VPC shares one or more subnets
+
+**Participant accounts**: Other accounts that belong to the same organization
+
+**Participant capabilities**: Can view, create, modify, and delete their application resources in shared subnets
+
+**Participant limitations**: Cannot view, modify, or delete resources belonging to other participants or the VPC owner
+
+### VPC Sharing Benefits
+
+**[[Separation of Duties]]**: Centrally controlled VPC structure, routing, IP address allocation
+
+**[[Ownership]]**: Application owners continue to own resources, accounts, and security groups
+
+**[[Security Groups]]**: Participants can reference each other's security group IDs
+
+**[[Efficiencies]]**: Higher density in subnets, efficient use of VPNs and [[AWS Direct Connect]]
+
+**[[No Hard Limits]]**: Avoid hard limits (e.g., 50 virtual interfaces per Direct Connect connection) through simplified network architecture
+
+**[[Optimized Costs]]**: Costs optimized through reuse of NAT gateways, [[VPC Interface Endpoints]], and intra-Availability Zone traffic
+
+### Architecture Benefits
+
+**Decoupling**: Enables you to decouple accounts and networks
+
+**Centralization**: Fewer, larger, centrally managed VPCs
+
+**Interconnectivity**: Highly interconnected applications automatically benefit
+
+## VPC Peering
+
+**[[VPC Peering Connection]]**: A networking connection between two VPCs enabling private traffic routing between them.
+
+**Communication**: Instances in either VPC can communicate as if within the same network.
+
+**Flexibility**: Can peer:
+
+- Between your own VPCs
+- With a VPC in another AWS account
+- With a VPC in a different AWS Region
+
+### Setting Up VPC Peering
+
+**Process**: Create rules in route tables to allow VPCs to communicate through the **[[Peering Resource]]**.
+
+**Example configuration**:
+
+- **VPC A route table**: Destination = VPC B IP address, Target = peering resource ID
+- **VPC B route table**: Destination = VPC A IP address, Target = peering resource ID
+
+### VPC Peering Restrictions
+
+**IP address overlap**: IP address ranges cannot overlap
+
+**[[Transitive Peering]]**: Not supported
+
+- Example: If VPC A connects to VPC B, and VPC A connects to VPC C, VPC B does NOT automatically connect to VPC C
+- Must explicitly establish connectivity
+
+**One peering resource**: Can only have one peering resource between the same two VPCs
 
 ## AWS Site-to-Site VPN
 
-By default, instances that you launch into a VPC cannot communicate with a remote network. To connect your VPC to your remote network (that is, create a virtual private network or VPN connection), you:
+**Purpose**: Connect your VPC to your remote network (create a **[[VPN Connection]]**).
 
-1. Create a new virtual gateway device (called a virtual private network (VPN) gateway) and attach it to your VPC.
-2. Define the configuration of the VPN device or the customer gateway. The customer gateway is not a device but an AWS resource that provides information to AWS about your VPN device.
-3. Create a custom route table to point corporate data center-bound traffic to the VPN gateway. You also must update security group rules. (You will learn about security groups in the next section.)
-4. Establish an AWS Site-to-Site VPN (Site-to-Site VPN) connection to link the two systems together.5.Configure routing to pass traffic through the connection
+### Setup Process
+
+**Default limitation**: Instances launched in a VPC cannot communicate with a remote network by default.
+
+**Setup steps**:
+
+1. Create a **[[VPN Gateway]]** (virtual gateway device) and attach to your VPC
+2. Define the configuration of the **[[Customer Gateway]]** (not a physical device, but an AWS resource providing information about your VPN device)
+3. Create a custom route table to point corporate data center-bound traffic to the VPN gateway
+4. Update security group rules
+5. Establish an **[[AWS Site-to-Site VPN]]** connection to link the two systems
+6. Configure routing to pass traffic through the connection
 
 ## AWS Direct Connect
 
-One of the challenges of network communication is network performance. Performance can be negatively affected if your data center is located far away from your AWS Region. For such situations, AWS offers AWS Direct Connect, or DX. AWS Direct Connect enables you to establish a dedicated, private network connection between your network and one of the DX locations. This private connection can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than internet-based connections. DX uses open standard 802.1q virtual local area networks (VLANs).
+**Challenge**: Network performance can be negatively affected if your data center is far from your AWS Region.
 
+**[[AWS Direct Connect]]** (DX): Enables you to establish a dedicated, private network connection between your network and one of the **[[DX Locations]]**.
 
-## VPC endpoints
+### Benefits
 
-A VPC endpointis a virtual device that enables you to privately connect your VPC to supported AWS services and VPC endpoint services that are powered by AWS PrivateLink. Connection to these services does not require an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection. Instances in your VPC do not require public IP addresses to communicate with resources in the service. Traffic between your VPC and the other service does not leave the Amazon network.
+**Private connection**: Can reduce network costs
 
-There are two types of VPC endpoints
+**Increased bandwidth**: Higher bandwidth throughput
 
-- An interface VPC endpoint(interface endpoint) enables you to connect to services that are powered by AWS PrivateLink. These services include some AWS services, services that are hosted by other AWS customers and AWS Partner Network (APN) Partners in their own VPCs (referred to as endpoint services), and supported AWS Marketplace APN Partner services. The owner of the service is the service provider, and you—as the principal who creates the interface endpoint—are the service consumer. You are charged for creating and using an interface endpoint to a service. Hourly usage rates and data processing rates apply.
-- Gateway endpoints: The use of gateway endpoints incurs no additional charge. Standard charges for data transfer and resource usage apply.
+**Consistent experience**: More consistent network experience than internet-based connections
+
+**Standard**: Uses open standard **[[802.1q VLANs]]** (Virtual Local Area Networks)
+
+## VPC Endpoints
+
+**[[VPC Endpoint]]**: A virtual device enabling private connection from your VPC to supported AWS services and VPC endpoint services powered by **[[AWS PrivateLink]]**.
+
+**No internet gateway required**: Connection doesn't require:
+
+- Internet gateway
+- NAT device
+- VPN connection
+- AWS Direct Connect connection
+
+**No public IPs needed**: Instances don't require public IP addresses to communicate with resources in the service.
+
+**Traffic stays internal**: Traffic between your VPC and the service doesn't leave the Amazon network.
+
+### Types of VPC Endpoints
+
+**[[Interface VPC Endpoint]]** (Interface Endpoint):
+
+- Connects to services powered by AWS PrivateLink
+- Includes AWS services, services hosted by other AWS customers and [[APN Partners]] in their VPCs ([[Endpoint Services]]), and supported AWS Marketplace services
+- **Service provider**: Owner of the service
+- **Service consumer**: Principal who creates the interface endpoint
+- **Charges**: For creating and using an interface endpoint (hourly usage rates and data processing rates)
+
+**[[Gateway Endpoints]]**:
+
+- No additional charge for use
+- Standard charges for data transfer and resource usage apply
 
 ## AWS Transit Gateway
 
-You can configure your VPCs in several ways, and take advantage of numerous connectivity options and gateways. These options and gateways include AWS Direct Connect (via DX gateways), NAT gateways, internet gateways, VPC peering, etc. It is not uncommon to find AWS customers with hundreds of VPCs distributed across AWS accounts and Regions to serve multiple lines of business, teams, projects, and so forth. Things get more complex when customers start to set up connectivity between their VPCs. All the connectivity options are strictly point-to-point, so the number of VPC-to-VPC connections can grow quickly. As you grow the number of workloads that run on AWS, you must be able to scale your networks across multiple accounts and VPCs to keep up with the growth.
+### The Connectivity Challenge
 
-Though you can use VPC peering to connect pairs of VPCs, managing point-to-point connectivity across many VPCs without the ability to centrally manage the connectivity policies can be operationally costly and difficult. For on-premises connectivity, you must attach your VPN to each individual VPC. This solution can be time-consuming to build and difficult to manage when the number of VPCs grows into the hundreds.
+**Problem**: As AWS customers grow, they have hundreds of VPCs distributed across accounts and Regions.
 
-To solve this problem, you can use AWS Transit Gateway to simplify your networking model. With AWS Transit Gateway, you only need to create and manage a single connection from the central gateway into each VPC, on-premises data center, or remote office across your network. A transit gateway acts as a hub that controls how traffic is routed among all the connected networks, which act like spokes. This hub-and-spoke model significantly simplifies management and reduces operational costs because each network only needs to connect to the transit gateway and not to every other network. Any new VPC is connected to the transit gateway, and is then automatically available to every other network that is connected to the transit gateway. This ease of connectivity makes it easier to scale your network as you grow.
+**Complexity**: All connectivity options (Direct Connect, NAT gateways, internet gateways, VPC peering) are strictly point-to-point.
 
+**Growth issue**: The number of VPC-to-VPC connections grows quickly.
 
-# Section 4: VPC security
+**On-premises challenge**: Must attach VPN to each individual VPC—time-consuming and difficult to manage at scale.
 
-You can build security into your VPC architecture in several ways so that youhave complete control over both incoming and outgoing traffic. In this section, you learn about two Amazon VPC firewall options that you can use to secure your VPC: security groups and network access control lists (network ACLs)
+### The Solution: AWS Transit Gateway
 
+**[[AWS Transit Gateway]]**: Simplifies networking model by acting as a central hub.
 
-## Security groups (1 of 2)
+**Hub-and-spoke model**:
 
-A security group acts as a virtual firewall for your instance, and it controls inbound and outbound traffic. Security groups act at the instance level, not the subnet level. Therefore, each instance in a subnet in your VPC can be assigned to a different set of security groups.
+- Transit gateway = hub
+- Connected networks = spokes
 
-At the most basic level, a security group is a way for you to filter traffic to your instances.
+**Setup**: Only need to create and manage a single connection from the central gateway to each VPC, on-premises data center, or remote office.
 
-## Security groups (2 of 2)
+**Traffic control**: Transit gateway controls how traffic is routed among all connected networks.
 
-Security groups have rules that control the inbound and outbound traffic. When you create a security group, it has no inbound rules. Therefore, no inbound traffic that originates from another host to your instance is allowed until you add inbound rules to the security group. By default, a security group includes an outbound rule that allows all outbound traffic. You can remove the rule and add outbound rules that allow specific outbound traffic only. If your security group has no outbound rules, no outbound traffic that originates from your instance is allowed.
+### Benefits
 
-Security groups are stateful, which means that state information is kept even after a request is processed. Thus, if you send a request from your instance, the response traffic for that request is allowed to flow in regardless of inbound security group rules. Responses to allowed inbound traffic are allowed to flow out, regardless of outbound rules.
+**Simplified management**: Significantly reduces operational costs
 
-## Custom security group example
+**Easy scaling**: Any new VPC connects to transit gateway and becomes automatically available to every other connected network
 
-When you create a custom security group, you can specify allow rules, but not deny rules. All rules are evaluated before the decision to allow traffic.
+**Ease of connectivity**: Makes it easier to scale network as you grow
 
-## Network access control lists (network ACLs 1 of 2)
+## Section 4: VPC Security
 
-A network access control list (network ACL)is an optional layer of security for your Amazon VPC. It acts as a firewall for controlling traffic in and out of one or more subnets. To add another layer of security to your VPC, you can set up network ACLs with rules that are similar to your security groups.
+### Overview
 
-Each subnet in your VPC must be associated with a network ACL. If you don't explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL. You can associate a network ACL with multiple subnets; however, a subnet can be associated with only one network ACL at a time. When you associate a network ACL with a subnet, the previous association is removed.
+**Security layers**: Can build security into VPC architecture in several ways for complete control over incoming and outgoing traffic.
 
-## Network access control lists (network ACLs 2 of 2)
+**Two main firewall options**:
 
-A network ACL has separate inbound and outbound rules, and each rule can either allow or deny traffic. Your VPC automatically comes with a modifiable default network ACL. By default, it allows all inbound and outbound IPv4 traffic and, if applicable, IPv6 traffic. The table shows a default network ACL.
+1. Security Groups
+2. Network Access Control Lists (Network ACLs)
 
-Network ACLs are stateless, which means that no information about a request is maintained after a request is processed.
+## Security Groups
 
-## Custom network ACLs example
+### What is a Security Group?
 
-You can create a custom network ACL and associate it with a subnet. By default, each custom network ACL denies all inbound and outbound traffic until you add rules.
+**[[Security Group]]**: Acts as a virtual firewall for your instance, controlling inbound and outbound traffic.
 
-A network ACL contains a numbered list of rules that are evaluated in order, starting with the lowest numbered rule. The purpose is to determine whether traffic is allowed in or out of any subnet that is associated with the network ACL. The highest number that you can use for a rule is 32,766. AWS recommends that you create rules in increments (for example, increments of 10 or 100) so that you can insert new rules where you need them later.
+**Level of operation**: Acts at the **instance level**, not the subnet level.
 
-## Security groups versus network ACL
+**Flexibility**: Each instance in a subnet can be assigned to a different set of security groups.
 
-Here is a summary of the differences between security groups and network ACLs:
+**Purpose**: Filter traffic to your instances.
 
-- Security groupsact at the instance level, but network ACLs act at the subnet level.
-- Security groups support allow rules only, but network ACLs support both allow and deny rules.
-- Security groups are stateful, but network ACLs are stateless.
-- For security groups, all rules are evaluated before the decision is made to allow traffic. For network ACLs, rules are evaluated in number order before the decision is made to allow traffic.
-## Activity: Design a VPC
+### Security Group Rules
 
-Now,it’s your turn! In this scenario, you are a small business owner with a website that is hosted on an AmazonElastic Compute Cloud (Amazon EC2)instance. You have customer data that is stored on a backend database that you want to keep private.
+**Inbound rules**: When you create a security group, it has **no inbound rules** by default.
 
-See if you can design a VPC that meets the following requirements:
-- Your web server and database server must be in separate subnets.
-- The first address of your network must be 10.0.0.0. Each subnet must have 256 IPv4 addresses.•Your customers must always be able to access your web server.•Your database server must be able to access the internet to make patch updates.•Your architecture must be highly available and use at least one custom firewall layer
+- No inbound traffic from another host is allowed until you add inbound rules
 
-# Section 5: Amazon Route 53
+**Outbound rules**: By default, includes an outbound rule allowing **all outbound traffic**.
 
-## Amazon Route 5
+- Can remove the rule and add outbound rules for specific traffic only
 
-Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed to give developers and businesses areliable and cost-effective way to route users to internet applications by translating names (like www.example.com) into the numeric IP addresses (like 192.0.2.1) that computers use to connect to each other. In addition, Amazon Route 53 is fully compliant with IPv6.
+**[[Stateful]]**: Security groups are stateful—state information is kept even after a request is processed.
 
-Amazon Route 53 effectively connects user requests to infrastructure running in AWS—such as Amazon EC2 instances, Elastic Load Balancing load balancers, or Amazon S3 buckets—and can also be used to route users to infrastructure that is outside of AWS.
+**Stateful behavior**:
 
-You can use Amazon Route 53 to configure DNS health checks so you that can route traffic to healthy endpoints or independently monitor the health of your application and its endpoints.
+- If you send a request from your instance, response traffic is allowed to flow in regardless of inbound rules
+- Responses to allowed inbound traffic are allowed to flow out, regardless of outbound rules
 
-Amazon Route 53 traffic flow helps you manage traffic globally through several routing types, which can be combined with DNS failover to enable various low-latency, fault-tolerant architectures. You can use Amazon Route 53 traffic flow’s simple visual editor to manage how your users are routed to your application’s endpoints—whether in a single AWS Region or distributed around the globe.
+### Custom Security Group Rules
 
-Amazon Route 53 also offers Domain Name Registration—you can purchase and manage domain names (like example.com), and Amazon Route 53 will automatically configure DNS settings for your domains.
+**Allow rules only**: Can specify allow rules, but **not deny rules**
 
-## Amazon Route 53 DNS resolution
+**Evaluation**: All rules are evaluated before the decision to allow traffic
 
-Here is thebasic pattern that Amazon Route 53 follows when a user initiates a DNS request. The DNS resolver checks with your domain in Route 53, gets the IP address, and returns it to the user.
+**No explicit deny**: Cannot create deny rules in security groups
 
-## Amazon Route 53 supported routing
+## Network Access Control Lists (Network ACLs)
 
-Amazon Route 53 supports several types of routing policies, which determine how Amazon Route 53 responds to queries:
+### What is a Network ACL?
 
-- Simple routing (round robin)–Use for a single resource that performs a given function for your domain (such as a web server that serves content for the example.comwebsite).
-- Weighted round robin routing –Use to route traffic to multiple resources in proportions that you specify. Enables you to assign weights to resource record sets to specify the frequency with which different responses are served. You might want to use this capability to do A/B testing, which is when you send a small portion of traffic to a server where you made a software change. For instance, suppose you have two record sets that are associated with one DNS name: one with weight 3 and one with weight 1. In this case, 75 percent of the time, Amazon Route 53 will return the record set with weight 3, and 25 percent of the time, Amazon Route 53 will return the record set with weight 1. Weights can be any number between 0 and 255.
-- Latency routing (LBR) –Use when you have resources in multiple AWS Regions and you want to route traffic to the Region that provides the best latency. Latency routing works by routing your customers to the AWS endpoint (for example, Amazon EC2 instances, Elastic IP addresses, or load balancers) that provides the fastest experience based on actual performance measurements of the different AWS Regions where your application runs.
-- Geolocation routing –Use when you want to route traffic based on the location of your users. When you use geolocation routing, you can localize your content and present some or all of your website in the language of your users. You can also use geolocation routing to restrict the distribution of content to only the locations where you have distribution rights. Another possible use is for balancing the load across endpoints in a predictable, easy-to-manage way, so that each user location is consistently routed to the same endpoint.
-- Geoproximity routing–Use when you want to route traffic based on the location of your resources and, optionally, shift traffic from resources in one location to resources in another
-- Failover routing (DNS failover)–Use when you want to configure active-passive failover. Amazon Route 53 can help detect an outage of your website and redirect your users to alternate locations where your application is operating properly. When you enable this feature, Amazon Route 53 health-checking agents will monitor each locationor endpoint of your application to determine its availability. You can take advantage of this feature to increase the availability of your customer-facing application.
-- Multivalue answer routing–Use when you want Route53 to respond to DNS queries with up to eight healthy records that are selected at random. You can configure Amazon Route53 to return multiple values—such as IP addresses for your web servers—in response to DNS queries. You can specify multiple values for almost any record, but multivalue answer routing also enables you to check the health of each resource so that Route53 returns only values for healthy resources. It's not a substitute for a load balancer, but the ability to return multiple health-checkable IP addresses is a way to use DNS to improve availability and load balancing.
+**[[Network ACL]]** (Network Access Control List): An optional layer of security for your Amazon VPC acting as a firewall for controlling traffic in and out of one or more subnets.
 
-## Use case: Multi-region deployment
+**Additional security**: Adds another layer on top of security groups.
 
-Multi-Region deployment is an example use case for Amazon Route 53. With Amazon Route 53, the user is automatically directed to the Elastic Load Balancing load balancer that’s closest to the user.
+**Similar to security groups**: Can set up rules similar to security groups for added protection.
 
-The benefits of multi-region deployment of Route 53 include:
-- Latency-based routing to the Region
-- Load balancing routing tothe Availability Zone
+### Network ACL Association
 
-## Amazon Route 53 DNS failover
+**Required association**: Each subnet must be associated with a network ACL.
 
-Amazon Route 53 enables you to improve the availability of your applications that run on AWS by:
+**Default association**: If not explicitly associated, subnet is automatically associated with the **[[Default Network ACL]]**.
 
-- Configuring backup and failover scenarios for your own applications.
-- Enabling highly available multi-Region architectures on AWS.
-- Creating health checks to monitor the health and performance of your web applications, web servers, and other resources. Each health check that you create can monitor one of the following—the health of a specified resource, such as a web server;the status of other health checks; and the status of an Amazon CloudWatch alarm.
+**One-to-many**: Can associate a network ACL with multiple subnets.
 
-## DNS failover for a multi-tiered web application
+**One-to-one constraint**: A subnet can be associated with only **one** network ACL at a time.
 
-This diagram indicates how DNSfailover works in a typical architecture for a multi-tiered web application. Route 53 passes traffic to a load balancer, which then distributes traffic to a fleet of EC2 instances.
+**Association change**: When you associate a network ACL with a subnet, the previous association is removed.
 
-You can do the following tasks with Route 53 to ensure high availability:
-1. Create two DNS records for the Canonical Name Record (CNAME) www with a routing policy of Failover Routing. The first record is the primary route policy, which points to the load balancer for your web application. The second record is the secondary route policy, which points to your static Amazon S3 website.
-2. Use Route 53 health checks to make sure that the primary is running. If it is, all traffic defaults to your web application stack. Failover to the static backup site would be triggered if either the web server goes down (or stops responding),or the database instance goes down.
+### Network ACL Rules
 
-# Section 6: Amazon CloudFront
+**Separate rules**: Has separate inbound and outbound rules.
 
-The purpose of networking is to share information between connected resources. So far in this module, you learned about VPC networking with Amazon VPC. You learned aboutthe different options for connecting your VPC to the internet, to remote networks, to other VPCs, and to AWS services.
+**Allow or deny**: Each rule can either allow or deny traffic.
 
-Content delivery occurs over networks, too—for example, when you stream a movie from your favorite streaming service. In this final section, you learn about Amazon CloudFront, which is a content delivery network (CDN) service.
+**Default network ACL**: By default, allows all inbound and outbound IPv4 traffic (and IPv6 if applicable).
 
-## Content delivery and network latency
+**[[Stateless]]**: Network ACLs are stateless—no information about a request is maintained after processing.
 
-As explained earlier in this module when you were learning about AWS Direct Connect, one of the challenges of network communication is network performance. When you browse a website or stream a video, your request is routed through many different networks to reach an origin server. The origin server (or origin) stores the original, definitive versions of the objects (webpages, images, and media files). The number of network hops and the distance that the request must travel significantly affect the performance and responsiveness of the website. Further, network latency is different in various geographic locations. For these reasons, a content delivery network might be the solution.
+### Custom Network ACLs
 
-## Content delivery network (CDN)
+**Default behavior**: Each custom network ACL **denies** all inbound and outbound traffic by default until you add rules.
 
-A content delivery network (CDN) is a globally distributed system of caching servers. A CDN caches copies of commonly requested files (static content, such as Hypertext Markup Language, or HTML; Cascading Style Sheets, or CSS; JavaScript; and image files) that are hosted on the application origin server. The CDN delivers a local copy of the requested content from a cache edge or Point of Presence that provides the fastest delivery to the requester.
+**Numbered rules**: Contains a numbered list of rules evaluated in order, starting with the lowest numbered rule.
 
-CDNs also deliver dynamic content that is unique to the requester and is not cacheable. Having a CDN deliver dynamic content improves application performance and scaling. The CDN establishes and maintains secure connections closer to the requester. If the CDN is on the same network as the origin, routing back to the origin to retrieve dynamic content is accelerated. In addition, content such as form data, images, and text can be ingested and sent back to the origin, thus taking advantage of the low-latency connections and proxy behavior of the PoP.
+**Highest rule number**: 32,766
+
+**AWS recommendation**: Create rules in increments (e.g., 10 or 100) so you can insert new rules later where needed.
+
+## Security Groups vs. Network ACLs
+
+**Key differences**:
+
+|Aspect|Security Groups|Network ACLs|
+|---|---|---|
+|**Level**|Instance level|Subnet level|
+|**Rules**|Allow rules only|Allow and deny rules|
+|**State**|Stateful|Stateless|
+|**Evaluation**|All rules evaluated before decision|Rules evaluated in number order|
+
+## Section 5: Amazon Route 53
+
+### What is Amazon Route 53?
+
+**[[Amazon Route 53]]**: A highly available and scalable cloud **[[DNS]]** (Domain Name System) web service.
+
+**Purpose**: Gives developers and businesses a reliable and cost-effective way to route users to internet applications by translating names (like `www.example.com`) into numeric IP addresses (like `192.0.2.1`).
+
+**IPv6 compliant**: Fully compliant with IPv6.
+
+### Amazon Route 53 Capabilities
+
+**AWS integration**: Connects user requests to infrastructure running in AWS:
+
+- Amazon EC2 instances
+- [[Elastic Load Balancing]] load balancers
+- Amazon S3 buckets
+
+**External routing**: Can also route users to infrastructure outside of AWS.
+
+**[[DNS Health Checks]]**: Can configure DNS health checks to route traffic to healthy endpoints or independently monitor application health.
+
+**[[Amazon Route 53 Traffic Flow]]**: Helps manage traffic globally through several routing types, which can be combined with DNS failover for low-latency, fault-tolerant architectures.
+
+**Visual editor**: Simple visual editor to manage how users are routed to application endpoints.
+
+**[[Domain Name Registration]]**: Can purchase and manage domain names (like `example.com`), and Amazon Route 53 automatically configures DNS settings.
+
+## Amazon Route 53 DNS Resolution
+
+**Basic pattern**: When a user initiates a DNS request:
+
+1. DNS resolver checks with your domain in Route 53
+2. Gets the IP address
+3. Returns it to the user
+
+## Amazon Route 53 Supported Routing Policies
+
+Amazon Route 53 supports several routing policies determining how Route 53 responds to queries:
+
+### Simple Routing (Round Robin)
+
+**[[Simple Routing]]**: Use for a single resource performing a given function for your domain (e.g., a web server serving content for `example.com`).
+
+### Weighted Round Robin Routing
+
+**[[Weighted Round Robin Routing]]**: Route traffic to multiple resources in proportions you specify.
+
+**How it works**: Assign weights to resource record sets to specify frequency of different responses.
+
+**Use case**: [[A/B Testing]]—send a small portion of traffic to a server with software changes.
+
+**Example**:
+
+- Record set weight 3 and weight 1
+- Route 53 returns weight 3 record 75% of the time
+- Returns weight 1 record 25% of the time
+
+**Weight range**: Any number between 0 and 255.
+
+### Latency Routing (LBR)
+
+**[[Latency Routing]]**: Use when you have resources in multiple AWS Regions and want to route traffic to the Region providing the best latency.
+
+**How it works**: Routes customers to the AWS endpoint providing fastest experience based on actual performance measurements.
+
+**Based on**: Real performance data from different AWS Regions where your application runs.
+
+### Geolocation Routing
+
+**[[Geolocation Routing]]**: Route traffic based on the location of your users.
+
+**Use cases**:
+
+- Localize content
+- Present website in user's language
+- Restrict content distribution to locations where you have distribution rights
+- Balance load across endpoints in predictable way (each user location consistently routed to same endpoint)
+
+### Geoproximity Routing
+
+**[[Geoproximity Routing]]**: Route traffic based on the location of your resources and, optionally, shift traffic from resources in one location to resources in another.
+
+### Failover Routing (DNS Failover)
+
+**[[Failover Routing]]**: Configure active-passive failover.
+
+**Purpose**: Amazon Route 53 can detect website outage and redirect users to alternate locations where application is operating properly.
+
+**Health monitoring**: Route 53 health-checking agents monitor each location/endpoint to determine availability.
+
+**Benefit**: Increases availability of customer-facing application.
+
+### Multivalue Answer Routing
+
+**[[Multivalue Answer Routing]]**: Route 53 responds to DNS queries with up to eight healthy records selected at random.
+
+**Capability**: Can return multiple values (e.g., IP addresses for web servers) in response to DNS queries.
+
+**Health checking**: Can check health of each resource so Route 53 returns only values for healthy resources.
+
+**Not a load balancer**: Not a substitute for load balancer, but the ability to return multiple health-checkable IP addresses is a way to use DNS to improve availability and load balancing.
+
+## Use Case: Multi-Region Deployment
+
+**[[Multi-Region Deployment]]**: An example use case for Amazon Route 53.
+
+**How it works**: User is automatically directed to the Elastic Load Balancing load balancer closest to the user.
+
+**Benefits**:
+
+- **[[Latency-Based Routing]]** to the Region
+- **[[Load Balancing]]** routing to the Availability Zone
+
+## Amazon Route 53 DNS Failover
+
+**Purpose**: Improve availability of applications running on AWS.
+
+**Capabilities**:
+
+1. Configure backup and failover scenarios for your applications
+2. Enable highly available multi-Region architectures on AWS
+3. Create health checks to monitor health and performance
+
+**Health check monitoring**:
+
+- Health of specified resource (e.g., web server)
+- Status of other health checks
+- Status of an [[Amazon CloudWatch]] alarm
+
+## DNS Failover for Multi-Tiered Web Application
+
+**Architecture**: Route 53 passes traffic to a load balancer, which distributes traffic to a fleet of EC2 instances.
+
+### High Availability Tasks
+
+**1. Create DNS records**: Two DNS records for **[[CNAME]]** (Canonical Name Record) `www` with [[Failover Routing Policy]]:
+
+- **Primary route policy**: Points to load balancer for web application
+- **Secondary route policy**: Points to static Amazon S3 website
+
+**2. Use Route 53 health checks**: Make sure primary is running
+
+- If running: All traffic defaults to web application stack
+- If down: Failover to static backup site triggered if either:
+    - Web server goes down (or stops responding)
+    - Database instance goes down
+
+## Section 6: Amazon CloudFront
+
+### Content Delivery and Network Latency
+
+**The challenge**: Network performance and latency affect content delivery.
+
+**Network hops**: When you browse a website or stream video, your request routes through many different networks to reach an **[[Origin Server]]**.
+
+**Origin server**: Stores the original, definitive versions of objects (webpages, images, media files).
+
+**Impact**: Number of network hops and distance significantly affect performance and responsiveness.
+
+**Geographic variation**: Network latency differs in various geographic locations.
+
+**Solution**: A content delivery network (CDN).
+
+## Content Delivery Network (CDN)
+
+**[[CDN]]** (Content Delivery Network): A globally distributed system of caching servers.
+
+**Static content**: CDN caches copies of commonly requested files:
+
+- HTML (Hypertext Markup Language)
+- CSS (Cascading Style Sheets)
+- JavaScript
+- Image files
+
+**How it works**: Delivers a local copy of requested content from a cache edge or **[[Point of Presence]]** (PoP) providing fastest delivery.
+
+### Dynamic Content Delivery
+
+**Dynamic content**: Unique to the requester and not cacheable.
+
+**Performance improvement**: Having a CDN deliver dynamic content improves application performance and scaling.
+
+**Secure connections**: CDN establishes and maintains secure connections closer to the requester.
+
+**Same network advantage**: If CDN is on same network as origin, routing back to origin to retrieve dynamic content is accelerated.
+
+**Content ingestion**: Content like form data, images, and text can be ingested and sent back to origin, taking advantage of low-latency connections and proxy behavior of the PoP.
 
 ## Amazon CloudFront
 
-Amazon CloudFront is a fast CDN service that securely delivers data, videos, applications, and application programming interfaces (APIs) to customers globally with low latency and high transfer speeds.It also provides a developer-friendly environment. Amazon CloudFront delivers files to users over a global network of edge locations and Regional edge caches. Amazon CloudFront is different from traditional content delivery solutions because it enables you to quickly obtain the benefits of high-performance content delivery without negotiated contracts, high prices, or minimum fees. Like other AWS services, Amazon CloudFront is a self-service offering with pay-as-you-go pricing.
+**[[Amazon CloudFront]]**: A fast CDN service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds.
 
-## Amazon CloudFront infrastructure
+**Developer-friendly**: Provides a developer-friendly environment.
 
-Amazon CloudFront delivers content through a worldwide network of data centers that are called edge locations. When a user requests content that you serve with CloudFront, the user is routed to the edge location that provides the lowest latency (or time delay) so that content is delivered with the best possible performance. CloudFront edge locations are designed to serve popular content quickly to your viewers.
+**Global network**: Delivers files over a worldwide network of edge locations and [[Regional Edge Caches]].
 
-As objects become less popular, individual edge locations might remove those objects to make room for more popular content. For the less popular content, CloudFront has Regional edge caches. Regional edge caches are CloudFront locations that are deployed globally and are close to your viewers. They are located between your origin server and the global edge locations that serve content directly to viewers. A Regional edge cache has a larger cache than an individual edge location, so objects remain in the Regional edge cache longer. More of your content remains closer to your viewers, which reduces the need for CloudFront to go back to your origin server and improves overall performance for viewers.
+**No contracts**: Different from traditional CDN solutions—quickly obtain benefits without negotiated contracts, high prices, or minimum fees.
 
+**Self-service**: Self-service offering with **pay-as-you-go pricing**.
 
-## Amazon CloudFront benefits
+## Amazon CloudFront Infrastructure
 
-Amazon CloudFront provides the following benefits:
+**[[Edge Locations]]**: CloudFront delivers content through worldwide network of data centers called edge locations.
 
-- Fast and global–Amazon CloudFront is massively scaled and globally distributed. To deliver content to end users with low latency, Amazon CloudFront uses a global network that consists of edge locations and regional caches.
-- Security at the edge–Amazon CloudFront provides both network-level and application-level protection. Your traffic and applications benefit through various built-in protections, such as AWS Shield Standard, at no additional cost. You can also use configurable features, such as AWS Certificate Manager (ACM), to create and manage custom Secure Sockets Layer (SSL) certificates at no extra cost.
-- Highly programmable–Amazon CloudFront features can be customized for specific application requirements. It integrates with Lambda@Edgeso that you can run custom code across AWS locations worldwide, which enables you to move complex application logic closer to users to improve responsiveness. The CDN also supports integrations with other tools and automation interfaces for DevOps. It offers continuous integration and continuous delivery (CI/CD) environments.
-- Deeply integrated with AWS–Amazon CloudFront is integrated with AWS, with both physical locations that are directly connected to the AWS Global Infrastructure and other AWS services. You can use APIs or the AWS Management Console to programmatically configure all features in the CDN.
-- Cost-effective–Amazon CloudFront is cost-effective because it has no minimum commitments and charges you only for what you use. Compared to self-hosting, Amazon CloudFront avoids the expense and complexity of operating a network of cache servers in multiple sites across the internet. It eliminates the need to overprovision capacity to serve potential spikes in traffic. Amazon CloudFront also uses techniques like collapsing simultaneous viewer requests at an edge location for the same file into a single request to your origin server. The result is reduced load on your origin servers and reduced need to scale your origin infrastructure, which can result in further cost savings. If you use AWS origins such as Amazon Simple Storage Service (Amazon S3) or Elastic Load Balancing,you pay only for storage costs, not for any data transferred between these services and CloudFront.
+**Routing**: When a user requests content, they're routed to the edge location providing lowest latency (time delay).
 
-## Amazon CloudFront pricing
+**Performance**: Content delivered with best possible performance.
 
-Amazon CloudFront charges are based on actual usage of the service in four area:
+**Popular content**: Edge locations serve popular content quickly.
 
-- Data transfer out–You are charged for the volume of data that is transferred out from Amazon CloudFront edge locations, measured in GB, to the internet or to your origin (both AWS origins and other origin servers). Data transfer usage is totaled separately for specific geographic regions, and then cost is calculated based on pricing tiers for each area. If you use other AWS services as the origins of your files, you are charged separately for your use of those services, including storage and compute hours.
-- HTTP(S) requests–You are charged for the number of HTTP(S) requests that are made to Amazon CloudFront for your content.
-- Invalidation requests–You are charged per path in your invalidation request. A path that is listed in your invalidation request represents the URL (or multiple URLs if the path contains a wildcard character) of the object that you want to invalidate from CloudFront cache. You can request up to 1,000 paths each month from Amazon CloudFront at no additional charge. Beyond the first 1,000 paths, you are charged per path that is listed in your invalidation requests.
-- Dedicated IP custom Secure Sockets Layer (SSL)–You pay $600 per month for each custom SSL certificate that is associated with one or more CloudFront distributions that use the Dedicated IP version of custom SSL certificate support. This monthly fee is prorated by the hour. For example, if your custom SSL certificate was associated with at least one CloudFront distribution for just 24 hours (that is, 1 day) in the month of June, your total charge for using the custom SSL certificate feature in June is (1 day / 30 days) * $600 = $20
+### Regional Edge Caches
 
+**[[Regional Edge Caches]]**: CloudFront locations deployed globally close to viewers, located between origin server and global edge locations.
 
+**Larger cache**: Regional edge cache has larger cache than individual edge location.
 
+**Longer retention**: Objects remain in Regional edge cache longer.
+
+**Benefit**: More content stays closer to viewers, reducing need for CloudFront to fetch from origin server, improving overall performance.
+
+## Amazon CloudFront Benefits
+
+### Fast and Global
+
+**Massive scale**: Globally distributed system.
+
+**Low latency**: Uses global network of edge locations and regional caches to deliver content with low latency.
+
+### Security at the Edge
+
+**Network-level protection**: Provides both network-level and application-level protection.
+
+**[[AWS Shield Standard]]**: Built-in protections at no additional cost.
+
+**[[AWS Certificate Manager]]** (ACM): Can create and manage custom [[SSL Certificates]] at no extra cost.
+
+### Highly Programmable
+
+**Customization**: Features can be customized for specific application requirements.
+
+**[[Lambda@Edge]]**: Integrates so you can run custom code across AWS locations worldwide, moving complex application logic closer to users.
+
+**DevOps integration**: Supports integrations with other tools and automation interfaces for [[CI/CD]] (Continuous Integration and Continuous Delivery) environments.
+
+### Deeply Integrated with AWS
+
+**Physical integration**: Directly connected to AWS Global Infrastructure.
+
+**API access**: Can programmatically configure all features via APIs or AWS Management Console.
+
+### Cost-Effective
+
+**No minimum commitments**: Only charges for what you use.
+
+**Avoids complexity**: Avoids expense and complexity of operating network of cache servers across internet.
+
+**No overprovisioning**: Eliminates need to overprovision capacity for potential traffic spikes.
+
+**Request collapsing**: Collapses simultaneous viewer requests at edge location for same file into single request to origin server.
+
+**Reduced origin load**: Results in reduced load on origin servers and reduced need to scale origin infrastructure.
+
+**AWS origins savings**: If using AWS origins (Amazon S3, Elastic Load Balancing), pay only for storage costs, not for data transferred between these services and CloudFront.
+
+## Amazon CloudFront Pricing
+
+Charges based on actual usage in four areas:
+
+### 1. Data Transfer Out
+
+**Charge**: Volume of data transferred out from CloudFront edge locations to internet or origin, measured in GB.
+
+**Regional pricing**: Data transfer totaled separately for geographic regions, then cost calculated based on pricing tiers for each area.
+
+**Separate charges**: If using other AWS services as origins, charged separately for those services (storage, compute hours).
+
+### 2. HTTP(S) Requests
+
+**Charge**: Number of HTTP(S) requests made to CloudFront for your content.
+
+### 3. Invalidation Requests
+
+**Charge**: Per path in your invalidation request.
+
+**Path definition**: A path represents the URL (or multiple URLs if path contains wildcard character) of object to invalidate from CloudFront cache.
+
+**Free tier**: Up to 1,000 paths each month at no additional charge.
+
+**Beyond free tier**: Charged per path beyond first 1,000.
+
+### 4. Dedicated IP Custom SSL
+
+**Charge**: $600 per month for each custom SSL certificate associated with one or more CloudFront distributions using Dedicated IP version of custom SSL certificate support.
+
+**Prorated**: Monthly fee prorated by the hour.
+
+**Example**: If custom SSL certificate associated with CloudFront distribution for 24 hours (1 day) in June:
+
+- Calculation: (1 day / 30 days) × $600 = $20
+
+---
+
+## Review Questions
+
+1. What is a computer network? What devices are required to connect clients together?
+    
+2. What is an IP address? How many bits are in an IPv4 address vs. an IPv6 address?
+    
+3. Explain CIDR notation. What does `192.0.2.0/24` mean? How many IP addresses are available?
+    
+4. Calculate: How many IP addresses are available in `10.0.0.0/16`? What is the range?
+    
+5. What are the two special cases in CIDR addressing? What are they used for?
+    
+6. What is the OSI model? At which layer do routers operate? What about switches?
+    
+7. What is Amazon VPC? What control does it give you over your virtual networking resources?
+    
+8. What is the difference between a public subnet and a private subnet?
+    
+9. What is the size range for an IPv4 CIDR block when creating a VPC (largest to smallest)?
+    
+10. AWS reserves how many IP addresses in each subnet? What are they reserved for?
+    
+11. Calculate: A subnet has CIDR block `10.0.1.0/24`. How many total IP addresses? How many are available for use?
+    
+12. What is an Elastic IP address? How is it different from a regular public IP address?
+    
+13. What is an Elastic Network Interface? Can you detach the primary network interface from an instance?
+    
+14. What is a route table? What are the two components of a route?
+    
+15. What is an Internet Gateway? What are its two purposes?
+    
+16. What is a NAT Gateway? Why would you use one in a private subnet?
+    
+17. Compare NAT Gateway vs. NAT Instance. Which does AWS recommend and why?
+    
+18. What is VPC Sharing? List at least four benefits.
+    
+19. What is VPC Peering? What are three restrictions of VPC peering?
+    
+20. Explain transitive peering. If VPC A peers with VPC B, and VPC A peers with VPC C, can VPC B communicate with VPC C?
+    
+21. What is AWS Site-to-Site VPN? List the setup steps to connect your VPC to a remote network.
+    
+22. What is AWS Direct Connect? What are three benefits compared to internet-based connections?
+    
+23. What is a VPC Endpoint? What are the two types and how do they differ?
+    
+24. What problem does AWS Transit Gateway solve? Explain the hub-and-spoke model.
+    
+25. Compare Security Groups and Network ACLs across these dimensions: level of operation, stateful vs. stateless, allow/deny rules, rule evaluation.
+    
+26. What does it mean that Security Groups are "stateful"? Give an example.
+    
+27. What does it mean that Network ACLs are "stateless"? How does this affect traffic?
+    
+28. What is Amazon Route 53? What does it do?
+    
+29. Explain these Route 53 routing policies:
+    
+    - Simple Routing
+    - Weighted Round Robin
+    - Latency Routing
+    - Geolocation Routing
+    - Failover Routing
+30. What is the purpose of a CDN? How does it improve performance?
+    
+31. What is Amazon CloudFront? How is it different from traditional CDN solutions?
+    
+32. Explain the difference between Edge Locations and Regional Edge Caches in CloudFront.
+    
+33. List and explain four benefits of Amazon CloudFront.
+    
+34. What are the four pricing components for Amazon CloudFront?
+    
+35. Design a VPC with these requirements:
+    
+    - CIDR block starting at 10.0.0.0
+    - Two subnets (public and private) with 256 addresses each
+    - Web servers in public subnet accessible from internet
+    - Database servers in private subnet able to download patches
+    - High availability across two Availability Zones
+
+---
+
+## Practical Scenarios
+
+### Scenario 1: CIDR Calculations
+
+You're designing a VPC with CIDR block `172.16.0.0/20`. Calculate: a) How many total IP addresses are available? b) If you create 4 equal-sized subnets, what's the CIDR for each? c) How many usable IP addresses in each subnet (after AWS reservations)?
+
+### Scenario 2: Subnet Design
+
+You need to create a VPC for a three-tier application:
+
+- Web tier (needs internet access)
+- Application tier (needs outbound internet, no inbound)
+- Database tier (no internet access at all)
+
+Design the subnet structure including:
+
+- Subnet types (public/private)
+- Route table configurations
+- Required gateways
+
+### Scenario 3: Security Design
+
+You have a web application with:
+
+- Web servers in public subnet
+- Application servers in private subnet
+- Database in private subnet
+
+Design security using both Security Groups and Network ACLs:
+
+- What rules would you create for each layer?
+- Which would you use for allow rules? Deny rules?
+- How would you restrict database access to only application servers?
+
+### Scenario 4: Multi-Region Architecture
+
+You're deploying a global application with users in North America, Europe, and Asia. Design an architecture using:
+
+- VPCs in multiple regions
+- Amazon Route 53 routing policies
+- Amazon CloudFront for content delivery
+
+Explain which Route 53 routing policy would be best and why.
+
+### Scenario 5: Hybrid Cloud Connectivity
+
+Your company has an on-premises data center and wants to connect to AWS. Compare:
+
+- AWS Site-to-Site VPN
+- AWS Direct Connect
+
+For each, explain:
+
+- When you'd use it
+- Setup requirements
+- Cost considerations
+- Performance expectations
+
+### Scenario 6: VPC Peering Challenge
+
+You have 5 VPCs:
+
+- VPC A (Shared Services)
+- VPC B (Development)
+- VPC C (Testing)
+- VPC D (Production)
+- VPC E (DR/Backup)
+
+All VPCs need to communicate with VPC A. VPCs B, C, and D should NOT communicate with each other. Design the peering connections. Can you use AWS Transit Gateway to simplify this? How?
+
+### Scenario 7: Cost Optimization
+
+You have:
+
+- 10 VPCs across 3 AWS regions
+- Each VPC has a NAT Gateway ($0.045/hour)
+- Heavy inter-VPC traffic
+
+Calculate monthly NAT Gateway costs and propose a cost-optimized solution using VPC Sharing or Transit Gateway.
+
+### Scenario 8: DNS Failover Design
+
+Design a DNS failover solution for a critical web application:
+
+- Primary: Full application stack in us-east-1
+- Secondary: Static website in S3
+
+Configure Route 53 failover routing with health checks. What happens when: a) Primary web server fails? b) Primary database fails? c) Both fail?
+
+---
+
+## Common Mistakes to Avoid
+
+1. **Choosing wrong VPC CIDR block** - Can't change after creation; plan carefully
+2. **Forgetting AWS reserved IPs** - Always subtract 5 from total subnet IPs
+3. **Putting NAT Gateway in private subnet** - Must be in public subnet
+4. **Assuming VPC peering is transitive** - Must create explicit connections
+5. **Confusing stateful (Security Groups) with stateless (Network ACLs)** - Affects return traffic handling
+6. **Not using route tables correctly** - Forgetting to route 0.0.0.0/0 to Internet Gateway
+7. **Overlapping CIDR blocks in VPC peering** - IP ranges cannot overlap
+8. **Releasing Elastic IPs still in use** - Causes unexpected charges
+9. **Not considering multi-AZ for high availability** - Should span multiple Availability Zones
+10. **Using public IPs for internal communication** - Use private IPs within VPC
+11. **Not leveraging VPC endpoints** - Can avoid NAT Gateway charges for AWS services
+12. **Overcomplicating with too many VPCs** - Consider VPC Sharing instead
+13. **Forgetting to update both route tables in VPC peering** - Need bidirectional routes
+14. **Not monitoring CloudFront costs** - Can accumulate with high traffic
+15. **Assuming Network ACL rules apply to Security Groups** - They're separate layers
+
+---
+
+#AWS #Networking #VPC #CloudNetworking #AWSNetworking #Subnets #IPAddressing #CIDR #SecurityGroups #NetworkACLs #InternetGateway #NATGateway #VPCPeering #DirectConnect #SiteToSiteVPN #Route53 #DNS #CloudFront #CDN #TransitGateway #VPCEndpoints #NetworkSecurity #CloudInfrastructure #AWSArchitecture #NetworkDesign #HighAvailability #MultiRegion #ContentDelivery #AWSServices #CloudSecurity
