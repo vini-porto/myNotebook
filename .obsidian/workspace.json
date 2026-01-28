@@ -172,7 +172,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "java virtual machine",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -193,8 +193,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -301,7 +300,7 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "7777a8b549a3369e",
+  "active": "315c83aaff31e835",
   "lastOpenFiles": [
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/5 - AI Networking and Content Delivery.md",
