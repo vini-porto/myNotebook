@@ -172,7 +172,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "java",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -193,7 +193,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -300,8 +301,12 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "315c83aaff31e835",
+  "active": "7777a8b549a3369e",
   "lastOpenFiles": [
+    "Compiled Language.md",
+    "Sault College/W26/Winter 2026/Programming Concepts - CSD121/1 - Intoduction to Java.md",
+    "Hybrid language.md",
+    "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Agentic AI & TuringBots.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/5 - AI Networking and Content Delivery.md",
     "Sault College/W26/Winter 2026/Introduction to Web Development/3 - AI Advanced HTML & Data.md",
@@ -312,7 +317,6 @@
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - Cloud Economics and Billing.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/3 - AI The Relational Model.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/2- AI raw generated text.md",
-    "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Agentic AI & TuringBots.md",
     "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Raw AI - Agentic AI & TuringBots.md",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121/2 - AI Namespaces in Java.md",
     "Type definition.md",
@@ -325,9 +329,6 @@
     "Records.md",
     "Structs.md",
     "Dot Operator.md",
-    "Namespaces.md",
-    "Compiled Language.md",
-    "functions.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/Untitled",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121",
