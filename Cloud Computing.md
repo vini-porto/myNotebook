@@ -1,3 +1,8 @@
-Cloud computing is the delivery of computing services, including [[servers]], [[storage]], [[databases]], [[networking]], [[software]], analytics, and intelligence—over the internet (the "cloud") on a pay-as-you-go basis. Instead of owning and maintaining physical data centers and servers, you can access technology services from a cloud provider.
+# What is Cloud Computing
 
-Think of it as renting computing power and storage instead of buying and maintaining your own computers.
+Cloud computing is the delivery of computing services, including [[servers]], [[storage]], [[databases]], [[networking]], [[software]], analytics, and intelligence over the [[internet]] ("cloud"). 
+
+>Instead of owning and maintaining physical data centers and servers, you can access technology services from a cloud provider.
+
+---
+#
