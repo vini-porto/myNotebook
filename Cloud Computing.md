@@ -74,3 +74,110 @@ Cloud computing is the delivery of computing services, including [[servers]], [[
 ## SaaS (Software as a Service)
 
 >Complete software applications delivered over the internet. You just use them.
+
+---
+
+**You Manage**:
+
+- Your data and settings
+
+**Provider Manages**:
+
+- Everything else (application, data, runtime, middleware, OS, infrastructure)
+
+**SaaS Providers:**
+
+- Gmail, Outlook.com
+- Google Docs, Microsoft 365
+- Salesforce
+- Dropbox
+- Slack
+- Netflix
+- Zoom
+
+# Cloud Deployment Models
+
+## Public Cloud
+
+Services offered over the public internet and available to anyone who wants to purchase them.
+
+**Characteristics**:
+
+- Shared infrastructure
+- Resources pooled for multiple customers
+- Pay-as-you-go pricing
+- Managed by third-party provider
+
+**Examples**: AWS, Microsoft Azure, Google Cloud Platform
+
+## Private Cloud
+
+Infrastructure used exclusively by a single organization, either on-premises or hosted by a third party.
+
+**Characteristics**:
+
+- Dedicated infrastructure
+- Single organization
+- More control and customization
+- Can be on-premises or hosted
+
+**Examples**: VMware vCloud, OpenStack (self-hosted)
+
+**Pros**:
+
+- Greater control
+- Enhanced security
+- Compliance easier
+- Customizable
+
+**Cons**:
+
+- Higher costs
+- Requires IT expertise
+- Limited scalability compared to public cloud
+- Maintenance responsibility
+
+**Use Case**: Bank or healthcare provider with strict regulatory requirements
+
+## Hybrid Cloud
+
+Combination of public and private clouds, allowing data and applications to be shared between them.
+
+**Characteristics**:
+
+- Mix of on-premises, private cloud, and public cloud
+- Data and apps can move between clouds
+- Greater flexibility
+- Optimized resource usage
+
+**Pros**:
+
+- Flexibility
+- Cost optimization
+- Scalability when needed
+- Keep sensitive data on-premises
+
+**Cons**:
+
+- Complex to manage
+- Requires integration
+- Security challenges at connection points
+
+## Multi-Cloud
+
+Using multiple cloud providers (multiple public clouds).
+
+**Example**: Using AWS for compute, Google Cloud for machine learning, Azure for databases
+
+**Pros**:
+
+- No vendor lock-in
+- Best-of-breed services
+- Risk mitigation
+- Geographic distribution
+
+**Cons**:
+
+- Complex management
+- Different interfaces/APIs
+- Potential higher costs
