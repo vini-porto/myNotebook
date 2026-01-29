@@ -263,11 +263,11 @@ Obs: you pay only for the resources created
 
 # On-Premises vs. All-in-Cloud: Sample Comparison
 
-### Example Scenario
+## Example Scenario
 
 **On-premises environment**:
 
-- 1 virtual machine with 4 CPUs, 16 GB RAM, Linux OS
+- 1 virtual machine with 4 CPUs, 16 GB RA023M, Linux OS
 - Average utilization: 100%
 - Optimized by RAM
 
@@ -276,7 +276,7 @@ Obs: you pay only for the resources created
 - 1 m4.xlarge instance (4 CPUs, 16 GB RAM)
 - 3-year Partial Upfront Reserved Instance
 
-### Results (3-Year Comparison)
+## Results (3-Year Comparison)
 
 **On-premises 3-year total cost**: $167,422
 
@@ -284,13 +284,13 @@ Obs: you pay only for the resources created
 
 **Savings**: **96%** reduction ($159,913 saved over 3 years)
 
-### Why the Difference?
+## Why the Difference?
 
 **On-premises**: Predicted costs that continue whether capacity is used or not.
 
 **AWS**: Commissioned when needed, decommissioned when no longer in use = lower overall cost.
 
-## AWS Pricing Calculator
+# AWS Pricing Calculator
 
 **[[AWS Pricing Calculator]]**: Tool to estimate monthly AWS bills.
 
@@ -318,9 +318,9 @@ Obs: you pay only for the resources created
 - Create and name **[[Groups]]** (containers for services)
 - Organize by cost-center, department, product architecture, etc.
 
-## Additional Benefit Considerations
+# Additional Benefit Considerations
 
-### Hard Benefits
+## Hard Benefits
 
 **[[Hard Benefits]]**: Quantifiable, direct cost reductions.
 
