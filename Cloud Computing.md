@@ -7,6 +7,16 @@ Cloud computing is the delivery of computing services, including [[servers]], [[
 ---
 # Core Characteristics of Cloud Computing
 
-## On-Demand Self-Service
+1. **On-Demand Self-Service:** You can provision computing resources automatically without human interaction with the service provider.
+2. **Broad Network Access:** Services are available over the network and accessed through standard mechanisms (web browsers, mobile apps, APIs).
+3. **Resource Pooling:** The provider's computing resources serve multiple customers using a multi-tenant model.
+4. **Rapid Elasticity:** Resources can be scaled up or down quickly to meet demand.
+5. Measured Service: Resource usage is monitored, controlled, and reported, providing transparency.
 
-You can provision computing resources automatically without human interaction with the service provider.
+# Cloud Service Models
+
+## IaaS (Infrastructure as a Service)
+
+Rent fundamental computing infrastructure—virtual machines, storage, networks.
+
+
