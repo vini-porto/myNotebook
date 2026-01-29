@@ -234,14 +234,13 @@ Obs: you pay only for the resources created
 >- Administration
 >- Facilities
 
->[!NOTE] Network Costs]]**:
+>[!NOTE] Network Costs
 >- Hardware
 >- Administration
 >- Facilities
 
-**[[IT Labor Costs]]**:
-
-- Required to administer the entire solution
+>[!NOTE] IT Labor Costs
+>- Required to administer the entire solution
 
 ### Cloud vs. On-Premises Cost Assessment
 
@@ -262,7 +261,7 @@ Obs: you pay only for the resources created
 - Facilities: Upgrades, maintenance, building security, taxes
 - IT labor: Security administration, application administration
 
-## On-Premises vs. All-in-Cloud: Sample Comparison
+# On-Premises vs. All-in-Cloud: Sample Comparison
 
 ### Example Scenario
 
