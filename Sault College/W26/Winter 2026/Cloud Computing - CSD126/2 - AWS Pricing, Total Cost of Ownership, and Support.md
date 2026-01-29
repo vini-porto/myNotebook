@@ -261,16 +261,15 @@ Obs: you pay only for the resources created
 - Facilities: Upgrades, maintenance, building security, taxes
 - IT labor: Security administration, application administration
 
-
-**On-premises**: Predicted costs that continue whether capacity is used or not.
-
-**AWS**: Commissioned when needed, decommissioned when no longer in use = lower overall cost.
+>[!NOTE] The Difference
+>
+>**On-premises**: Predicted costs that continue whether capacity is used or not.
+>
+>**AWS**: Commissioned when needed, decommissioned when no longer in use = lower overall cost.
 
 # AWS Pricing Calculator
 
 **[[AWS Pricing Calculator]]**: Tool to estimate monthly AWS bills.
-
-**Access**: Online at AWS website
 
 **Capabilities**:
 
