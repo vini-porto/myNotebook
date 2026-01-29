@@ -138,8 +138,6 @@ AWS recognizes that every customer has different needs.
 
 **[[IAM]]**: Controls users' access to AWS services and resources.
 
-**Cost**: Free
-
 ## Consolidated Billing
 
 **[[Consolidated Billing]]**: A billing feature in [[AWS Organizations]] to consolidate payment for multiple AWS accounts.
@@ -151,21 +149,19 @@ AWS recognizes that every customer has different needs.
 - Decreased charges from volume pricing discounts from combined usage
 - Tiered benefits across all consolidated accounts
 
-**Cost**: Free
-
-### AWS Elastic Beanstalk
+## AWS Elastic Beanstalk
 
 **[[AWS Elastic Beanstalk]]**: Quickly deploy and manage applications in the AWS Cloud.
 
-**Cost**: Free (you pay only for the AWS resources your applications use)
+Obs: you pay only for the AWS resources your applications use
 
-### AWS CloudFormation
+## AWS CloudFormation
 
 **[[AWS CloudFormation]]**: Create a collection of related AWS resources and provision them in an orderly and predictable fashion.
 
-**Cost**: Free (you pay only for the resources created)
+Obs: you pay only for the resources created
 
-### Auto Scaling
+## Auto Scaling
 
 **[[Auto Scaling]]**: Automatically adds or removes resources according to conditions you define.
 
@@ -177,21 +173,15 @@ AWS recognizes that every customer has different needs.
 
 **Cost**: Free (you pay for the scaled resources, like EC2 instances)
 
-### AWS OpsWorks
+## AWS OpsWorks
 
 **[[AWS OpsWorks]]**: Application management service for deploying and operating applications of all sizes.
 
-**Cost**: Free (you pay for underlying resources)
+**Obs**: you pay for underlying resources
 
-## Total Cost of Ownership (TCO)
+# Total Cost of Ownership (TCO)
 
-### On-Premises vs. Cloud
-
-The fundamental question many businesses face: **on-premises or cloud?**
-
-The difference is in deployment method:
-
-### On-Premises Infrastructure
+## On-Premises Infrastructure
 
 **[[On-Premises Infrastructure]]**: Installed locally on a company's computers and servers.
 
@@ -202,7 +192,7 @@ The difference is in deployment method:
 - **Scaling up**: Expensive and time-consuming
 - **Scaling down**: Does NOT reduce fixed costs
 
-### Cloud Infrastructure
+## Cloud Infrastructure
 
 **[[Cloud Infrastructure]]**: Purchased from a service provider who builds and maintains facilities, hardware, and staff.
 
@@ -213,23 +203,7 @@ The difference is in deployment method:
 - **Costs**: Easy to estimate based on service use
 - [[Consumption-Based Costs]]
 
-### Comparing the Models
-
-**Challenge**: It's difficult to compare on-premises IT with AWS Cloud because they use different concepts and terms.
-
-**On-premises discussion involves**:
-
-- Capital expenditure
-- Long planning cycles
-- Multiple components to buy, build, manage, and refresh
-
-**AWS Cloud discussion involves**:
-
-- Flexibility
-- Agility
-- Consumption-based costs
-
-## What is Total Cost of Ownership?
+# What is Total Cost of Ownership?
 
 **[[Total Cost of Ownership]]** (TCO): A financial estimate to help buyers and owners determine direct and indirect costs of a product or system.
 
