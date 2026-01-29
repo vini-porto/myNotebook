@@ -334,11 +334,12 @@ Obs: you pay only for the resources created
 - **Agile business processes**: Quickly respond to new opportunities
 - **Increased global reach**: Deploy worldwide in minutes
 
-**Importance**: Understanding both hard and soft benefits reveals the full value of cloud migration.
+>[!NOTE] Importance: 
+>Understanding both hard and soft benefits reveals the full value of cloud migration.
 
-## AWS Organizations
+# AWS Organizations
 
-### Introduction to AWS Organizations
+## Introduction to AWS Organizations
 
 **[[AWS Organizations]]**: Free account management service to consolidate multiple AWS accounts into an organization you create and centrally manage.
 
