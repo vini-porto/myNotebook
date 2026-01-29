@@ -17,6 +17,60 @@ Cloud computing is the delivery of computing services, including [[servers]], [[
 
 ## IaaS (Infrastructure as a Service)
 
-Rent fundamental computing infrastructure—virtual machines, storage, networks.
+>Rent fundamental computing infrastructure—virtual machines, storage, networks.
 
+---
 
+**You Manage**:
+
+- Operating systems
+- Applications
+- Data
+- Runtime
+- Middleware
+
+**Provider Manages**:
+
+- Virtualization
+- Servers
+- Storage
+- Networking
+
+### IaaS Providers:
+
+- Amazon EC2 (Elastic Compute Cloud)
+- Microsoft Azure Virtual Machines
+- Google Compute Engine
+- DigitalOcean Droplets
+
+## PaaS (Platform as a Service)
+
+>A platform for developing, running, and managing applications without dealing with infrastructure.
+
+---
+
+**You Manage**:
+
+- Applications
+- Data
+
+**Provider Manages**:
+
+- Runtime
+- Middleware
+- Operating System
+- Virtualization
+- Servers
+- Storage
+- Networking
+
+### PaaS Providers:
+
+- Heroku
+- Google App Engine
+- Microsoft Azure App Service
+- AWS Elastic Beanstalk
+
+## SaaS (Software as a Service)
+
+>Complete software applications delivered over the internet. You just use them.
