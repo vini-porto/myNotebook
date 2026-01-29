@@ -152,3 +152,6 @@ Using multiple cloud providers (multiple public clouds).
 - Complex management
 - Different interfaces/APIs
 - Potential higher costs
+
+
+#cloud-computing #AWS #Azure #GCP #infrastructure #IaaS #PaaS #SaaS #scalability #distributed-systems #technology #fundamentals #architecture
