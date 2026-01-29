@@ -386,15 +386,13 @@ Root (Organization)
 └── Account E
 ```
 
-**Hierarchy rules**:
-
-- An OU can have only one parent
-- Each account can be a member of exactly one OU
-- Policies attached to nodes flow down to all branches and leaves
+>[!NOTE] Hierarchy rules
+>
+>- An OU can have only one parent
+>- Each account can be a member of exactly one OU
+>- Policies attached to nodes flow down to all branches and leaves
 
 ## Key Features and Benefits
-
-**AWS Organizations enables you to**:
 
 **1. Service Control Policies**:
 
