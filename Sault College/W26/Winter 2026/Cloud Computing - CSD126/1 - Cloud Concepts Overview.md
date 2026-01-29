@@ -4,7 +4,7 @@
 
 **How it works**: These resources run on server computers located in large **[[Data Centers]]** in different locations around the world. When you use a [[Cloud Service Provider]] like [[AWS]], that provider owns the computers you're using. These resources can be combined like building blocks to create solutions that meet business goals and technology requirements.
 
-## Infrastructure as Software
+# Infrastructure as Software
 
 Cloud computing fundamentally changes how we think about IT infrastructure.
 
