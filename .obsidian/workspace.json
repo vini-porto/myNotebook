@@ -117,12 +117,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS Cloud Adoption Framework.md",
+                "file": "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AWS Cloud Adoption Framework"
+              "title": "1 - Cloud Concepts Overview"
             }
           },
           {
@@ -317,8 +317,8 @@
   },
   "active": "7777a8b549a3369e",
   "lastOpenFiles": [
-    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
     "AWS Cloud Adoption Framework.md",
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
     "AWS SDKs.md",
     "RDBMS.md",
     "Cloud Computing.md",

@@ -107,7 +107,7 @@ Deploys resources on-premises using virtualization and resource management tools
 
 ## AWS Cloud Adoption Framework (AWS CAF)
 
-The **[[AWS Cloud Adoption Framework]]** (AWS CAF) provides guidance and best practices to help organizations successfully adopt cloud computing.
+![[AWS Cloud Adoption Framework#What Is the AWS CAF]]
 
 ### Why AWS CAF Exists
 

@@ -34,7 +34,8 @@ The AWS Cloud Adoption Framework (CAF) is a comprehensive guide developed by Ama
 
 The framework organizes cloud adoption guidance into **six perspectives**, each focusing on different aspects and involving different stakeholders.
 
-## 1. Business Perspective
+## Foundational Perspectives (Business-Focused)
+### 1. Business Perspective
 
 **Focus**: Ensuring cloud investments align with business goals and deliver measurable value.
 
@@ -52,7 +53,7 @@ The framework organizes cloud adoption guidance into **six perspectives**, each 
 - How do we measure success?
 - What's the return on investment (ROI)?
 
-## 2. People Perspective
+### 2. People Perspective
 
 **Focus**: Preparing your workforce for cloud adoption through training, organizational change, and culture transformation.
 
@@ -70,7 +71,7 @@ The framework organizes cloud adoption guidance into **six perspectives**, each 
 - How does our organization need to change?
 - How do we create a cloud-first culture?
 
-## 3. Governance Perspective
+### 3. Governance Perspective
 
 **Focus**: Ensuring cloud usage aligns with organizational policies, managing risks, and optimizing costs.
 
