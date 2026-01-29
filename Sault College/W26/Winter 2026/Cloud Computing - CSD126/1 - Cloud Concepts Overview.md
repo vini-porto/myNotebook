@@ -1,16 +1,13 @@
-# What is Cloud Computing?
 
-![[cloud]]
+![[Cloud Computing#What is Cloud Computing]]
 
 # Infrastructure as Software
 
 Cloud computing fundamentally changes how we think about IT infrastructure.
 
-**Key concept**: Cloud computing enables you to stop thinking of your infrastructure as hardware and instead think of (and use) it as **software**.
-
 ### Traditional Computing Model
 
-**[[Traditional Computing Model]]** treats infrastructure as hardware.
+Traditional Computing Model treats infrastructure as hardware.
 
 **Characteristics of hardware solutions**:
 
@@ -24,64 +21,11 @@ Cloud computing fundamentally changes how we think about IT infrastructure.
 
 ### Cloud Computing Model
 
-**[[Cloud Computing Model]]** treats infrastructure as software.
+![[Cloud Computing#Core Characteristics of Cloud Computing]]
 
-**Characteristics of software solutions**:
+## Service Models
 
-- **Flexible** and adaptable to changing needs
-- **Quick to change** compared to hardware
-- **Easy to modify** without physical constraints
-- **Cost-effective** to update and scale
-- **Eliminate undifferentiated heavy-lifting tasks** like procurement and maintenance
-
-
-## Cloud Service Models
-
-There are three main **[[Cloud Service Models]]**, each providing different levels of control, flexibility, and management:
-
-### Infrastructure as a Service (IaaS)
-
-**[[IaaS]]** (Infrastructure as a Service) provides the basic building blocks for cloud IT.
-
-**What you get**:
-
-- Access to **networking features**
-- **Computers** (virtual or dedicated hardware)
-- **Data storage space**
-
-**Control level**: Highest level of flexibility and management control over IT resources.
-
-**Familiarity**: Most similar to existing IT resources that IT departments and developers already use.
-
-**Examples**: [[Amazon EC2]], [[Amazon VPC]], [[Amazon EBS]]
-
-### Platform as a Service (PaaS)
-
-**[[PaaS]]** (Platform as a Service) reduces the need to manage underlying infrastructure.
-
-**What it does**: Handles hardware and operating systems for you, enabling you to focus on **deployment and management of applications**.
-
-**Benefit**: You don't manage servers, storage, or networking—just deploy your code.
-
-**Examples**: [[AWS Elastic Beanstalk]], [[AWS Lambda]]
-
-### Software as a Service (SaaS)
-
-**[[SaaS]]** (Software as a Service) provides completed products that the service provider runs and manages.
-
-**What you get**: End-user applications ready to use.
-
-**What you don't worry about**:
-
-- How the service is maintained
-- How underlying infrastructure is managed
-- Feature additions or updates
-
-**Focus**: Only on how you plan to use the software.
-
-**Common example**: Web-based email—you send and receive email without managing servers, operating systems, or email software updates.
-
-**Examples**: Gmail, Salesforce, Microsoft 365
+![[Cloud Computing#Cloud Service Models]]
 
 ## Cloud Computing Deployment Models
 
