@@ -37,7 +37,7 @@ AWS pricing is based on a simple principle: **pay for what you use**. Key charac
 
 **Availability**: All AWS services are available on-demand with no long-term contracts and no complex licensing dependencies.
 
-### 2. Pay Less When You Reserve
+## 2. Pay Less When You Reserve
 
 For certain services like [[Amazon EC2]] and [[Amazon RDS]], you can invest in **[[Reserved Capacity]]**.
 
@@ -66,7 +66,7 @@ For certain services like [[Amazon EC2]] and [[Amazon RDS]], you can invest in *
 >[!NOTE] Benefits: 
 >Minimize risks, predictably manage budgets, comply with policies requiring longer-term commitments.
 
-### 3. Pay Less By Using More
+## 3. Pay Less By Using More
 
 **[[Volume-Based Discounts]]**: Get better pricing as your usage increases.
 
@@ -89,7 +89,7 @@ For certain services like [[Amazon EC2]] and [[Amazon RDS]], you can invest in *
 
 Choose the right combination of storage solutions to reduce costs while preserving performance, security, and durability.
 
-### 4. Pay Less as AWS Grows
+## 4. Pay Less as AWS Grows
 
 AWS constantly works to reduce costs:
 
@@ -102,21 +102,22 @@ AWS constantly works to reduce costs:
 
 **Additional benefit**: Future, higher-performing resources replace current ones for no extra charge.
 
-### Custom Pricing
+## Custom Pricing
 
 AWS recognizes that every customer has different needs.
 
-**When standard pricing doesn't work**: [[Custom Pricing]] is available for:
+**When standard pricing doesn't work**: Custom Pricing is available for:
 
 - High-volume projects
 - Unique requirements
 - Enterprise-level deployments
 
-## AWS Free Tier
+# AWS Free Tier
 
 **[[AWS Free Tier]]**: Helps new AWS customers get started in the cloud.
 
-**Availability**: New customers for up to 1 year
+>[!NOTE] Availability: 
+>New customers for up to 1 year
 
 **What's included**:
 
@@ -127,25 +128,19 @@ AWS recognizes that every customer has different needs.
 - AWS data transfer
 - Other AWS services
 
-**Applies to**: Certain services and options with usage limits.
+# Services with No Charge
 
-## Services with No Charge
-
-Several AWS services are offered at no cost (though associated services may incur charges):
-
-### Amazon Virtual Private Cloud (Amazon VPC)
+## Amazon Virtual Private Cloud (Amazon VPC)
 
 **[[Amazon VPC]]**: Provision a logically isolated section of the AWS Cloud where you launch AWS resources in a virtual network you define.
 
-**Cost**: Free
-
-### AWS Identity and Access Management (IAM)
+## AWS Identity and Access Management (IAM)
 
 **[[IAM]]**: Controls users' access to AWS services and resources.
 
 **Cost**: Free
 
-### Consolidated Billing
+## Consolidated Billing
 
 **[[Consolidated Billing]]**: A billing feature in [[AWS Organizations]] to consolidate payment for multiple AWS accounts.
 
