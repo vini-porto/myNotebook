@@ -705,34 +705,34 @@ AWS offers four support plans: **Basic**, **Developer**, **Business**, and **Ent
 
 **[[Case Severity]]**: Determines response time based on impact level.
 
-### Five Severity Levels
+## Five Severity Levels
 
-**Critical**:
+1. **Critical**:
 
-- Business is at risk
-- Critical functions unavailable
-- Fastest response time
+	- Business is at risk
+	- Critical functions unavailable
+	- Fastest response time
 
-**Urgent**:
+2. **Urgent**:
 
-- Business significantly impacted
-- Important functions unavailable
+	- Business significantly impacted
+	- Important functions unavailable
 
-**High**:
+3. **High**:
 
-- Important functions impaired or degraded
+	- Important functions impaired or degraded
 
-**Normal**:
+4. **Normal**:
 
-- Non-critical functions behaving abnormally
-- Time-sensitive development question
+	- Non-critical functions behaving abnormally
+	- Time-sensitive development question
 
-**Low**:
+5. **Low**:
 
-- General development question
-- Feature request
+	- General development question
+	- Feature request
 
-### Response Times by Plan
+## Response Times by Plan
 
 **Basic Support**: No case support available
 
@@ -756,7 +756,8 @@ AWS offers four support plans: **Basic**, **Developer**, **Business**, and **Ent
 - Production system down: < 1 hour
 - Business-critical system down: < 15 minutes
 
-**Important**: Response times should be considered when determining which support plan is best for your organization.
+>[!NOTE] Important 
+>Response times should be considered when determining which support plan is best for your organization.
 
 ---
 
