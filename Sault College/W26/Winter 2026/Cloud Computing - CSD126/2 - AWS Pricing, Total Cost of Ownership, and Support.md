@@ -418,9 +418,9 @@ Root (Organization)
 - Central location to manage billing
 - Benefit from volume discounts
 
-## Security with AWS Organizations
+# Security with AWS Organizations
 
-### IAM vs. Service Control Policies
+## IAM vs. Service Control Policies
 
 **AWS Organizations does NOT replace [[IAM]] policies**.
 
@@ -441,9 +441,7 @@ Root (Organization)
 
 **Key difference**: SCPs provide account-level guardrails, while IAM provides user/role-level permissions.
 
-## Organizations Setup Process
-
-**Assumptions**: You have access to two existing AWS accounts and can sign in as administrator.
+# Organizations Setup Process
 
 **Step 1**: Create your organization
 
@@ -784,105 +782,6 @@ AWS offers four support plans: **Basic**, **Developer**, **Business**, and **Ent
 - Business-critical system down: < 15 minutes
 
 **Important**: Response times should be considered when determining which support plan is best for your organization.
-
----
-
-## Key Concepts to Review
-
-### Pricing Fundamentals
-
-- [[Compute]]
-- [[Storage]]
-- [[Outbound Data Transfer]]
-- [[AWS Region]]
-- [[Utility-Style Pricing]]
-- [[Variable Costs]]
-- [[Reserved Capacity]]
-- [[All Upfront Reserved Instance]]
-- [[Partial Upfront Reserved Instance]]
-- [[No Upfront Reserved Instance]]
-- [[Volume-Based Discounts]]
-- [[Tiered Pricing]]
-- [[Custom Pricing]]
-- [[AWS Free Tier]]
-
-### Cost Analysis
-
-- [[On-Premises Infrastructure]]
-- [[Cloud Infrastructure]]
-- [[Fixed Costs]]
-- [[Capital Expenses]]
-- [[Consumption-Based Costs]]
-- [[Total Cost of Ownership]]
-- [[Server Costs]]
-- [[Storage Costs]]
-- [[Network Costs]]
-- [[IT Labor Costs]]
-- [[AWS Pricing Calculator]]
-- [[Groups]]
-- [[Hard Benefits]]
-- [[Cloud TCO]]
-- [[Return on Investment]]
-- [[Soft Benefits]]
-
-### AWS Services (Free)
-
-- [[Amazon VPC]]
-- [[IAM]]
-- [[Consolidated Billing]]
-- [[AWS Elastic Beanstalk]]
-- [[AWS CloudFormation]]
-- [[Auto Scaling]]
-- [[AWS OpsWorks]]
-
-### AWS Services (Compute & Storage)
-
-- [[Amazon EC2]]
-- [[Amazon RDS]]
-- [[Amazon S3]]
-- [[Amazon EBS]]
-
-### AWS Organizations
-
-- [[AWS Organizations]]
-- [[Root]]
-- [[Organizational Unit]]
-- [[Account]]
-- [[Service Control Policies]]
-- [[APIs]]
-- [[IAM Policies]]
-- [[Primary Account]]
-- [[Member Account]]
-- [[IAM Policy Simulator]]
-- [[AWS Command Line Interface]]
-- [[AWS SDKs]]
-
-### Billing and Cost Management
-
-- [[AWS Billing and Cost Management]]
-- [[AWS Cost and Usage Report Tool]]
-- [[AWS Billing Dashboard]]
-- [[Spend Summary]]
-- [[Month-to-Date Spend by Service]]
-- [[AWS Bills]]
-- [[AWS Cost Explorer]]
-- [[Monthly Running Costs Report]]
-- [[AWS Budgets]]
-- [[Amazon SNS]]
-- [[AWS Cost and Usage Reports]]
-
-### AWS Support
-
-- [[AWS Support]]
-- [[Technical Account Manager]]
-- [[AWS Trusted Advisor]]
-- [[Support Concierge]]
-- [[Basic Support Plan]]
-- [[Personal Health Dashboard]]
-- [[Developer Support Plan]]
-- [[Business Support Plan]]
-- [[Enterprise Support Plan]]
-- [[Case Severity]]
 
 ---
 
