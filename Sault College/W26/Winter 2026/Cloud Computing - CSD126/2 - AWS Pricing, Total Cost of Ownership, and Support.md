@@ -222,17 +222,14 @@ Obs: you pay only for the resources created
 - Budgeting purposes
 - Building business cases for optimal deployment decisions
 
-### TCO Considerations
+## TCO Considerations
 
-When calculating TCO, consider:
+>[!NOTE] Server Costs
+>- Hardware
+>- Software
+>- Facilities to house equipment
 
-**[[Server Costs]]**:
-
-- Hardware
-- Software
-- Facilities to house equipment
-
-**[[Storage Costs]]**:
+Storage Costs
 
 - Hardware
 - Administration
