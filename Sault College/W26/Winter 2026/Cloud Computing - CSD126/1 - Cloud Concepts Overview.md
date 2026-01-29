@@ -51,33 +51,15 @@ Deploys resources on-premises using virtualization and resource management tools
 
 ![[Cloud Computing#Multi-Cloud]]
 
-## Similarities Between AWS and Traditional IT
-
-AWS services have analogs to traditional on-premises IT components:
-
-**Security & Access Control**:
-
-- [[AWS Security Groups]], [[Network ACLs]], and [[IAM]] ≈ Firewalls, ACLs, and administrators
-
-**Networking**:
-
-- [[Elastic Load Balancing]] and [[Amazon VPC]] ≈ Routers, network pipelines, and switches
-
-**Compute**:
-
-- [[Amazon Machine Images]] (AMIs) and [[Amazon EC2]] instances ≈ On-premises servers
-
-**Storage & Databases**:
-
-- [[Amazon EBS]], [[Amazon EFS]], [[Amazon S3]], and [[Amazon RDS]] ≈ [[DAS]], [[SAN]], [[NAS]], and [[RDBMS]]
-
 ## Six Advantages of Cloud Computing
 
-1. **[[Capital Expenses]]** (CapEx): Funds used to acquire, upgrade, and maintain physical assets like property, buildings, or equipment. **Cloud solution**: **[[Variable Expense]]**—pay only when you consume resources and only for the amount you consume.
+1. **Capital Expenses** (CapEx): Funds used to acquire, upgrade, and maintain physical assets like property, buildings, or equipment. 
+	- **Cloud solution**: **Variable Expense**—pay only when you consume resources and only for the amount you consume.
 
 2. **[[Economies of Scale]]**: By aggregating usage from hundreds of thousands of customers, providers like AWS achieve higher economies of scale.
 
-3. You either have expensive idle resources (over-provisioned) or insufficient capacity (under-provisioned). **Cloud solution**: Access as much or as little as you need and **[[Elastic Scaling]]**—scale up and down with only a few minutes' notice.
+3. You either have expensive idle resources (over-provisioned) or insufficient capacity (under-provisioned). 
+	- **Cloud solution**: Access as much or as little as you need and **[[Elastic Scaling]]**—scale up and down with only a few minutes' notice.
 
 4. New IT resources are available in **minutes**. Dramatic increase in **[[Organizational Agility]]**—the cost and time to experiment and develop are significantly lower.
 
@@ -87,26 +69,12 @@ AWS services have analogs to traditional on-premises IT components:
 
 ## Categories of AWS Services
 
-AWS services fall under different categories, each containing multiple services:
-
-**Main categories include**:
-
 - **Compute**: Processing power ([[Amazon EC2]], [[AWS Lambda]])
 - **Storage**: Data storage ([[Amazon S3]], [[Amazon EBS]])
 - **Database**: Data management ([[Amazon RDS]], [[Amazon DynamoDB]])
 - **Networking**: Connectivity ([[Amazon VPC]], [[Amazon CloudFront]])
 - **Security**: Access control ([[IAM]], [[AWS WAF]])
 - **Management**: Monitoring and automation ([[Amazon CloudWatch]])
-
-### Simple Solution Example
-
-**Scenario**: Building a database application.
-
-1. Customers send data to **[[Amazon EC2]]** instances (compute service)
-2. EC2 servers batch data in one-minute increments
-3. Data added as objects to **[[Amazon S3]]** (storage service)
-4. **[[Amazon DynamoDB]]** (non-relational database) powers the application and builds an index
-5. Everything runs inside **[[Amazon VPC]]** (networking service)
 
 ## Choosing the Right AWS Service
 
