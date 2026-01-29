@@ -1,8 +1,4 @@
-# AWS Pricing, Total Cost of Ownership, and Support
-
-## Fundamentals of AWS Pricing
-
-### AWS Pricing Model
+# AWS Pricing Model
 
 There are three fundamental drivers of cost with AWS:
 
@@ -10,18 +6,15 @@ There are three fundamental drivers of cost with AWS:
 2. **[[Storage]]**: Data storage (databases, file storage, backups)
 3. **[[Outbound Data Transfer]]**: Data leaving AWS
 
-**Important notes**:
-
-- **No charge** for inbound data transfer in most cases
-- **No charge** for data transfer between AWS services within the same [[AWS Region]]
-- **Outbound data transfer** is aggregated across services and billed as "AWS Data Transfer Out"
-- Always verify data transfer rates before using a service—there are exceptions
+>[!NOTE] Important notes
+>- **No charge** for inbound data transfer in most cases
+>- **No charge** for data transfer between AWS services within the same [[AWS Region]]
+>- **Outbound data transfer** is aggregated across services and billed as "AWS Data Transfer Out"
+>- Always verify data transfer rates before using a service—there are exceptions
 
 ### Core AWS Pricing Philosophy
 
-AWS pricing is based on a simple principle: **pay for what you use**. This philosophy has remained consistent since AWS launched, even as the number and types of services have dramatically increased.
-
-**Key characteristics**:
+AWS pricing is based on a simple principle: **pay for what you use**. Key characteristics:
 
 - Start or stop using a product at any time
 - No long-term contracts required
