@@ -671,7 +671,7 @@ AWS offers four support plans: **Basic**, **Developer**, **Business**, and **Ent
 
 **Includes**: Email support during business hours, general guidance.
 
-### Business Support Plan
+## Business Support Plan
 
 **[[Business Support Plan]]**: For customers running production workloads.
 
@@ -683,7 +683,7 @@ AWS offers four support plans: **Basic**, **Developer**, **Business**, and **Ent
 
 **Includes**: 24/7 phone, email, and chat support, faster response times, access to all Trusted Advisor checks.
 
-### Enterprise Support Plan
+## Enterprise Support Plan
 
 **[[Enterprise Support Plan]]**: For business and mission-critical workloads.
 
@@ -701,7 +701,7 @@ AWS offers four support plans: **Basic**, **Developer**, **Business**, and **Ent
 - Primary point of contact for ongoing support needs
 - Proactive guidance and planning
 
-## Case Severity and Response Times
+# Case Severity and Response Times
 
 **[[Case Severity]]**: Determines response time based on impact level.
 
