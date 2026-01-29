@@ -99,13 +99,11 @@ Deploys resources on-premises using virtualization and resource management tools
 	- Supported on Linux, macOS, and Microsoft Windows
 	- Ideal for automation and scripting
 
-3. Software Development Kits (SDKs)
+3. Software Development Kits **[[AWS SDKs]]**: Packages for accessing AWS in popular programming languages.
 
-**[[AWS SDKs]]**: Packages for accessing AWS in popular programming languages.
-
-- Integrate AWS into existing applications
-- Create applications that deploy and monitor complex systems entirely through code
-- Programmatic access to AWS services
+	- Integrate AWS into existing applications
+	- Create applications that deploy and monitor complex systems entirely through code
+	- Programmatic access to AWS services
 
 ## AWS Cloud Adoption Framework (AWS CAF)
 
