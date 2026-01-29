@@ -229,17 +229,15 @@ Obs: you pay only for the resources created
 >- Software
 >- Facilities to house equipment
 
-Storage Costs
+>[!NOTE] Storage Costs
+>- Hardware
+>- Administration
+>- Facilities
 
-- Hardware
-- Administration
-- Facilities
-
-**[[Network Costs]]**:
-
-- Hardware
-- Administration
-- Facilities
+>[!NOTE] Network Costs]]**:
+>- Hardware
+>- Administration
+>- Facilities
 
 **[[IT Labor Costs]]**:
 
