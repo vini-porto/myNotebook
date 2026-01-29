@@ -117,12 +117,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - AWS Pricing, Total Cost of Ownership, and Support.md",
+                "file": "Sault College/W26/Winter 2026/Cloud Computing - CSD126/3- AWS Global Infrastructure Overview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2 - AWS Pricing, Total Cost of Ownership, and Support"
+              "title": "3- AWS Global Infrastructure Overview"
             }
           },
           {
@@ -331,8 +331,9 @@
   },
   "active": "f1b0497f2499bc1d",
   "lastOpenFiles": [
-    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/3- AWS Global Infrastructure Overview.md",
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/5 - Networking and Content Delivery.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - AWS Pricing, Total Cost of Ownership, and Support.md",
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/3- AWS Global Infrastructure Overview.md",
     "AWS Cloud Adoption Framework.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
     "SQL.md",
@@ -346,7 +347,6 @@
     "Sault College/W26/Winter 2026/Databases I - CSD123/2- AI raw generated text.md",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121/2 - Namespaces in Java.md",
     "Sault College/W26/Winter 2026/Introduction to Web Development/2 - AI Raw - The Building Blocks - Content, Media, &  Semantics.md",
-    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/5 - Networking and Content Delivery.md",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121/1 - Intoduction to Java.md",
     "Compiled Language.md",
     "Hybrid language.md",

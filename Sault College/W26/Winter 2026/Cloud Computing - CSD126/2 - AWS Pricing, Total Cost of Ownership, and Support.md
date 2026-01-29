@@ -922,6 +922,6 @@ Calculate the break-even point: At what hourly savings does Business Support jus
 
 ---
 
-## Practical Tags for Obsidian
+# Tags 
 
 #AWS #CloudPricing #TCO #CostOptimization #AWSOrganizations #ConsolidatedBilling #ReservedInstances #AWSSupport #CloudEconomics #FinOps #CloudFinance #AWSBilling #CostManagement #CloudCosts #AWSTrustedAdvisor #AWSPricing #CloudBudgeting #ROI #EnterpriseCloud #CloudStrategy #AWSBestPractices #CostAnalysis #CloudMigration

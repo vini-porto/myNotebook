@@ -1,4 +1,3 @@
-
 # AWS Global Infrastructure
 
 **[[AWS Global Infrastructure]]**: Designed and built to deliver a flexible, reliable, scalable, and secure cloud computing environment with high-quality global network performance.
