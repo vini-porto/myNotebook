@@ -29,41 +29,27 @@ Traditional Computing Model treats infrastructure as hardware.
 
 ## Cloud Computing Deployment Models
 
+## Public Cloud
+
 ![[Cloud Computing#Public Cloud]]
+
+## Private Cloud
+
+Deploys resources on-premises using virtualization and resource management tools.
 
 ![[Cloud Computing#Private Cloud]]
 
-![[Cloud Computing#Hybrid Cloud]]
-
-![[Cloud Computing#Multi-Cloud]]
-### Cloud Deployment
-
-**[[Cloud Deployment]]**: A fully cloud-based application where all parts run in the cloud.
-
-**Example**: A startup builds a new web application entirely on AWS using [[Amazon EC2]], [[Amazon RDS]], and [[Amazon S3]].
-
-### Hybrid Deployment
-
-**[[Hybrid Deployment]]**: Connects infrastructure and applications between cloud-based resources and existing on-premises resources.
+## Hybrid Cloud
 
 **Most common method**: Between the cloud and existing on-premises infrastructure.
 
 **Purpose**: Enables organizations to extend and grow their infrastructure into the cloud while connecting cloud resources to internal systems.
 
-**Use case**: A company keeps sensitive data on-premises due to regulations but uses cloud for scalable compute resources.
+![[Cloud Computing#Hybrid Cloud]]
 
-### On-Premises (Private Cloud) Deployment
+## Multi-Cloud
 
-**[[On-Premises Deployment]]** (sometimes called **[[Private Cloud]]**): Deploys resources on-premises using virtualization and resource management tools.
-
-**Characteristics**:
-
-- Does not provide many cloud computing benefits
-- Sometimes sought for dedicated resources
-- Similar to legacy IT infrastructure
-- May use application management and virtualization technologies to increase resource utilization
-
-**Use case**: Government agencies with strict data residency requirements.
+![[Cloud Computing#Multi-Cloud]]
 
 ## Similarities Between AWS and Traditional IT
 
