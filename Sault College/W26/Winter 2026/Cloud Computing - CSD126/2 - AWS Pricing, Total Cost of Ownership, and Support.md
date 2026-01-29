@@ -242,7 +242,7 @@ Obs: you pay only for the resources created
 >[!NOTE] IT Labor Costs
 >- Required to administer the entire solution
 
-### Cloud vs. On-Premises Cost Assessment
+## Cloud vs. On-Premises Cost Assessment
 
 **Cloud costs**: Most costs are upfront and readily calculated.
 
@@ -261,30 +261,6 @@ Obs: you pay only for the resources created
 - Facilities: Upgrades, maintenance, building security, taxes
 - IT labor: Security administration, application administration
 
-# On-Premises vs. All-in-Cloud: Sample Comparison
-
-## Example Scenario
-
-**On-premises environment**:
-
-- 1 virtual machine with 4 CPUs, 16 GB RA023M, Linux OS
-- Average utilization: 100%
-- Optimized by RAM
-
-**Comparable AWS environment**:
-
-- 1 m4.xlarge instance (4 CPUs, 16 GB RAM)
-- 3-year Partial Upfront Reserved Instance
-
-## Results (3-Year Comparison)
-
-**On-premises 3-year total cost**: $167,422
-
-**AWS Cloud 3-year total cost**: $7,509
-
-**Savings**: **96%** reduction ($159,913 saved over 3 years)
-
-## Why the Difference?
 
 **On-premises**: Predicted costs that continue whether capacity is used or not.
 
