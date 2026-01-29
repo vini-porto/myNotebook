@@ -21,13 +21,9 @@ AWS pricing is based on a simple principle: **pay for what you use**. Key charac
 - Pay at the end of each month for actual usage
 - [[Utility-Style Pricing]]—like electricity or water
 
-## The Four Pillars of AWS Pricing
+# The Four Pillars of AWS Pricing
 
-### 1. Pay for What You Use
-
-**Traditional approach**: Build and maintain data centers with large upfront expenses.
-
-**AWS approach**: Pay only for the services you consume with no large upfront costs.
+## 1. Pay for What You Use
 
 **Benefits**:
 
@@ -67,7 +63,8 @@ For certain services like [[Amazon EC2]] and [[Amazon RDS]], you can invest in *
 - Smallest discount
 - Frees capital for other projects
 
-**Benefits**: Minimize risks, predictably manage budgets, comply with policies requiring longer-term commitments.
+>[!NOTE] Benefits: 
+>Minimize risks, predictably manage budgets, comply with policies requiring longer-term commitments.
 
 ### 3. Pay Less By Using More
 
@@ -79,13 +76,13 @@ For certain services like [[Amazon EC2]] and [[Amazon RDS]], you can invest in *
 - Data transfer IN is always free
 - Storage costs decrease based on your needs
 
-**Economy of scale benefit**: As your AWS usage increases, you benefit from economies of scale that help you:
+>**Economy of scale benefit**: As your AWS usage increases, you benefit from economies of scale that help you:
 
 - Increase adoption
 - Keep costs under control
 - Access better pricing tiers
 
-**Strategic advantage**: The AWS storage services portfolio offers options to lower pricing based on:
+>**Strategic advantage**: The AWS storage services portfolio offers options to lower pricing based on:
 
 - How frequently you access data
 - Performance requirements for retrieval
@@ -102,8 +99,6 @@ AWS constantly works to reduce costs:
 - Lower cost of doing business
 
 **Result**: Substantial economies of scale = savings passed to customers as lower pricing.
-
-**Track record**: Since 2006, AWS has lowered pricing **75 times** (as of September 2019).
 
 **Additional benefit**: Future, higher-performing resources replace current ones for no extra charge.
 
