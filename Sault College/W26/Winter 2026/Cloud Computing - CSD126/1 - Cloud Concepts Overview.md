@@ -109,21 +109,9 @@ Deploys resources on-premises using virtualization and resource management tools
 
 ![[AWS Cloud Adoption Framework#What Is the AWS CAF]]
 
-### Why AWS CAF Exists
+## Why AWS CAF Exist
 
-**The challenge**: Cloud adoption requires alignment of three elements:
-
-1. **People** (stakeholders, skills, culture)
-2. **Process** (workflows, governance, operations)
-3. **Technology** (infrastructure, services, architecture)
-
-**The shift**: Cloud computing introduces significant changes in:
-
-- How technology is obtained, used, and managed
-- How organizations budget and pay for technology
-- Organizational structure and responsibilities
-
-**The need**: Organizations must discuss and consider fundamental changes across the entire organization, with stakeholder support from all units (within and outside IT).
+![[AWS Cloud Adoption Framework#Why CAF Exists]]
 
 ### How AWS CAF Works
 
