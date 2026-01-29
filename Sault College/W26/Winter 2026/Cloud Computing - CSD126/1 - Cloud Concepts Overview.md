@@ -5,7 +5,7 @@
 
 Cloud computing fundamentally changes how we think about IT infrastructure.
 
-### Traditional Computing Model
+## Traditional Computing Model
 
 Traditional Computing Model treats infrastructure as hardware.
 
@@ -19,7 +19,7 @@ Traditional Computing Model treats infrastructure as hardware.
 - Have long **[[Hardware Procurement Cycles]]**—acquiring, provisioning, and maintaining takes weeks or months
 - Require provisioning capacity by guessing theoretical maximum peaks
 
-### Cloud Computing Model
+## Cloud Computing Model
 
 ![[Cloud Computing#Core Characteristics of Cloud Computing]]
 
@@ -27,7 +27,7 @@ Traditional Computing Model treats infrastructure as hardware.
 
 ![[Cloud Computing#Cloud Service Models]]
 
-## Cloud Computing Deployment Models
+# Cloud Computing Deployment Models
 
 ## Public Cloud
 
@@ -51,7 +51,7 @@ Deploys resources on-premises using virtualization and resource management tools
 
 ![[Cloud Computing#Multi-Cloud]]
 
-## Six Advantages of Cloud Computing
+# Six Advantages of Cloud Computing
 
 1. **Capital Expenses** (CapEx): Funds used to acquire, upgrade, and maintain physical assets like property, buildings, or equipment. 
 	- **Cloud solution**: **Variable Expense**—pay only when you consume resources and only for the amount you consume.
@@ -67,7 +67,7 @@ Deploys resources on-premises using virtualization and resource management tools
 
 6. Deploy applications in multiple **[[AWS Regions]]** around the world with just a few clicks.
 
-## Categories of AWS Services
+# Categories of AWS Services
 
 - **Compute**: Processing power ([[Amazon EC2]], [[AWS Lambda]])
 - **Storage**: Data storage ([[Amazon S3]], [[Amazon EBS]])
@@ -76,13 +76,7 @@ Deploys resources on-premises using virtualization and resource management tools
 - **Security**: Access control ([[IAM]], [[AWS WAF]])
 - **Management**: Monitoring and automation ([[Amazon CloudWatch]])
 
-## Choosing the Right AWS Service
-
-Which service you choose depends on **business goals** and **technology requirements**.
-
-### Example: Compute Services
-
-AWS offers many compute options beyond EC2:
+### Choosing the Right AWS Service
 
 - **[[Amazon EC2]]**: Virtual servers in the cloud
 - **[[AWS Lambda]]**: Serverless computing (run code without managing servers)
@@ -97,19 +91,15 @@ AWS offers many compute options beyond EC2:
 
 ## Three Ways to Interact with AWS
 
-### 1. AWS Management Console
+1. **[[AWS Management Console]]**: A web-based graphical interface.
 
-**[[AWS Management Console]]**: A web-based graphical interface.
+2. **[[AWS CLI]]**: A suite of command-line utilities.
 
-### 2. AWS Command Line Interface (AWS CLI)
+	- Can be launched from command scripts
+	- Supported on Linux, macOS, and Microsoft Windows
+	- Ideal for automation and scripting
 
-**[[AWS CLI]]**: A suite of command-line utilities.
-
-- Can be launched from command scripts
-- Supported on Linux, macOS, and Microsoft Windows
-- Ideal for automation and scripting
-
-### 3. Software Development Kits (SDKs)
+3. Software Development Kits (SDKs)
 
 **[[AWS SDKs]]**: Packages for accessing AWS in popular programming languages.
 

@@ -211,8 +211,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "25633665bbc170a3",
@@ -318,8 +317,9 @@
   },
   "active": "7777a8b549a3369e",
   "lastOpenFiles": [
-    "RDBMS.md",
+    "AWS SDKs.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
+    "RDBMS.md",
     "Cloud Computing.md",
     "Type definition.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - Cloud Economics and Billing.md",
@@ -343,7 +343,6 @@
     "Interfaces.md",
     "Enums.md",
     "Python.md",
-    "structs.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/Untitled",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121",
