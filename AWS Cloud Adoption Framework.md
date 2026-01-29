@@ -46,3 +46,10 @@ Cloud adoption requires alignment of three elements:
 
 **The need**: Organizations must discuss and consider fundamental changes across the entire organization, with stakeholder support from all units (within and outside IT).
 
+## How AWS CAF Works
+
+- Identify **gaps in skills and processes**
+- Build a comprehensive approach to cloud computing across the organization and throughout the IT lifecycle
+- Understand their **current state**, **target state**, and the **transition** needed
+- Set goals and create processes for staff
+- Create **prescriptive work streams** that support successful cloud adoption

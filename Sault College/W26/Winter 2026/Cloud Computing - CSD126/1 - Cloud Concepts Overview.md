@@ -113,15 +113,9 @@ Deploys resources on-premises using virtualization and resource management tools
 
 ![[AWS Cloud Adoption Framework#Why CAF Exists]]
 
-### How AWS CAF Works
+## How it Works
 
-The AWS CAF helps organizations:
-
-- Identify **gaps in skills and processes**
-- Build a comprehensive approach to cloud computing across the organization and throughout the IT lifecycle
-- Understand their **current state**, **target state**, and the **transition** needed
-- Set goals and create processes for staff
-- Create **prescriptive work streams** that support successful cloud adoption
+![[AWS Cloud Adoption Framework#How AWS CAF Works]]
 
 ## The Six Perspectives Explained
 
@@ -220,122 +214,6 @@ The AWS CAF helps organizations:
 - Identify process changes needed for successful cloud adoption
 - Plan training requirements
 
----
-
-## Key Concepts to Review
-
-### Cloud Computing Fundamentals
-
-- [[Cloud Computing]]
-- [[Pay-as-You-Go Pricing]]
-- [[Data Centers]]
-- [[Cloud Service Provider]]
-- [[Traditional Computing Model]]
-- [[Cloud Computing Model]]
-- [[Capital Expenditure]]
-- [[Variable Expense]]
-- [[Operational Expense]]
-- [[Hardware Procurement Cycles]]
-- [[Elastic Scaling]]
-- [[Organizational Agility]]
-
-### Cloud Service Models
-
-- [[Cloud Service Models]]
-- [[IaaS]]
-- [[PaaS]]
-- [[SaaS]]
-
-### Cloud Deployment Models
-
-- [[Cloud Deployment Models]]
-- [[Cloud Deployment]]
-- [[Hybrid Deployment]]
-- [[On-Premises Deployment]]
-- [[Private Cloud]]
-
-### Economic Concepts
-
-- [[Economies of Scale]]
-- [[Latency]]
-
-### AWS Core Services
-
-- [[Amazon Web Services]]
-- [[AWS]]
-- [[AWS Regions]]
-
-### Compute Services
-
-- [[Amazon EC2]]
-- [[AWS Lambda]]
-- [[AWS Elastic Beanstalk]]
-- [[Amazon Lightsail]]
-- [[AWS Batch]]
-- [[AWS Outposts]]
-- [[Amazon ECS]]
-- [[Amazon EKS]]
-- [[AWS Fargate]]
-- [[VMware Cloud on AWS]]
-
-### Storage Services
-
-- [[Amazon S3]]
-- [[Amazon EBS]]
-- [[Amazon EFS]]
-
-### Database Services
-
-- [[Amazon RDS]]
-- [[Amazon DynamoDB]]
-
-### Networking Services
-
-- [[Amazon VPC]]
-- [[Elastic Load Balancing]]
-- [[Amazon CloudFront]]
-
-### Security and Management
-
-- [[AWS Security Groups]]
-- [[Network ACLs]]
-- [[IAM]]
-- [[AWS WAF]]
-- [[Amazon CloudWatch]]
-- [[Amazon Machine Images]]
-
-### Traditional IT Components
-
-- [[DAS]]
-- [[SAN]]
-- [[NAS]]
-- [[RDBMS]]
-
-### Web Technologies
-
-- [[Web Service]]
-- [[APIs]]
-- [[XML]]
-- [[JSON]]
-
-### AWS Interaction Methods
-
-- [[AWS Management Console]]
-- [[AWS CLI]]
-- [[AWS SDKs]]
-
-### AWS Cloud Adoption Framework
-
-- [[AWS Cloud Adoption Framework]]
-- [[Perspectives]]
-- [[Capabilities]]
-- [[Business Perspective]]
-- [[People Perspective]]
-- [[Governance Perspective]]
-- [[Platform Perspective]]
-- [[Security Perspective]]
-- [[Operations Perspective]]
-- [[Agile Organization]]
 
 ---
 
@@ -424,6 +302,6 @@ The AWS CAF helps organizations:
 
 ---
 
-## Practical Tags for Obsidian
+# Tags
 
 #CloudComputing #AWS #AWSArchitecture #CloudAdoption #IaaS #PaaS #SaaS #CloudDeployment #AWSServices #CloudEconomics #AWSCAF #CloudStrategy #ITInfrastructure #DigitalTransformation #CloudMigration #EnterpriseIT #Scalability #CostOptimization #CloudSecurity #AWSBestPractices
