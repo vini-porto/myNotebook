@@ -29,8 +29,13 @@ Traditional Computing Model treats infrastructure as hardware.
 
 ## Cloud Computing Deployment Models
 
-There are three main **[[Cloud Deployment Models]]** representing different environments where applications can run:
+![[Cloud Computing#Public Cloud]]
 
+![[Cloud Computing#Private Cloud]]
+
+![[Cloud Computing#Hybrid Cloud]]
+
+![[Cloud Computing#Multi-Cloud]]
 ### Cloud Deployment
 
 **[[Cloud Deployment]]**: A fully cloud-based application where all parts run in the cloud.
