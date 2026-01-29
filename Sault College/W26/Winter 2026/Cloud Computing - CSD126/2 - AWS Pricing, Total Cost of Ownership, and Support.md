@@ -465,16 +465,16 @@ Root (Organization)
 - See how SCPs impact account access
 - Use [[IAM Policy Simulator]] to test and troubleshoot policies
 
-## Limits of AWS Organizations
+# Limits of AWS Organizations
 
-### Naming Restrictions
+## Naming Restrictions
 
-Names must be:
+>[!NOTE] Names must be:
+>
+>- Composed of Unicode characters
+>- Not exceed 250 characters in length
 
-- Composed of Unicode characters
-- Not exceed 250 characters in length
-
-### Maximum and Minimum Values
+## Maximum and Minimum Values
 
 **Key limits**:
 
@@ -488,39 +488,37 @@ Names must be:
 - **Member accounts created concurrently**: 5
 - **Entities to attach a policy**: Unlimited
 
-## Accessing AWS Organizations
+# Accessing AWS Organizations
 
 AWS Organizations can be managed through different interfaces:
 
-### AWS Management Console
+## AWS Management Console
 
 Browser-based interface to manage organization and AWS resources. Can perform any task using the console.
 
-### AWS CLI
+## AWS CLI
 
 **[[AWS Command Line Interface]]**: Issue commands at system's command line to perform tasks.
 
 - Faster and more convenient than console
 - Good for automation
 
-### AWS SDKs
+## AWS SDKs
 
 **[[AWS SDKs]]**: Handle tasks like cryptographically signing requests, managing errors, retrying requests.
 
 - Libraries and sample code for various programming languages
 - Platforms: Java, Python, Ruby, .NET, iOS, Android
 
-### AWS Organizations HTTPS Query API
+## AWS Organizations HTTPS Query API
 
 Programmatic access via HTTPS requests directly to the service.
 
 - Must include code to digitally sign requests using credentials
 
-## AWS Billing and Cost Management
+# AWS Billing and Cost Management
 
-### Introduction
-
-**[[AWS Billing and Cost Management]]**: Service to pay AWS bills, monitor usage, and budget costs.
+**AWS Billing and Cost Management:** Service to pay AWS bills, monitor usage, and budget costs.
 
 **Capabilities**:
 
@@ -530,64 +528,43 @@ Programmatic access via HTTPS requests directly to the service.
 - Filter and group data using various dimensions
 - Identify optimization opportunities
 
-**[[AWS Cost and Usage Report Tool]]**: Understand cost and usage data trends and how you're using AWS.
+**AWS Cost and Usage Report Tool:** Understand cost and usage data trends and how you're using AWS.
 
-## AWS Billing Dashboard
+# AWS Billing Dashboard
 
 **[[AWS Billing Dashboard]]**: View status of month-to-date AWS expenditure.
-
-**Key features**:
 
 - Identify services accounting for majority of expenditure
 - Understand how costs are trending
 
-**[[Spend Summary]]**: Shows:
+**Spend Summary**
 
 - How much you spent last month
 - Estimated costs for month-to-date
 - Forecast for current month spending
 
-**[[Month-to-Date Spend by Service]]**: Shows:
+**[[Month-to-Date Spend by Service]]**
 
 - Top services you use most
 - Proportion of costs attributed to each service
 
-## Cost Management Tools
+# Cost Management Tools
 
 From the billing dashboard, access several tools:
 
 **[[AWS Bills]]**: Lists costs incurred for each AWS service, broken down by AWS Region and linked account.
 
-**[[AWS Cost Explorer]]**: Visualize, understand, and manage AWS costs and usage over time.
-
-**[[AWS Budgets]]**: Set budget thresholds and receive alerts.
-
-**[[AWS Cost and Usage Reports]]**: Comprehensive reports on AWS costs and usage.
-
-## AWS Bills
-
-**Purpose**: Access most up-to-date information on costs and usage.
-
-**Shows**:
+>[!NOTE] Purpose 
+>Access most up-to-date information on costs and usage.
 
 - Costs incurred over past month for each AWS service
 - Breakdown by AWS Region
 - Breakdown by linked account
 - Monthly bill details
 
-## AWS Cost Explorer
+---
 
-**[[Cost Explorer]]**: Visualize AWS cost data as graphs.
-
-**Default report**: Visualizes costs and usage for top cost-incurring AWS services.
-
-**[[Monthly Running Costs Report]]**:
-
-- Overview of all costs for past 3 months
-- Forecasted numbers for coming month
-- Corresponding confidence interval
-
-**Cost Explorer is free** and enables you to:
+**[[AWS Cost Explorer]]**: Visualize, understand, and manage AWS costs and usage over time.
 
 - View charts of your costs
 - View cost data for past 13 months
@@ -597,11 +574,9 @@ From the billing dashboard, access several tools:
 - Identify most-used services
 - View metrics (Availability Zone traffic, linked account usage)
 
-## AWS Budgets
+---
 
-**[[AWS Budgets]]**: Uses Cost Explorer visualization to show budget status and provide cost forecasts.
-
-**Features**:
+**[[AWS Budgets]]**: Set budget thresholds and receive alerts.
 
 - Create notifications for when you go over budget
 - Notifications when estimated costs exceed budget
@@ -609,24 +584,24 @@ From the billing dashboard, access several tools:
 - Customize start and end dates
 - Alert delivery via email or [[Amazon SNS]]
 
-**Proactive cost management**: Get alerted before overspending occurs.
+>[!NOTE] Proactive cost management
+>Get alerted before overspending occurs.
 
-## AWS Cost and Usage Report
+---
 
-**[[AWS Cost and Usage Report]]**: Single location for comprehensive cost and usage information.
+**[[AWS Cost and Usage Reports]]**: Comprehensive reports on AWS costs and usage.
 
-**Details**:
-
-- Lists usage for each service category
+-  Lists usage for each service category
 - Breaks down by account and users
 - Hourly or daily line items
 - Tax information for tax allocation
 
 **Delivery**: Publish billing reports to [[Amazon S3]] bucket, updated once per day.
 
-**Use case**: Detailed analysis and custom processing of cost data.
+>[!NOTE] Use case 
+>Detailed analysis and custom processing of cost data.
 
-## AWS Support
+# AWS Support
 
 ### Introduction to AWS Support
 
