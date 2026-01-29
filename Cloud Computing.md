@@ -123,22 +123,6 @@ Infrastructure used exclusively by a single organization, either on-premises or 
 
 **Examples**: VMware vCloud, OpenStack (self-hosted)
 
-**Pros**:
-
-- Greater control
-- Enhanced security
-- Compliance easier
-- Customizable
-
-**Cons**:
-
-- Higher costs
-- Requires IT expertise
-- Limited scalability compared to public cloud
-- Maintenance responsibility
-
-**Use Case**: Bank or healthcare provider with strict regulatory requirements
-
 ## Hybrid Cloud
 
 Combination of public and private clouds, allowing data and applications to be shared between them.
@@ -149,19 +133,6 @@ Combination of public and private clouds, allowing data and applications to be s
 - Data and apps can move between clouds
 - Greater flexibility
 - Optimized resource usage
-
-**Pros**:
-
-- Flexibility
-- Cost optimization
-- Scalability when needed
-- Keep sensitive data on-premises
-
-**Cons**:
-
-- Complex to manage
-- Requires integration
-- Security challenges at connection points
 
 ## Multi-Cloud
 
