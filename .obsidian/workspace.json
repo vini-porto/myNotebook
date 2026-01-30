@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Type definition.md",
+                "file": "Sault College/W26/Winter 2026/Programming Concepts - CSD121/2 - Namespaces in Java.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Type definition"
+              "title": "2 - Namespaces in Java"
             }
           }
         ],
@@ -255,6 +255,7 @@
   },
   "active": "080ab345b328b093",
   "lastOpenFiles": [
+    "Type definition.md",
     "Cloud Computing.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/2- AI raw generated text.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/2 - Talking to Your Data - SQL Basics.md",
@@ -268,7 +269,6 @@
     "SQL.md",
     "AWS SDKs.md",
     "RDBMS.md",
-    "Type definition.md",
     "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Raw AI - Agentic AI & TuringBots.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/4 - AI SQL Joins.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/3 - AI The Relational Model.md",
