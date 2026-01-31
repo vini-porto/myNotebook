@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Compute.md",
+                "file": "Outbound Data Transfer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Compute"
+              "title": "Outbound Data Transfer"
             }
           }
         ],
@@ -255,9 +255,11 @@
   },
   "active": "080ab345b328b093",
   "lastOpenFiles": [
-    "Cryptography.md",
-    "Compute.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - AWS Pricing, Total Cost of Ownership, and Support.md",
+    "Outbound Data Transfer.md",
+    "Storage.md",
+    "Compute.md",
+    "Cryptography.md",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121/2 - Namespaces in Java.md",
     "Type definition.md",
     "Cloud Computing.md",
@@ -279,8 +281,6 @@
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121/1 - Intoduction to Java.md",
     "Compiled Language.md",
     "Hybrid language.md",
-    "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Agentic AI & TuringBots.md",
-    "Sault College/W26/Winter 2026/Introduction to Web Development/3 - AI Advanced HTML & Data.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/Untitled",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121",
