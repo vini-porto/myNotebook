@@ -2,11 +2,11 @@
 
 In the ecosystem of [[Cloud Computing]], data movement is categorized by its direction relative to the cloud provider's network boundary. 
 
-While moving data into the cloud is generally seamless and cost-free, moving data out—known as **Outbound Data Transfer** or **Egress**—is a complex technical and financial pillar of modern architecture.
+>While moving data into the cloud is generally seamless and cost-free, moving data out—known as **Outbound Data Transfer** or **Egress**—is a complex technical and financial pillar of modern architecture.
 
 ---
 
-## 1. The Mechanics of Data Movement
+# The Mechanics of Data Movement
 
 To understand outbound transfer, one must visualize the "boundary" of a cloud region.
 
@@ -15,7 +15,7 @@ To understand outbound transfer, one must visualize the "boundary" of a cloud re
 - **[[Data Egress]] (Outbound):** Data flowing from the cloud provider's internal network out to the public internet or to a different geographic region.
     
 
-### The Path of an Outbound Packet
+## The Path of an Outbound Packet
 
 1. **Origin:** A resource (like a [[Virtual Machines|VM]] or an [[Object Storage]] bucket) initiates a response.
     
@@ -30,15 +30,15 @@ To understand outbound transfer, one must visualize the "boundary" of a cloud re
 
 ---
 
-## 2. Pricing Models and "The Egress Bill"
+# Pricing Models and "The Egress Bill"
 
 Outbound data transfer is often the most unpredictable variable in a monthly cloud invoice.
 
-### Why is it charged?
+## Why is it charged?
 
 Cloud providers incur costs from **Internet Service Providers (ISPs)** and for maintaining the massive physical fiber-optic cables that connect global data centers. These costs are passed to the consumer.
 
-### Tiers of Egress
+## Tiers of Egress
 
 - **Internet Egress:** Data sent to a user's browser or an external API. This is usually the most expensive.
     
@@ -49,7 +49,7 @@ Cloud providers incur costs from **Internet Service Providers (ISPs)** and for m
 
 ---
 
-## 3. Practical Scenarios
+# Practical Scenarios
 
 |**Scenario**|**Type**|**Typical Cost Status**|
 |---|---|---|
@@ -60,25 +60,25 @@ Cloud providers incur costs from **Internet Service Providers (ISPs)** and for m
 
 ---
 
-## 4. Architectural Strategies to Minimize Egress
+# Architectural Strategies to Minimize Egress
 
 High egress fees can lead to **[[Vendor Lock-in]]**, where it becomes too expensive to move your data to a different provider. Engineers use several tactics to avoid this:
 
-### Use of [[CDN]] (Content Delivery Networks)
+## Use of [[CDN]] (Content Delivery Networks)
 
 Instead of sending every file directly from the "Origin" server, data is cached at **Edge Locations**. Most providers offer cheaper egress rates for data sent through their CDN (e.g., Amazon CloudFront) compared to direct internet egress.
 
-### Data Locality
+## Data Locality
 
 Architects keep [[Compute]] and [[Databases]] in the same [[Region]]. If an application in Region A frequently requests data from a database in Region B, the egress fees will accumulate rapidly.
 
-### Compression Algorithms
+## Compression Algorithms
 
 By using compression (like **Gzip** or **Brotli**), the physical size of the data being transferred is reduced. Since egress is billed per Gigabyte, cutting the file size by 50% directly cuts the bill by 50%.
 
 ---
 
-## 5. Overlooked Subtopics: The "Free Tier" and Limits
+# Overlooked Subtopics: The "Free Tier" and Limits
 
 - **Monthly Free Allowances:** Most providers offer a small amount of free egress (e.g., the first 100GB per month). Small projects often stay within this, but scaling suddenly triggers significant costs.
     
@@ -87,7 +87,7 @@ By using compression (like **Gzip** or **Brotli**), the physical size of the dat
 
 ---
 
-## 6. Limitations and Ethics
+# Limitations and Ethics
 
 The cost of outbound data transfer has led to the **"Data Transfer Project"** and the **Cloud Flare Bandwidth Alliance**, where companies advocate for the elimination of egress fees. Critics argue that high egress fees are not just about "infrastructure costs" but are a strategic barrier to prevent customers from leaving a specific cloud ecosystem.
 
