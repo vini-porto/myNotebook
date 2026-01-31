@@ -8,31 +8,27 @@ In the ecosystem of [[Cloud Computing]], data movement is categorized by its dir
 
 # The Mechanics of Data Movement
 
-To understand outbound transfer, one must visualize the "boundary" of a cloud region.
-
 - **[[Data Ingress]] (Inbound):** Data flowing from the internet or on-premises into the cloud. Providers rarely charge for this because they want to encourage data migration onto their platforms.
-    
+
 - **[[Data Egress]] (Outbound):** Data flowing from the cloud provider's internal network out to the public internet or to a different geographic region.
-    
 
 ## The Path of an Outbound Packet
 
 1. **Origin:** A resource (like a [[Virtual Machines|VM]] or an [[Object Storage]] bucket) initiates a response.
-    
+
 2. **Internal Routing:** The packet travels through the provider's software-defined network.
-    
+
 3. **The Gateway:** The packet hits the "Internet Gateway" or a "Virtual Private Gateway."
-    
+
 4. **Metering:** At this exit point, the provider's billing system records the size of the packet in [[Bytes]].
-    
+
 5. **Transit:** The packet enters the public internet backbone or a private fiber line to reach the user.
-    
 
 ---
 
-# Pricing Models and "The Egress Bill"
+# Pricing Models
 
-Outbound data transfer is often the most unpredictable variable in a monthly cloud invoice.
+Outbound data transfer is often the most **unpredictable** variable in a monthly cloud invoice.
 
 ## Why is it charged?
 
@@ -41,11 +37,10 @@ Cloud providers incur costs from **Internet Service Providers (ISPs)** and for m
 ## Tiers of Egress
 
 - **Internet Egress:** Data sent to a user's browser or an external API. This is usually the most expensive.
-    
+
 - **Inter-Region Egress:** Data sent from one cloud region (e.g., US-East) to another (e.g., US-West). This is cheaper than internet egress but still carries a cost.
-    
+
 - **Intra-Region (Inter-AZ) Egress:** Data moving between different [[Availability Zones]] within the same region. Some providers charge small fees here to cover the cost of high-speed cross-zone fiber.
-    
 
 ---
 
