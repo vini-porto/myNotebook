@@ -60,7 +60,7 @@ selector {
 
 # Where Does CSS Go?
 
-### Inline
+## Inline
 
 **[[Inline Styles]]**: CSS written directly in the HTML tag.
 
@@ -70,9 +70,10 @@ selector {
 
 **Assessment**: **BAD** idea. Hard to manage and maintain.
 
-**Problem**: Violates separation of concerns; difficult to update multiple elements.
+>[!NOTE] Problem 
+Violates separation of concerns; difficult to update multiple elements.
 
-### Option 2: Internal (The 'Testing' Way)
+## Internal
 
 **[[Internal Styles]]**: CSS written in the `<head>` of your HTML.
 
@@ -82,13 +83,14 @@ selector {
 </style>
 ```
 
-**Use case**: Good for testing or single-page sites.
+>[!NOTE] Use case 
+Good for testing or single-page sites.
 
-### Option 3: External (The 'Professional' Way)
+## External
 
 **[[External Stylesheet]]**: A separate `.css` file linked via HTML.
 
-**This is what we will use** in production.
+>**This is what we will use** in production.
 
 **Benefits**:
 
@@ -97,7 +99,7 @@ selector {
 - Better organization
 - Cacheable (faster page loads)
 
-## The Link Tag
+# The Link Tag
 
 **[[Link Tag]]**: Connects your HTML to your CSS file.
 
@@ -107,13 +109,11 @@ selector {
 <link rel="stylesheet" href="style.css">
 ```
 
-**Analogy**: It tells HTML: "Go get the outfit from the closet."
+- **[[rel Attribute]]**: Defines the relationship (stylesheet)
 
-**[[rel Attribute]]**: Defines the relationship (stylesheet)
+- **[[href Attribute]]**: Specifies the path to the CSS file
 
-**[[href Attribute]]**: Specifies the path to the CSS file
-
-## The Big Three Selectors
+# The Big Three Selectors
 
 The three main ways to target HTML elements:
 
@@ -121,23 +121,22 @@ The three main ways to target HTML elements:
 2. **[[Class Selector]]** (The Precision Tool)
 3. **[[ID Selector]]** (The Nuclear Option)
 
-## 1. Element Selector
+## Element Selector
 
 **[[Element Selector]]**: Targets ALL tags of that type.
-
-**Example**:
 
 ```css
 p {
   color: green;
 }
-```
+``` 
 
 **Result**: Every single paragraph turns green.
 
-**Use case**: Applying styles to all elements of a specific type.
+>[!NOTE] Use case
+>Applying styles to all elements of a specific type.
 
-## 2. Class Selector (The Best One)
+## Class Selector
 
 **[[Class Selector]]**: Targets specific groups. Starts with a **DOT** (`.`).
 
@@ -157,17 +156,16 @@ p {
 
 **Syntax**: `.className` in CSS, `class="className"` in HTML.
 
-## Why Classes Rule
+### Why Classes Rule
 
 **Reusability**: You can reuse them!
 
 **Flexibility**: You can have 100 elements with `class="minion"`.
 
-**Analogy**: Think of it like a **Uniform**—many people can wear the same style.
+>[!NOTE] Best practice 
+>Classes are the most commonly used selectors in professional CSS.
 
-**Best practice**: Classes are the most commonly used selectors in professional CSS.
-
-## 3. ID Selector
+## ID Selector
 
 **[[ID Selector]]**: Targets ONE unique element. Starts with a **HASH** (`#`).
 
@@ -189,18 +187,15 @@ p {
 
 ## ID vs Class
 
-**Class** = Minions (There are many)
-
-**ID** = Gru (There is only one)
-
-**Critical rule**: Never use the same ID twice on a page!
+>[!NOTE] Critical rule 
+>Never use the same ID twice on a page!
 
 **When to use**:
 
 - **IDs**: Unique elements (one navigation, one header)
 - **Classes**: Repeated styles (multiple cards, buttons)
 
-## The Cascade (Who Wins?)
+# The Cascade (Who Wins?)
 
 **Question**: What if I say Paragraphs are Red, but `.special` is Blue?
 
