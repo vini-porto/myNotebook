@@ -77,36 +77,22 @@ In cloud architecture, the **Blast Radius** refers to how much of your system is
 
 >[!NOTE] Data is not automatically copied everywhere
 > Cloud providers do not move your data between Regions unless you explicitly set up and pay for [[Replication]]. Your data stays exactly where you put it.
-    
-- **"Regions are just data centers":** **False.** A Region is a _collection_ of data centers (AZs). Calling a Region a "data center" is like calling a city a "house."
-    
 
----
+>[!NOTE] Regions are not just data centers
+>A Region is a _collection_ of data centers ([[Availability Zones|AZs]]). Calling a Region a "data center" is like calling a city a "house."
 
 ## Related Notes
 
 - [[Availability Zones]]
-    
+
 - [[Content Delivery Network]]
-    
+
 - [[Data Sovereignty]]
-    
+
 - [[Fault Tolerance]]
-    
+
 - [[High Availability vs Disaster Recovery]]
-    
 
-## Sources
-
-- AWS Global Infrastructure Documentation
-    
-- Google Cloud: Regions and Zones
-    
-- Microsoft Azure: Regional Overview
-    
-- NIST Special Publication 800-145
-    
-
-## Tags
+# Tags
 
 #cloud #infrastructure #networking #architecture #latency #compliance
