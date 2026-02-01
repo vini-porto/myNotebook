@@ -187,25 +187,24 @@ If port 5500 is busy, Live Server tries 5501, 5502, etc.
 # File Management
 
 >[!NOTE] Important principle 
-Web development is 50% code, 25% organizing files, and 25% design.
+>Web development is 50% code, 25% organizing files, and 25% design.
 
->**Broken links are usually broken paths.**
+Broken links are usually broken paths.
 
-### The Root Folder
+## The Root Folder
 
 The **[[Root Folder]]** is the top-level folder of your project.
 
-**Best practice**: Open THIS folder in VS Code—not your entire Desktop or C: Drive. This ensures correct [[Relative Paths]].
+>[!NOTE] Best practice 
+>Open THIS folder in VS Code, not your entire Desktop or C: Drive. This ensures correct [[Relative Paths]].
 
-### Rule 1: Lowercase Only
+## Rule 1: Lowercase Only
 
-**Problem**: Windows is case-insensitive (`Logo.png` = `logo.png`), but Linux servers (where most websites are hosted) are **CASE SENSITIVE**.
+Windows is case-insensitive (`Logo.png` = `logo.png`), but Linux servers (where most websites are hosted) are **CASE SENSITIVE**.
 
 **Result**: If you code `Logo.png` but the file is actually `logo.png`, it works on your computer but breaks when deployed online.
 
-**Solution**: ALWAYS use lowercase for all file and folder names.
-
-### Rule 2: No Spaces in File Names
+## Rule 2: No Spaces in File Names
 
 **Problem**: Browsers convert spaces to `%20` in [[URLs]].
 
@@ -213,45 +212,22 @@ The **[[Root Folder]]** is the top-level folder of your project.
 
 **Solution**: Use hyphens (`my-resume.html`) or underscores (`my_resume.html`) instead of spaces.
 
-### The "Hidden Extension" Trap
+## The "Hidden Extension" Trap
 
-**Warning**: Windows hides file extensions by default.
+>[!NOTE] Warning 
+>Windows hides file extensions by default.
 
 **Problem**: You might think you saved `index.html`, but you actually saved `index.html.txt`.
 
 **Solution**: Enable "File Name Extensions" in Windows Explorer View settings. This is essential for web development.
 
-### File Naming Quiz
+# Understanding File Paths
 
-Let's check if these file names are good or bad:
-
-- `home page.html` → **BAD** (contains space)
-- `HomePage.html` → **BAD** (contains capitals)
-- `home-page.html` → **GOOD**
-- `img/Dog.jpg` → **BAD** (capital D)
-- `css/style.css` → **GOOD**
-
-## Standard Project Structure
-
-A typical web project follows this structure:
-
-```
-project-name/
-├── index.html
-├── css/           (or /styles)
-├── js/            (or /scripts)
-└── images/        (or /img)
-```
-
-**Note**: `index.html` is the default file that web servers look for when someone visits your website's root URL.
-
-## Understanding File Paths
-
-### Absolute Paths
+## Absolute Paths
 
 **[[Absolute Paths]]** contain the full URL and connect to external sites:
 
-**Example**: `https://www.google.com`
+>**Example**: `https://www.google.com`
 
 **Characteristics**:
 
@@ -259,36 +235,29 @@ project-name/
 - Used for linking to external resources
 - Works from anywhere
 
-### Relative Paths
+## Relative Paths
 
 **[[Relative Paths]]** connect to local files within your project:
 
-**Concept**: Directions from WHERE YOU ARE to WHERE YOU WANT TO GO.
+>[!NOTE] Concept 
+>Directions from WHERE YOU ARE to WHERE YOU WANT TO GO.
 
 **Syntax**:
 
 - `./` = Current folder (often optional)
 - `images/logo.png` = Go into the `images` folder, get `logo.png`
 
-### The "Up" Command
+## The "Up" Command
 
 **`../`** = Go up one folder level
 
-**Use case**: If you're in `css/style.css` and need an image from the `images/` folder (which is at the same level as `css/`), you use:
+If you're in `css/style.css` and need an image from the `images/` folder (which is at the same level as `css/`), you use:
 
 ```css
 background-image: url('../images/bg.jpg');
 ```
 
-### Path Quiz Example
-
-**Scenario**: I am in `index.html` at the root level. I want a picture inside the `images` folder.
-
-**Correct**: `src="images/pic.jpg"`
-
-**Wrong**: `src="../images/pic.jpg"` (This goes up and out of the project—there's no parent folder to go up to)
-
-## Introduction to HTML
+# Introduction to HTML
 
 **[[HTML]]** stands for HyperText Markup Language.
 
@@ -316,7 +285,7 @@ background-image: url('../images/bg.jpg');
 
 The **[[HTML Boilerplate]]** is the standard skeleton structure that every HTML document needs.
 
-**Shortcut in VS Code**: Type `!` and hit Enter to generate it automatically.
+**Shortcut in [[Visual Studio Code|VS Code]]: Type `!` and hit Enter to generate it automatically.
 
 ```html
 <!DOCTYPE html>
@@ -338,7 +307,7 @@ The **[[HTML Boilerplate]]** is the standard skeleton structure that every HTML 
 <!DOCTYPE html>
 ```
 
-**What it is**: A declaration, NOT a tag. It tells the browser which version of HTML the page uses.
+This is a declaration, NOT a tag. It tells the browser which version of HTML the page uses.
 
 **What it does**:
 
