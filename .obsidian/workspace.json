@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Databases.md",
+                "file": "Sault College/W26/Winter 2026/Introduction to Web Development/4 - The World of CSS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Databases"
+              "title": "4 - The World of CSS"
             }
           }
         ],
@@ -110,7 +110,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "css",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -241,8 +241,14 @@
   },
   "active": "daed6fd588eabafb",
   "lastOpenFiles": [
-    "Normalisation.md",
+    "Untitled.base",
+    "Box Model Layers.md",
+    "Sault College/W26/Winter 2026/Introduction to Web Development/4 - The World of CSS.md",
+    "Sault College/W26/Winter 2026/Introduction to Web Development/3 - Advanced HTML & Data.md",
+    "Sault College/W26/Winter 2026/Introduction to Web Development/1 - Architecture, Tools, & Setup.md",
+    "Sault College/W26/Winter 2026/Programming Concepts - CSD121/1 - Intoduction to Java.md",
     "Databases.md",
+    "Normalisation.md",
     "RDBMS.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
     "Servers.md",
@@ -252,11 +258,8 @@
     "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Agentic AI & TuringBots.md",
     "Sault College/W26/Winter 2026/Emerging Technology - CSD125/Untitled.md",
     "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Raw AI - Agentic AI & TuringBots.md",
-    "Sault College/W26/Winter 2026/Introduction to Web Development/4 - The World of CSS.md",
-    "Sault College/W26/Winter 2026/Introduction to Web Development/3 - Advanced HTML & Data.md",
     "Sault College/W26/Winter 2026/Introduction to Web Development/2 - Content, Media, &  Semantics.md",
     "Sault College/W26/Winter 2026/Introduction to Web Development/2 - The Building Blocks Content, Media, &  Semantics.md",
-    "Sault College/W26/Winter 2026/Introduction to Web Development/1 - Architecture, Tools, & Setup.md",
     "Cloud Computing.md",
     "Untitled.canvas",
     "English/Pillars/Word Classes.md",
@@ -268,9 +271,6 @@
     "Region.md",
     "Outbound Data Transfer.md",
     "Outbound Data Trnsfer.md",
-    "Storage.md",
-    "Compute.md",
-    "Cryptography.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/Untitled",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121",

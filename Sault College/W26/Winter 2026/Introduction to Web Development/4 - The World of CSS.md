@@ -337,6 +337,8 @@ font-family: 'Arial', sans-serif;
 >[!NOTE] Key principle 
 >**EVERYTHING in HTML is a box.**
 
+
+
 ## The Layers of the Box
 
 **[[Box Model Layers]]** (from inside to outside):
@@ -591,3 +593,5 @@ display: block;
 # Tags
 
 #CSS #WebDesign #Styling #Frontend #CascadingStyleSheets #WebDevelopment #BoxModel #CSSSelectors #Typography #ColorTheory #ResponsiveDesign #WebStyling #HTMLCSS #CSSBasics #VisualDesign #UserInterface #WebLayout #CSSProperties #Specificity #DeveloperTools
+
+[^1]: 

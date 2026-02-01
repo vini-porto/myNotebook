@@ -4,8 +4,6 @@ A **Database** is an organized collection of structured information, or data, ty
 
 While a simple text file can store data, a database is designed to handle large volumes of information, allow multiple users to access it simultaneously, and ensure the data remains accurate and secure.
 
----
-
 # The [[DBMS]] 
 
 It is important to distinguish between the **database** (the data itself) and the **[[DBMS]]** (the software used to manage it). 
