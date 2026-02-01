@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Availability Zones.md",
+                "file": "English/Introduction to the Pillars of English Linguistics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Availability Zones"
+              "title": "Introduction to the Pillars of English Linguistics"
             }
           }
         ],
@@ -253,11 +253,12 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "315c83aaff31e835",
+  "active": "080ab345b328b093",
   "lastOpenFiles": [
+    "Availability Zones.md",
+    "English/Introduction to the Pillars of English Linguistics.md",
     "English",
     "Region.md",
-    "Availability Zones.md",
     "Cloud Computing.md",
     "Outbound Data Transfer.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - AWS Pricing, Total Cost of Ownership, and Support.md",
@@ -299,7 +300,6 @@
     "image 1 5.png",
     "image 1 4.png",
     "image 1 3.png",
-    "image 1.png",
-    "Notion"
+    "image 1.png"
   ]
 }
