@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Servers.md",
+                "file": "Databases.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Servers"
+              "title": "Databases"
             }
           }
         ],
@@ -241,9 +241,10 @@
   },
   "active": "daed6fd588eabafb",
   "lastOpenFiles": [
-    "IP Addresses and Networking.md",
-    "Servers.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
+    "Databases.md",
+    "Servers.md",
+    "IP Addresses and Networking.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/3- AWS Global Infrastructure Overview.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - AWS Pricing, Total Cost of Ownership, and Support.md",
     "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Agentic AI & TuringBots.md",
@@ -270,7 +271,6 @@
     "Cryptography.md",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121/2 - Namespaces in Java.md",
     "Type definition.md",
-    "Sault College/W26/Winter 2026/Databases I - CSD123/2- AI raw generated text.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/Untitled",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121",

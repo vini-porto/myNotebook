@@ -26,29 +26,24 @@ Servers are built for **Reliability** and **Uptime**. They often have:
 >	- **ECC RAM:** Error-Correcting Code memory that can detect and fix data corruption on the fly.
 >	- **High Core Counts:** Specialized [[CPU|CPUs]] (like Intel Xeon or AMD EPYC) designed to handle many tasks at once.
 
-- **The OS:** They run server-specific operating systems (like **Linux Ubuntu Server**, **Windows Server**, or **RHEL**) which lack a fancy visual interface to save [[Compute]] resources.
-    
-
----
+>[!NOTE] The [[Operating System|OS]] 
+>- They run server-specific operating systems (like **[[Linux]] Ubuntu Server**, **[[Windows]] Server**, or **[[RHEL]]**) which lack a fancy visual interface to save [[Compute]] resources.
 
 # Types of Servers
 
 Servers are often named after the specific job they perform:
 
-- **[[Web Server]]:** Delivers website content (HTML, CSS, images) to your browser (e.g., Apache, Nginx).
-    
-- **[[Database Server]]:** Stores and manages structured data (e.g., MySQL, PostgreSQL, MongoDB).
-    
-- **[[Application Server]]:** Runs the actual "logic" of an app—like calculating a bank balance or processing a video.
-    
-- **[[File Server]]:** A central location for storing and sharing files within a network.
-    
-- **[[DNS Server]]:** The "phonebook of the internet" that translates names like `google.com` into IP addresses.
-    
-- **[[Mail Server]]:** Handles the sending and receiving of emails.
-    
+- **[[Web Server]]:** Delivers website content ([[HTML]], [[CSS]], images) to your browser (e.g., [[Apache]], [[Nginx]]).
 
----
+- **[[Database Server]]:** Stores and manages structured data (e.g., [[MySQL]], [[PostgreSQL]], [[MongoDB]]).
+
+- **[[Application Server]]:** Runs the actual "logic" of an app—like calculating a bank balance or processing a video.
+
+- **[[File Server]]:** A central location for storing and sharing files within a network.
+
+- **[[DNS Server]]:** The "phonebook of the internet" that translates names like `google.com` into [[IP Address|IP addresses]].
+
+- **[[Mail Server]]:** Handles the sending and receiving of emails.
 
 # Physical vs. Virtual Servers
 
@@ -56,7 +51,9 @@ In the past, one "Server" meant one physical metal box in a closet. Modern compu
 
 ## Bare Metal Servers
 
-This is a physical machine dedicated entirely to one user. It offers the highest performance because there is no "middleman," but it is slow to set up and expensive.
+This is a physical machine dedicated entirely to one user. 
+
+>It offers the highest performance because there is no "middleman," but it is slow to set up and expensive.
 
 ## [[Virtual Private Server]] (VPS)
 
@@ -64,13 +61,13 @@ Using a technology called a **[[Hypervisor]]**, a single powerful physical serve
 
 ## [[Serverless]]
 
-The most modern evolution. You don't manage a "server" at all. You just give the cloud provider your code, and they create a temporary server environment to run it for a fraction of a second, then delete it.
+The most modern evolution. You don't manage a "server" at all. You just give the [[Cloud Computing|cloud]] provider your code, and they create a temporary server environment to run it for a fraction of a second, then delete it.
 
----
+# The [[Ports]] Concept
 
-# How a Server "Listens" (The [[Ports]] Concept)
+Servers use **Ports** to distinguish between different services running on the same machine. 
 
-Servers use **Ports** to distinguish between different services running on the same machine. Think of the server's IP address as the building address and the Port as the specific apartment number:
+Think of the server's [[IP Address|IP address]] as the building address and the Port as the specific apartment number:
 
 - **Port 80/443:** Reserved for Web traffic (HTTP/HTTPS).
 
