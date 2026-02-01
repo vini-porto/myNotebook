@@ -137,17 +137,17 @@
 
 >**Benefits**: Better structure, easier to style, improved accessibility.s
 
-## The `<form>` Wrapper
+# Forms 
+
+The `<form>` Wrapper
 
 **[[Form Element]]**: The container for all form controls.
 
 **Required attributes**:
 
-**[[action Attribute]]**: Where to send the data (URL endpoint).
+- **[[action Attribute]]**: Where to send the data (URL endpoint).
 
-**[[method Attribute]]**: How to send the data (GET or POST).
-
-**Example**:
+- **[[method Attribute]]**: How to send the data (GET or POST).
 
 ```html
 <form action="https://httpbin.org/post" method="POST">
@@ -165,9 +165,10 @@
 
 **Syntax**: `<form method="GET">`
 
-**Use cases**: Search forms, filters, non-sensitive data.
+>[!NOTE] Use cases 
+Search forms, filters, **non-sensitive data.**
 
-**Limitation**: Data length limited by URL length.
+>**Limitation**: Data length limited by URL length. Security is compromised
 
 ### POST Method
 
@@ -177,11 +178,12 @@
 
 **Syntax**: `<form method="POST">`
 
-**Use cases**: Login forms, registration, any sensitive data.
+>[!NOTE] Use cases 
+Login forms, registration, any sensitive data.
 
-**Security**: More secure than GET (though still needs HTTPS for true security).
+>**Security**: More secure than GET (though still needs HTTPS for true security).
 
-## Organizing with Fieldset
+## Fieldset
 
 **[[Fieldset Element]]**: Groups related inputs with a visible box.
 
@@ -200,17 +202,17 @@
 
 ## The `<input>` Tag
 
-**[[Input Element]]**: The "Transformer" of HTML—changes shape based on `type` attribute.
+**[[Input Element]]**: The "Transformer" of HTML changes shape based on `type` attribute.
 
 **Key characteristic**: Self-closing (void element).
 
 **Basic syntax**: `<input type="text">`
 
-**Power**: One element, many forms through the `type` attribute.
+**Power**: One element, many forms through the [[type attribute]].
 
-## Input Types Showcase 1
+### Input Types 
 
-### Basic Text
+#### Basic Text
 
 **[[Text Input]]**: Standard single-line text field.
 
@@ -218,7 +220,7 @@
 <input type="text">
 ```
 
-### Secrets (Password)
+#### Secrets (Password)
 
 **[[Password Input]]**: Masks typed characters.
 
@@ -226,7 +228,7 @@
 <input type="password">
 ```
 
-### Email Validation
+#### Email Validation
 
 **[[Email Input]]**: Validates @ symbol and email format.
 
@@ -236,9 +238,7 @@
 
 **Browser validation**: Automatically checks for valid email format on submission.
 
-## Input Types Showcase 2
-
-### Calendar
+#### Calendar
 
 **[[Date Input]]**: Provides a date picker.
 
@@ -246,7 +246,7 @@
 <input type="date">
 ```
 
-### Color Picker
+#### Color Picker
 
 **[[Color Input]]**: Opens a color selection tool.
 
@@ -254,7 +254,7 @@
 <input type="color">
 ```
 
-### Slider
+#### Slider
 
 **[[Range Input]]**: Creates a slider control.
 
@@ -264,7 +264,7 @@
 
 **Modern browsers**: All provide native UI controls for these input types.
 
-## The Label (CRUCIAL)
+## The Label 
 
 **[[Label Element]]**: Connects text to the input using `for` and `id` attributes.
 
@@ -275,9 +275,8 @@
 <input type="text" id="user">
 ```
 
-**Magic**: Click the word "Username" and the input box lights up (receives focus)!
-
-**Accessibility**: Screen readers announce the label when the input receives focus.
+>[!NOTE] Accessibility 
+>Screen readers announce the label when the input receives focus.
 
 **[[for Attribute]]**: Must match the input's `id` attribute exactly.
 
@@ -285,7 +284,8 @@
 
 **[[Button Element]]**: Creates clickable buttons.
 
-**Default behavior**: Inside a form, automatically submits the form.
+>[!NOTE] Default behavior
+>Inside a form, automatically submits the form.
 
 ```html
 <button>Submit Order</button>
@@ -297,13 +297,14 @@
 <button type="button">I do nothing</button>
 ```
 
-**Types**: `submit` (default), `button`, `reset`.
+**Types**: 
+- `submit` (default)
+- `button`
+- `reset`
 
 ## Textarea
 
 **[[Textarea Element]]**: For long, multi-line text (essays, comments, messages).
-
-**Important**: Has a closing tag (not a void element)!
 
 **Syntax**:
 
