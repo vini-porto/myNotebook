@@ -100,14 +100,14 @@ Browsers like [[Chrome]], [[Firefox]], and [[Safari]] are **[[Rendering Engines]
 >[!NOTE] Important note 
 >Different browsers sometimes render things slightly differently. Web developers primarily test in Chrome/Edge (both [[Chromium]]-based browsers).
 
-## Developer Tools: View Source vs. Inspect
+# Developer Tools
 
-**View Page Source** (Right-click → "View Page Source"):
+**View Page Source** (Right-click > "View Page Source"):
 
 - Shows the raw HTML file as it was sent from the server
 - Static snapshot of the original code
 
-**Inspect** (Right-click → "Inspect"):
+**Inspect** (Right-click > "Inspect"):
 
 - Shows the live [[DOM]] (Document Object Model) in browser memory
 - Reflects current state including JavaScript changes
@@ -121,7 +121,7 @@ Every web developer needs three essential tools:
 2. **Terminal** (To give commands) - [[Command Line Interface]]
 3. **Browser** (To see results) - [[Chrome]], [[Firefox]], etc.
 
-## Text Editors vs. IDEs
+# Text Editors vs. IDEs
 
 **Simple Text Editors** (Notepad, Word):
 
@@ -146,67 +146,33 @@ Every web developer needs three essential tools:
 - Lightweight and fast
 - Extensive extension ecosystem
 
-**Important**: VS Code (blue icon) is NOT the same as "Visual Studio" (purple icon, which is a full IDE for .NET development).
+>[!NOTE] Important 
+>[[Visual Studio Code|VS Code]] is NOT the same as [[Visual Studio]] which is a full IDE for .NET development.
 
-## Essential VS Code Extensions
+---
+### Essential VS Code Extensions
 
 VS Code is lightweight out of the box. You install **[[Extensions]]** to add features. Click the "Squares" icon on the left sidebar to browse extensions.
 
-### Live Server
+#### Live Server
 
-**Author**: Ritwick Dey
+Automatically refreshes the browser when you save your code
 
-**Function**: Automatically refreshes the browser when you save your code
+Saves enormous amounts of time during development, you don't have to manually refresh the browser after every change.
 
-**Why it matters**: Saves enormous amounts of time during development—you don't have to manually refresh the browser after every change.
-
-### Prettier
+#### Prettier
 
 **Function**: Code formatter
 
-**What it does**: Automatically fixes messy indentation and formatting
+Automatically fixes messy indentation and formatting
 
-**Benefit**: Makes code consistent and readable across your project
-
-### Material Icon Theme
+#### Material Icon Theme
 
 **Function**: Changes file icons in the explorer
 
-**Benefit**: Helps you visually distinguish `.html`, `.css`, `.js` files quickly, making navigation easier
+Helps you visually distinguish `.html`, `.css`, `.js` files quickly, making navigation easier
 
-## Pro Tips for VS Code
-
-### Auto Save
-
-**Location**: File → Auto Save
-
-**Benefit**: Never lose work again—your files save automatically
-
-**Caution**: [[Live Server]] triggers every time you pause typing if Auto Save is on, which can be distracting. Use with consideration.
-
-### The Integrated Terminal
-
-VS Code has a built-in **[[Command Prompt]]** / **[[Terminal]]**:
-
-- Access via: View → Terminal
-- Used later for [[Git]] and [[Node.js]] commands
-- No need to switch between applications
-
-## Why Use Live Server?
-
-**Problem with double-clicking HTML files**:
-
-- Uses `file://` protocol
-- Strictly local access
-- Browsers treat local files differently than web files (security restrictions)
-
-**Live Server solution**:
-
-- Launches a real `http://` server on your computer
-- Makes your computer pretend to be a real web server
-- Your site behaves exactly as it will when deployed online
-
-## Understanding 127.0.0.1:5500
+# Understanding Live Server
 
 When Live Server runs, you'll see an address like `127.0.0.1:5500`:
 
@@ -218,29 +184,12 @@ If port 5500 is busy, Live Server tries 5501, 5502, etc.
 
 **Note**: This port number may vary depending on what's available.
 
-## How to Launch Live Server
+# File Management
 
-1. Open an HTML file in VS Code
-2. Look at the bottom right blue status bar
-3. Click "Go Live" button, or use the "Show Preview" button in the top right
-4. Browser opens automatically
+>[!NOTE] Important principle 
+Web development is 50% code, 25% organizing files, and 25% design.
 
-### Troubleshooting Live Server
-
-**Error: "Listing Directory" instead of your page**
-
-- **Cause**: You don't have an `index.html` file in the root
-- **Solution**: Create or rename your main file to `index.html`
-
-**Error: "Server is offline"**
-
-- **Fix**: Click "Go Live" again to restart the server
-
-## File Management: The Golden Rules
-
-**Important principle**: Web development is 50% code, 25% organizing files, and 25% design.
-
-**Broken links are usually broken paths.** Follow these rules strictly to avoid problems.
+>**Broken links are usually broken paths.**
 
 ### The Root Folder
 
