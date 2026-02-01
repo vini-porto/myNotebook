@@ -54,6 +54,8 @@ Semantics focuses on the literal meaning of words and sentences. It is the bridg
 
 Pragmatics is often called "social language." It explores how context contributes to meaning. It is the difference between what we say and what we actually mean.
 
+---
+
 - **Example:** If someone asks, "Can you pass the salt?" they aren't asking if you have the physical strength to lift the salt shaker (literal). They are making a polite request for you to give it to them (pragmatic).
 
 
