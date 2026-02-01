@@ -215,35 +215,18 @@ p { color: red; }
 
 **[[Specificity]]**: Determines which CSS rule is applied when multiple rules target the same element.
 
-**Hierarchy** (from strongest to weakest):
+>[!NOTE] Hierarchy 
+>1. **ID** (`#`) - Strongest
+>2. **Class** (`.`) - Medium
+>3. **Tag** (`p`) - Weakest
 
-1. **ID** (`#`) - Strongest
-2. **Class** (`.`) - Medium
-3. **Tag** (`p`) - Weakest
-
-**Rule**: ID beats Class. Class beats Tag.
-
-## Pop Quiz: Specificity
-
-**Who wins?**
-
-```css
-#header { color: red; }
-.header { color: blue; }
-header { color: green; }
-```
-
-**Answer**: **Red** (The ID wins)
-
-**Reason**: ID has the highest specificity.
-
-## Coloring the Web
+# Coloring the Web
 
 **Two main properties**:
 
-**[[color Property]]**: Text color
+- **[[color Property]]**: Text color
 
-**[[background-color Property]]**: Box/background color
+- **[[background-color Property]]**: Box/background color
 
 **Example**:
 
@@ -257,17 +240,17 @@ header { color: green; }
 }
 ```
 
-## Color Specification Methods
+# Color Specification Methods
 
-### Way 1: Keywords
+## Keywords
 
 **[[Color Keywords]]**: Named colors like `red`, `blue`, `green`, `papayawhip`, `tomato`.
 
-**Pros**: Easy to read
+>[!NOTE]
+>- **Pros**: Easy to read
+>- **Cons**: Limited options (~140 named colors)
 
-**Cons**: Limited options (~140 named colors)
-
-### Way 2: Hex Codes
+## Hex Codes
 
 **[[Hex Codes]]**: The computer language for colors.
 
@@ -279,9 +262,7 @@ header { color: green; }
 
 **Format**: `#RRGGBB` using 0-9 and A-F
 
-**Reality**: You don't memorize these; you use a color picker.
-
-### Way 3: RGB / RGBA
+## RGB / RGBA
 
 **[[RGB]]**: Red, Green, Blue (values 0-255)
 
@@ -293,7 +274,7 @@ header { color: green; }
 
 **Alpha channel**: 0 = fully transparent, 1 = fully opaque
 
-## Fonts
+# Fonts
 
 **[[font-family Property]]**: Specifies which font to use.
 
@@ -303,7 +284,8 @@ header { color: green; }
 font-family: 'Arial', sans-serif;
 ```
 
-**Important**: Always list a **backup font**!
+>[!NOTE] Important 
+>Always list a **backup font**!
 
 **Why?**: If the user doesn't have the first font, it tries the second.
 
@@ -323,7 +305,7 @@ font-family: 'Arial', sans-serif;
 - Clean
 - Often used on screens
 
-**Generic families**: Always end with `serif` or `sans-serif` as final fallback.
+>**Generic families**: Always end with `serif` or `sans-serif` as final fallback.
 
 ## Font Size
 
@@ -337,9 +319,7 @@ font-family: 'Arial', sans-serif;
 - Scales with user preferences
 - More flexible
 
-**Recommendation**: Start with pixels for now, learn rem later.
-
-## Text Alignment
+# Text Alignment
 
 **[[text-align Property]]**: Controls horizontal alignment of text.
 
@@ -350,13 +330,12 @@ font-family: 'Arial', sans-serif;
 - `text-align: right;` (Rare)
 - `text-align: justify;` (Not shown but available)
 
-## The Box Model (Vital Concept)
+# The Box Model
 
 **[[Box Model]]**: The fundamental concept of CSS layout.
 
-**Key principle**: **EVERYTHING in HTML is a box.**
-
-**Even a circle**: A circle image is technically inside a square box.
+>[!NOTE] Key principle 
+>**EVERYTHING in HTML is a box.**
 
 ## The Layers of the Box
 
@@ -367,9 +346,9 @@ font-family: 'Arial', sans-serif;
 3. **[[Border]]** (The line) - Edge of the element
 4. **[[Margin]]** (Space outside) - Space between elements
 
-## Padding vs Margin
+# Padding vs Margin
 
-### Padding
+## Padding
 
 **[[Padding]]**: Like wearing a puffy coat. It increases YOUR size.
 
@@ -377,7 +356,7 @@ font-family: 'Arial', sans-serif;
 
 **Inside the box**: Part of the element's background
 
-### Margin
+## Margin
 
 **[[Margin]]**: Like personal space. It pushes OTHERS away.
 
