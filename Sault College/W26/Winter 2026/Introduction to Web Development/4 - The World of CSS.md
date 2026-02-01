@@ -337,8 +337,21 @@ font-family: 'Arial', sans-serif;
 >[!NOTE] Key principle 
 >**EVERYTHING in HTML is a box.**
 
+<div style="margin: 40px; background-color: #f8d7da; border: 1px dashed #dc3545; display: inline-block;">
+  <span style="font-size: 10px; color: #dc3545;">Margem (40px)</span>
 
+  <div style="border: 10px solid #007bff;">
+    
+    <div style="padding: 30px; background-color: #d4edda;">
+      <span style="font-size: 10px; color: #155724;">Padding (30px)</span>
 
+      <div style="width: 200px; height: 50px; background-color: white; border: 1px solid #ccc; display: flex; align-items: center; justify-content: center;">
+        <strong>CONTEÚDO</strong>
+      </div>
+      
+    </div>
+  </div>
+</div>
 ## The Layers of the Box
 
 **[[Box Model Layers]]** (from inside to outside):
