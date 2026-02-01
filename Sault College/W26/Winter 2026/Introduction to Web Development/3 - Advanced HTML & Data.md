@@ -314,15 +314,14 @@ Login forms, registration, any sensitive data.
 
 **[[rows Attribute]]**: Controls visible height.
 
-**Difference from input**: Can contain multiple lines of text.
+>[!NOTE] Difference from input 
+>Can contain multiple lines of text
 
-## Select & Option (Dropdown)
+## Select & Option
 
 **[[Select Element]]**: Creates a dropdown menu.
 
 **[[Option Element]]**: Defines each choice in the dropdown.
-
-**Scenario**: Choosing a Minion Overlord.
 
 ```html
 <select name="overlord">
@@ -343,7 +342,8 @@ Login forms, registration, any sensitive data.
 <input type="checkbox" name="toppings"> Pepperoni
 ```
 
-**Use case**: Multiple independent choices (pizza toppings, features, interests).
+>[!NOTE] Use case 
+Multiple independent choices (pizza toppings, features, interests).
 
 ### Radio Button
 
@@ -356,40 +356,27 @@ Login forms, registration, any sensitive data.
 <input type="radio" name="payment"> Mastercard
 ```
 
-**Behavior**: Selecting one automatically deselects others with the same name.
+>[!NOTE] Behavior
+>Selecting one automatically deselects others with the same name.
 
 ## The 'name' Attribute
 
 **[[name Attribute]]**: Critical for server communication.
 
-**Distinction**:
+>[!NOTE] Distinction
+>
+>- **[[id Attribute]]**: For CSS/JavaScript (client-side)
+>- **[[name attribute]]**: For the Server (data submission)
 
-- **[[id Attribute]]**: For CSS/JavaScript (client-side)
-- **name attribute**: For the Server (data submission)
+>**Critical warning**: If you forget `name`, the server sees **nothing**!
 
-**Critical warning**: If you forget `name`, the server sees **nothing**!
-
-**Example**:
 
 ```html
 <input type="email" name="email">
 ```
 
-**Why it matters**: The `name` becomes the key in the submitted data.
-
-## Visualizing the Data
-
-**What happens when you click Submit?**
-
-The browser takes all `name` and `value` pairs and creates a **[[Query String]]**:
-
-```
-user=Kevin&pass=banana&overlord=gru
-```
-
-**Format**: `name=value&name=value&name=value`
-
-**Lab connection**: This is what we'll see in the Lab on Friday using httpbin.
+>[!NOTE] Why it matters: 
+>The `name` becomes the key in the submitted data.
 
 ## Placeholders
 
@@ -402,8 +389,6 @@ user=Kevin&pass=banana&overlord=gru
 ```
 
 **Use case**: Provide hints or examples without using labels.
-
-**Accessibility note**: Not a replacement for labels—screen readers may not announce placeholders.
 
 ## Required & Disabled
 
@@ -426,37 +411,22 @@ user=Kevin&pass=banana&overlord=gru
 ```
 
 **Use case**: Show fields that aren't currently editable.
+# Visualizing the Data
 
-## Code Example: The Login Form
+**What happens when you click Submit?**
 
-**Complete login form**:
+The browser takes all `name` and `value` pairs and creates a **[[Query String]]**:
 
-```html
-<form action="/login" method="POST">
-  <label for="u">User:</label>
-  <input type="text" id="u" name="user" required>
-  <button>Login</button>
-</form>
+```
+user=Kevin&pass=banana&overlord=gru
 ```
 
-**Features**:
+>[!NOTE] Format
+>`name=value&name=value&name=value`
 
-- POST method (secure)
-- Proper label association
-- Required validation
-- Submit button
-
-## The 'Rich Web'
-
-**Question**: How do we get Maps and YouTube onto our site?
-
-**Answer**: The `<iframe>` element.
-
-## The iframe Element
+# External content
 
 **[[iframe Element]]**: Cuts a "hole" in your site to show another website.
-
-**Basic syntax**:
 
 ```html
 <iframe src="https://www.wikipedia.org"></iframe>
@@ -466,9 +436,7 @@ user=Kevin&pass=banana&overlord=gru
 
 ## YouTube Embeds
 
-**Process**: Click Share → Embed on YouTube.
-
-**Example**:
+>Click Share > Embed on YouTube.
 
 ```html
 <iframe width="560" height="315"
@@ -476,19 +444,13 @@ user=Kevin&pass=banana&overlord=gru
 </iframe>
 ```
 
-**Benefit**: Full YouTube player functionality embedded in your page.
-
 ## Google Maps Embeds
 
-**Process**: Google Maps → Share → Embed a Map.
-
-**Example**:
+>Google Maps > Share > Embed a Map.
 
 ```html
 <iframe src="http://googleusercontent.com/maps..."></iframe>
 ```
-
-**Use case**: Show location without leaving your website.
 
 ## iframe Attributes
 
@@ -506,9 +468,8 @@ user=Kevin&pass=banana&overlord=gru
 
 **Restriction**: You can only iframe sites that **allow** it.
 
-**Blocked sites**: Google/Facebook will block you from embedding them.
-
-**Debugging**: Use Developer Tools (Console) to see the error message.
+>[!NOTE] Blocked sites 
+>Google/Facebook will block you from embedding them.
 
 **Security**: Sites can use [[X-Frame-Options]] header to prevent being embedded.
 
