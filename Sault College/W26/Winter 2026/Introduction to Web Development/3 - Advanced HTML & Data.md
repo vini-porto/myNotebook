@@ -1,32 +1,9 @@
 # The 'Void' Check
 
-**Question**: Which of these needs a closing tag?
-
-A. `<img>` B. `<br>` C. `<form>`
-
-**Answer**: **C. `<form>`** - It wraps around content.
-
-**Structure**:
-
-```html
-<form>
-  <!-- content here -->
-</form>
-```
-
 **Remember**: [[Void Elements]] like `<img>` and `<br>` are self-closing.
 
-## Why This Week Matters
-
-**Tables**: Schedules, Grades, Statistics
-
-**Forms**: Logins, Search boxes, Shopping Carts
-
-**Key distinction**: This is the difference between a "Brochure" and an "App"—forms enable **interactivity**.
-
+# Tables
 ## When to Use Tables
-
-### GOOD: Data (Spreadsheets)
 
 **[[Data Tables]]**: Appropriate for displaying tabular data like:
 
@@ -34,14 +11,6 @@ A. `<img>` B. `<br>` C. `<form>`
 - Statistical information
 - Comparison charts
 - Financial data
-
-### BAD: Layout
-
-**[[Layout Tables]]**: Do NOT use tables to position images next to text or create page layouts.
-
-**Why?**: [[Screen Readers]] read tables row-by-row. Using them for layout confuses users with vision issues.
-
-**Accessibility**: Tables should represent actual data relationships, not visual positioning.
 
 ## The Table Anatomy
 
@@ -52,8 +21,6 @@ A. `<img>` B. `<br>` C. `<form>`
 **[[Table Data]]** (`<td>`): A cell containing data.
 
 **[[Table Header]]** (`<th>`): A header cell (bold title, typically in first row or column).
-
-**Basic structure**:
 
 ```html
 <table>
@@ -81,31 +48,11 @@ A. `<img>` B. `<br>` C. `<form>`
 </table>
 ```
 
-**Purpose**: Provides context for the table, especially important for accessibility.
-
-## The 'Minion Roster' Example
-
-**Complete table example**:
-
-```html
-<table border="1">
-  <caption>Team Gru</caption>
-  <tr>
-    <th>Name</th>
-    <th>Fruit</th>
-  </tr>
-  <tr>
-    <td>Kevin</td>
-    <td>Banana</td>
-  </tr>
-</table>
-```
-
-**Result**: Creates a table with headers "Name" and "Fruit", with one data row for Kevin.
+`<caption>` provides context for the table, especially important for accessibility.
 
 ## Understanding the Row (`<tr>`)
 
-**[[Table Row Concept]]**: Think of it like a typewriter.
+[[Table Row]]: Think of it like a typewriter.
 
 **Process**:
 
@@ -115,21 +62,22 @@ A. `<img>` B. `<br>` C. `<form>`
 
 **Common error**: If you miss a `<td>`, your table will have a **hole** (missing cell)!
 
-**Important**: Each row should have the same number of cells (unless using colspan/rowspan).
+>[!NOTE] Important 
+>Each row should have the same number of cells (unless using colspan/rowspan).
 
-## Borders (The Ugly Truth)
+## Borders
 
-**Default**: Tables are invisible (no borders).
+>[!NOTE] Default 
+>Tables are invisible (no borders).
 
-**[[Temporary Cheat]]**: Use the `border` attribute for development.
+**Temporary Cheat**: Use the `border` attribute for development.
 
 ```html
 <table border="1">
 ```
 
-**Warning**: Don't get used to this—[[CSS]] does it better (next week).
-
-**Modern approach**: Borders should be styled with CSS, not HTML attributes.
+>[!NOTE] Modern approach: 
+>Borders should be styled with CSS, not HTML attributes.
 
 ## Merging Cells
 
@@ -164,28 +112,15 @@ A. `<img>` B. `<br>` C. `<form>`
 </table>
 ```
 
-## Colspan Example
-
-**Scenario**: The "Total" row needs to span columns.
-
-```html
-<tr>
-  <td colspan="2">Grand Total</td>
-  <td>$50.00</td>
-</tr>
-```
-
-**Use case**: Common for summary rows that combine multiple columns.
-
 ## Semantic Tables
 
 **[[Semantic Table Structure]]**: Organize tables into meaningful sections.
 
-**[[thead Element]]**: The header rows (column labels).
+- **[[thead]]**: The header rows (column labels).
 
-**[[tbody Element]]**: The body data (main content).
+- **[[tbody]]**: The body data (main content).
 
-**[[tfoot Element]]**: The totals/summary row.
+- **[[tfoot]]**: The totals/summary row.
 
 **Example**:
 
@@ -200,27 +135,7 @@ A. `<img>` B. `<br>` C. `<form>`
 </table>
 ```
 
-**Benefits**: Better structure, easier to style, improved accessibility.
-
-## Accessibility Note
-
-**Screen readers need `<th>`** to know what the data means.
-
-**BAD**:
-
-```html
-<td><b>Name</b></td>
-```
-
-**GOOD**:
-
-```html
-<th>Name</th>
-```
-
-**Rule**: Always use proper header elements for accessibility!
-
-**Why it matters**: Screen readers announce relationships between headers and data cells.
+>**Benefits**: Better structure, easier to style, improved accessibility.s
 
 ## The `<form>` Wrapper
 
