@@ -195,9 +195,7 @@ p {
 - **IDs**: Unique elements (one navigation, one header)
 - **Classes**: Repeated styles (multiple cards, buttons)
 
-# The Cascade (Who Wins?)
-
-**Question**: What if I say Paragraphs are Red, but `.special` is Blue?
+# The Cascade
 
 ```css
 p { color: red; }
@@ -210,9 +208,10 @@ p { color: red; }
 
 **Result**: The paragraph is **Blue**.
 
-**Why?**: [[Specificity]] determines which rule wins.
+>[!NOTE]
+>[[Specificity]] determines which rule wins.
 
-## Specificity Hierarchy
+# Specificity Hierarchy
 
 **[[Specificity]]**: Determines which CSS rule is applied when multiple rules target the same element.
 
