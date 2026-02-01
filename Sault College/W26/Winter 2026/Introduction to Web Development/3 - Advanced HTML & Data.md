@@ -473,7 +473,7 @@ user=Kevin&pass=banana&overlord=gru
 
 **Security**: Sites can use [[X-Frame-Options]] header to prevent being embedded.
 
-## Audio (Review)
+# Audio
 
 **[[Audio Element]]**: Embeds sound files.
 
@@ -485,7 +485,7 @@ user=Kevin&pass=banana&overlord=gru
 
 **[[controls Attribute]]**: Shows play/pause controls.
 
-## Video (Review)
+# Video
 
 **[[Video Element]]**: Embeds video files.
 
@@ -497,7 +497,7 @@ user=Kevin&pass=banana&overlord=gru
 
 **Attributes**: Width, height, controls for user interface.
 
-## Favicons
+# Favicons
 
 **[[Favicon]]**: The icon in the browser tab.
 
@@ -511,7 +511,7 @@ user=Kevin&pass=banana&overlord=gru
 
 **Purpose**: Branding and easy tab identification.
 
-## Meta Tags (Social Media)
+# Meta Tags
 
 **[[Open Graph Meta Tags]]**: Control how your link looks on social media.
 
@@ -527,7 +527,7 @@ user=Kevin&pass=banana&overlord=gru
 
 **[[Social Media Preview]]**: The expanded link preview with image and text.
 
-## Entities (Special Characters)
+# Entities
 
 **[[HTML Entities]]**: Special codes for characters that can't be typed directly or have special meaning in HTML.
 
@@ -538,212 +538,61 @@ user=Kevin&pass=banana&overlord=gru
 - `&gt;` → >
 - `&nbsp;` → (Non-breaking space)
 
-**Why needed**: `<` and `>` have special meaning in HTML, so must be escaped.
-
-## Validation
-
-**[[HTML Validation]]**: Check your code for errors.
-
-**Tool**: Go to **[[validator.w3.org]]**
-
-**Process**:
-
-1. Upload your index.html
-2. Fix the red errors
-3. Verify warnings
-
-**Purpose**: Ensures your HTML follows standards and works across browsers.
-
-## The 'Code Bloat' Warning
-
-**[[Code Bloat]]**: Unnecessary nesting of elements.
-
-**Avoid this**:
-
-```html
-<div><div><div><p>No!</p></div></div></div>
-```
-
-**Better**: Use only the structure you need.
-
-**Principle**: Keep HTML simple and semantic—don't add extra wrappers without purpose.
-
-## Summary
-
-**Tables**: `<table>`, `<tr>`, `<td>`, `<th>`
-
-**Forms**: `<form>`, `<input>`, `<button>`, `<label>`
-
-**Rich Media**: `<iframe>`, `<audio>`, `<video>`
-
-**Key concepts**:
-
-- Data tables for tabular information
-- Forms for user input and interaction
-- Embedding external content with iframes
-
-## Lab #3 Introduction
-
-**Project**: The Registration Page
-
-**Goal**: Build a Sign-Up page with:
-
-- A Data Table
-- A Form
-
-**Testing tool**: We'll use the "Magic Mirror" (**[[httpbin]]**) to test our data submission.
-
-**Purpose**: See exactly what data your form sends to the server.
-
-## Pro Tips for Lab
-
-**Use `placeholder`**: Provide hints for what to enter.
-
-**Use `required`**: Force users to fill in important fields.
-
-**DON'T FORGET THE `name` ATTRIBUTE!**: Without it, the server receives no data from that field.
-
-**Critical reminder**: `name` is what makes form data work—never skip it!
-
----
-
-## Key Concepts to Review
-
-### Tables
-
-- [[Data Tables]]
-- [[Layout Tables]]
-- [[Screen Readers]]
-- [[Table Element]]
-- [[Table Row]]
-- [[Table Data]]
-- [[Table Header]]
-- [[Caption Element]]
-- [[Table Row Concept]]
-- [[Temporary Cheat]]
-- [[Colspan]]
-- [[Rowspan]]
-- [[Semantic Table Structure]]
-- [[thead Element]]
-- [[tbody Element]]
-- [[tfoot Element]]
-
-### Forms
-
-- [[Form Element]]
-- [[action Attribute]]
-- [[method Attribute]]
-- [[GET Method]]
-- [[POST Method]]
-- [[Request Body]]
-- [[Fieldset Element]]
-- [[Legend Element]]
-- [[Input Element]]
-- [[Text Input]]
-- [[Password Input]]
-- [[Email Input]]
-- [[Date Input]]
-- [[Color Input]]
-- [[Range Input]]
-
-### Form Controls
-
-- [[Label Element]]
-- [[for Attribute]]
-- [[Button Element]]
-- [[Textarea Element]]
-- [[rows Attribute]]
-- [[Select Element]]
-- [[Option Element]]
-- [[Checkbox Input]]
-- [[Radio Input]]
-
-### Form Attributes
-
-- [[name Attribute]]
-- [[id Attribute]]
-- [[Query String]]
-- [[Placeholder Attribute]]
-- [[required Attribute]]
-- [[disabled Attribute]]
-
-### Rich Media
-
-- [[iframe Element]]
-- [[frameborder Attribute]]
-- [[allowfullscreen Attribute]]
-- [[X-Frame-Options]]
-- [[Audio Element]]
-- [[controls Attribute]]
-- [[Video Element]]
-- [[Favicon]]
-- [[Open Graph Meta Tags]]
-- [[Social Media Preview]]
-
-### Miscellaneous
-
-- [[HTML Entities]]
-- [[HTML Validation]]
-- [[validator.w3.org]]
-- [[Code Bloat]]
-- [[httpbin]]
-- [[CSS]]
-- [[Void Elements]]
-
----
+>[!NOTE] Why needed 
+>`<` and `>` have special meaning in HTML, so must be escaped.
 
 ## Review Questions
 
 1. What is the "Restaurant Analogy" and how do forms relate to it?
-    
+
 2. When should you use tables in HTML? When should you NOT use tables?
-    
+
 3. Why is using tables for layout bad for accessibility?
-    
+
 4. What are the four main table elements? Explain what each does.
-    
+
 5. Where should the `<caption>` element be placed in a table?
-    
+
 6. Explain the "typewriter" analogy for understanding table rows.
-    
+
 7. What happens if you forget a `<td>` in a table row?
-    
+
 8. What is the difference between `colspan` and `rowspan`? Give an example of each.
-    
+
 9. What are the three semantic table sections (`<thead>`, `<tbody>`, `<tfoot>`) and when would you use each?
-    
+
 10. Why should you use `<th>` instead of `<td><b>Text</b></td>` for headers?
     
 11. What are the two required attributes for the `<form>` element? What does each control?
-    
+
 12. Explain the difference between GET and POST methods. When would you use each?
-    
+
 13. What is the purpose of the `<fieldset>` and `<legend>` elements?
-    
+
 14. Why is the `<input>` element called the "Transformer" of HTML?
-    
+
 15. Name at least five different `type` values for the `<input>` element and what each creates.
-    
+
 16. What is the purpose of the `<label>` element? How do you properly associate it with an input?
-    
+
 17. What is the difference between the `id` and `name` attributes on form inputs?
     
 18. What happens if you forget the `name` attribute on a form input?
-    
+
 19. What is a query string? Give an example of what form data looks like when submitted.
-    
+
 20. What does the `placeholder` attribute do? Is it a replacement for labels?
-    
+
 21. What does the `required` attribute do? What does `disabled` do?
     
 22. What is the difference between `<input type="checkbox">` and `<input type="radio">`?
-    
+
 23. For radio buttons to work properly (only one selectable), what must they all share?
-    
+
 24. What is an `<iframe>` and what is it used for?
-    
+
 25. Can you iframe any website? What happens if a site blocks embedding?
-    
+
 26. Write the HTML for a table with:
     
     - Caption "Class Schedule"
@@ -760,132 +609,7 @@ user=Kevin&pass=banana&overlord=gru
 29. What do Open Graph meta tags do? Why are they important for social media?
     
 30. What is validator.w3.org used for? Why should you validate your HTML?
-    
 
----
-
-## Practical Exercises
-
-### Exercise 1: Build a Course Schedule Table
-
-Create a table showing your weekly schedule with:
-
-- Caption: "Weekly Schedule"
-- Columns: Time, Monday, Tuesday, Wednesday, Thursday, Friday
-- At least 3 time slots
-- Use `<th>` for all headers
-- Use semantic sections (`<thead>`, `<tbody>`)
-
-### Exercise 2: Registration Form
-
-Build a registration form with:
-
-- Full Name (text input, required)
-- Email (email input, required)
-- Password (password input, required)
-- Date of Birth (date input)
-- Gender (radio buttons: Male, Female, Other)
-- Interests (checkboxes: Sports, Music, Art)
-- Bio (textarea)
-- Submit button
-- All inputs must have proper labels and name attributes
-
-### Exercise 3: Product Order Form
-
-Create an order form for a pizza shop:
-
-- Customer name (required)
-- Phone number (required)
-- Size (radio: Small, Medium, Large)
-- Toppings (checkboxes: Pepperoni, Mushrooms, Olives, Extra Cheese)
-- Special instructions (textarea)
-- Organize using `<fieldset>` for "Customer Info" and "Pizza Options"
-
-### Exercise 4: Table with Merged Cells
-
-Create a table for a grade report:
-
-- Student name spanning 2 columns in first row
-- Headers: Assignment, Grade
-- 3 assignments with grades
-- Final row: "Average" spanning first column, grade in second
-
-### Exercise 5: Embed Rich Media
-
-Create a page with:
-
-- An embedded YouTube video of your choice
-- An embedded Google Map of Sault College
-- Both should have appropriate width/height
-- Remove borders and allow fullscreen
-
-### Exercise 6: Contact Form with Validation
-
-Build a contact form with:
-
-- Name (required, placeholder: "John Doe")
-- Email (required, email validation)
-- Subject (required)
-- Message (textarea, required, placeholder: "Enter your message...")
-- All fields have proper labels
-- Submit button
-- Use POST method
-- Action: "https://httpbin.org/post"
-
-### Exercise 7: Fix the Broken Code
-
-Find and fix all errors in this code:
-
-```html
-<table>
-  <tr>
-    <td><b>Name</b></td>
-  </tr>
-  <tr>
-    <td>Alice
-    <td>Bob</td>
-  </tr>
-</table>
-
-<form>
-  <input type="text" id="email">
-  <input type="password" id="pass">
-  <button type="button">Submit</button>
-</form>
-```
-
-### Exercise 8: Survey Form
-
-Create a survey form asking:
-
-- Age range (select dropdown: 18-25, 26-35, 36-50, 50+)
-- Satisfaction rating (range slider, 1-10)
-- Would recommend? (radio: Yes, No)
-- Comments (textarea)
-- All with proper structure and validation
-
----
-
-## Common Mistakes to Avoid
-
-1. **Using tables for layout** - Tables are for data only, not positioning
-2. **Forgetting closing tags on tables** - `<tr>`, `<td>`, `<th>` all need closing tags
-3. **Missing `<th>` for headers** - Bad for accessibility
-4. **Forgetting the `name` attribute** - Form data won't be submitted
-5. **Using same `name` for radio buttons that shouldn't be grouped** - They'll interfere with each other
-6. **Confusing `id` and `name`** - `id` for CSS/JS, `name` for server
-7. **Not matching `for` and `id` in labels** - Label won't connect to input
-8. **Using GET for sensitive data** - Passwords should use POST
-9. **Forgetting `required` on important fields** - Users can submit incomplete forms
-10. **Not providing labels for inputs** - Bad for accessibility
-11. **Using placeholder as a replacement for labels** - Screen readers may not announce it
-12. **Forgetting `type="button"` on non-submit buttons** - Will accidentally submit form
-13. **Mismatched number of cells in table rows** - Creates broken tables
-14. **Not validating HTML** - Errors may not be visible but break functionality
-15. **Excessive div nesting** - Creates code bloat and maintenance issues
-
----
-
-## Practical Tags for Obsidian
+# Tags
 
 #HTML #Tables #Forms #WebForms #DataTables #UserInput #HTMLTables #FormValidation #Accessibility #WebDevelopment #Frontend #HTMLStructure #SemanticHTML #FormControls #InputTypes #RichMedia #iframes #HTMLBasics #WebDesign #UserInteraction #FormDesign #WebAccessibility #HTMLElements #InteractiveForms #WebContent
