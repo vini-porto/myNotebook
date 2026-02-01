@@ -1,17 +1,4 @@
-## The Ugly Truth
-
-**Reality check**: Up until now, our websites have looked like documents from 1995.
-
-**Characteristics**:
-
-- Black text
-- White background
-- Times New Roman font
-- **Boring**
-
-**Today**: We fix this!
-
-## What is CSS?
+# What is CSS?
 
 **[[CSS]]** (Cascading Style Sheets): The presentation layer of the web.
 
@@ -26,13 +13,12 @@
 
 **[[Separation of Concerns]]**: Keep structure and presentation separate.
 
-**HTML**: Nouns (Paragraph, Image, Table)
+- **HTML**: Nouns (Paragraph, Image, Table)
 
-**CSS**: Adjectives (Red, Big, Centered, Hidden)
+- **CSS**: Adjectives (Red, Big, Centered, Hidden)
 
-**Rule #1**: We try to keep them in **separate files**!
-
-**Why**: Easier to maintain, update, and organize code.
+>[!NOTE] Rule 
+>We try to keep them in separate files
 
 ## 10 Reasons We Need CSS
 
