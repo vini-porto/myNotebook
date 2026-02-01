@@ -9,7 +9,7 @@
 
 **Purpose**: Transform raw HTML structure into visually appealing designs.
 
-## The Separation of Powers
+# The Separation of Powers
 
 **[[Separation of Concerns]]**: Keep structure and presentation separate.
 
@@ -20,49 +20,7 @@
 >[!NOTE] Rule 
 >We try to keep them in separate files
 
-## 10 Reasons We Need CSS
-
-### 1. Stop the Ugly
-
-No more black text on white backgrounds.
-
-### 2. The "Lazy" Factor
-
-Change one file, update 100 pages **instantly**.
-
-### 3. Mobile Magic
-
-Make your site look good on phones (**[[Responsive Design]]**).
-
-### 4. Layout Control
-
-Move images and text wherever you want them.
-
-### 5. Cool Fonts
-
-Say goodbye to Times New Roman.
-
-### 6. Animations
-
-Make things bounce, spin, and fade in.
-
-### 7. Hover Effects
-
-Make buttons light up when you touch them.
-
-### 8. Speed
-
-Less HTML code means your site loads faster.
-
-### 9. Accessibility
-
-Fix **[[Contrast]]** so everyone can read your content.
-
-### 10. You Become the Artist
-
-HTML is just the skeleton; CSS is the style!
-
-## The Anatomy of a CSS Rule
+# The Anatomy of a CSS Rule
 
 **[[CSS Rule]]**: The basic building block of CSS.
 
@@ -100,9 +58,9 @@ selector {
 }
 ```
 
-## Where Does CSS Go?
+# Where Does CSS Go?
 
-### Option 1: Inline (The 'Lazy' Way)
+### Inline
 
 **[[Inline Styles]]**: CSS written directly in the HTML tag.
 
