@@ -2,12 +2,12 @@
 
 **[[CSS]]** (Cascading Style Sheets): The presentation layer of the web.
 
-**The analogy**:
-
 - **HTML** = The Skeleton (Structure)
+
 - **CSS** = The Skin, Clothing, and Makeup (Presentation)
 
-**Purpose**: Transform raw HTML structure into visually appealing designs.
+>[!NOTE] Purpose 
+>Transform raw HTML structure into visually appealing designs.
 
 # The Separation of Powers
 
@@ -364,51 +364,7 @@ font-family: 'Arial', sans-serif;
 
 **Outside the box**: Transparent, pushes other elements away
 
-## Visualizing Padding
-
-**CSS**:
-
-```css
-.box {
-  background: red;
-  padding: 20px;
-}
-```
-
-**HTML**:
-
-```html
-<div class="box">
-  I am content inside the box! Notice how the padding keeps me away from the edges.
-</div>
-```
-
-**Result**: The red color grows because padding is INSIDE the box.
-
-**Effect**: Content is pushed away from edges; red background expands.
-
-## Visualizing Margin
-
-**CSS**:
-
-```css
-.box {
-  background: red;
-  margin: 20px;
-}
-```
-
-**HTML**:
-
-```html
-<div class="box">Look – I have a margin</div>
-```
-
-**Result**: The red color stays small. The box just moves away from neighbors.
-
-**Effect**: White space appears around the box; background doesn't change size.
-
-## Borders
+# Borders
 
 **[[border Property]]**: Adds an edge to an element.
 
@@ -426,17 +382,9 @@ border: 5px solid black;
 - **Style**: `solid`, `dashed`, `dotted`, `double`
 - **Color**: Any valid color value
 
-**Example**:
+# Centering Things
 
-```css
-.solid-box {
-  border: 5px solid black;
-}
-```
-
-## Centering Things
-
-### Centering Text
+## Centering Text
 
 **To center text**: `text-align: center;`
 
@@ -449,7 +397,7 @@ border: 5px solid black;
 }
 ```
 
-### Centering a Block
+## Centering a Block
 
 **To center a Block** (like an image or div):
 
@@ -462,11 +410,9 @@ margin: 0 auto;
 - `0` = top/bottom margin
 - `auto` = automatic left/right margin (centers the element)
 
-**Requirement**: Element must have a specified width.
+>**Requirement**: Element must have a specified width.
 
-## Styling Images
-
-**Make them responsive!**
+# Styling Images
 
 **[[Responsive Images]]**: Images that scale with their container.
 
@@ -486,7 +432,7 @@ margin: 0 auto;
 <img class="responsive-img" src="horse.jpg" alt="Horse Riding">
 ```
 
-**Result**: Images won't overflow on mobile phones.
+>**Result**: Images won't overflow on mobile phones.
 
 **Explanation**:
 
@@ -494,56 +440,15 @@ margin: 0 auto;
 - `height: auto`: Maintains aspect ratio
 - `display: block`: Prevents extra space below image
 
-## The Developer Tools
+# The Developer Tools
 
 **[[Developer Tools]]**: Built-in browser tool for inspecting and testing CSS.
 
-**How to access**: Right Click → Inspect
+**How to access**: Right Click > Inspect
 
 **Key feature**: Look at the **Styles** pane
 
-**Live editing**: You can edit CSS live to test ideas!
-
-**Your best friend**: This is the most powerful tool for learning and debugging CSS.
-
-**VS Code alternative**: Live Preview in VS Code provides similar testing environment.
-
-## Common Mistakes
-
-1. **Forgetting the semicolon** (`;`)
-2. **Forgetting the curly braces** (`{}`)
-3. **Typos** (`colr` instead of `color`)
-4. **Editing the CSS file but forgetting to `<link>` it** in HTML
-5. **Using wrong selector syntax** (forgetting `.` for classes or `#` for IDs)
-
-## Lab #4 Preview
-
-**Project**: The 'Wanted' Poster
-
-**Goal**: Create a Wanted Poster for a Minion.
-
-**Required elements**:
-
-- Custom Fonts
-- Borders (Dashed?)
-- Background Colors
-- Text Alignment
-
-**Purpose**: Practice basic CSS styling techniques.
-
-## Final Thought
-
-**Reality**: CSS is **huge**. We are just scratching the surface.
-
-**Expectation**: Don't panic if it doesn't look perfect yet.
-
-**Goal**: Just make it colorful.
-
-**Approach**: Experiment, test, and iterate.
-
----
-
-## Review Questions
+# Review Questions
 
 1. What is CSS and what does it stand for?
     
@@ -636,111 +541,9 @@ margin: 0 auto;
     
 
 ---
+# CSS Quick Reference
 
-## Practical Exercises
-
-### Exercise 1: Basic Selectors
-
-Create CSS rules to: a) Make all paragraphs have blue text b) Make all elements with class "highlight" have yellow background c) Make the element with id "logo" be 200px wide
-
-### Exercise 2: The Box Model
-
-Create a class called "card" that has:
-
-- Light blue background (#e3f2fd)
-- 20px padding on all sides
-- 1px solid border in gray
-- 10px margin on all sides
-
-### Exercise 3: Typography
-
-Style a page with:
-
-- Headings in Arial, bold, 32px
-- Paragraphs in Georgia, 16px
-- A class "special" that centers text and makes it red
-
-### Exercise 4: Color Experimentation
-
-Create three boxes using different color methods:
-
-- One with named colors
-- One with hex codes
-- One with RGBA (include some transparency)
-
-### Exercise 5: Specificity Challenge
-
-Predict what color each element will be:
-
-```css
-p { color: green; }
-.intro { color: blue; }
-#main { color: red; }
-```
-
-```html
-<p>Normal paragraph</p>
-<p class="intro">Intro paragraph</p>
-<p id="main">Main paragraph</p>
-<p class="intro" id="main">Both paragraph</p>
-```
-
-### Exercise 6: Complete Page Styling
-
-Create a simple webpage with:
-
-- External stylesheet
-- Custom background color
-- Centered heading with custom font
-- Paragraphs with readable text color
-- A responsive image
-- At least 3 different classes applied
-
-### Exercise 7: Border Styles
-
-Create four boxes, each with different border styles:
-
-- Solid
-- Dashed
-- Dotted
-- Double
-
-All borders should be 3px and colored differently.
-
-### Exercise 8: Responsive Design
-
-Create a class for images that:
-
-- Never exceeds 100% of container width
-- Maintains aspect ratio
-- Centers on the page
-- Has 10px margin on all sides
-
----
-
-## Common Mistakes to Avoid
-
-1. **Forgetting semicolons** - Every CSS declaration must end with `;`
-2. **Missing curly braces** - Rules must be wrapped in `{ }`
-3. **Typos in property names** - `colr` vs `color`, `backgrond` vs `background`
-4. **Not linking the stylesheet** - Forgetting the `<link>` tag in HTML
-5. **Wrong path in href** - `href="style.css"` when file is in `css/style.css`
-6. **Using same ID multiple times** - IDs must be unique on a page
-7. **Forgetting the dot for classes** - `.className` not `className`
-8. **Forgetting the hash for IDs** - `#idName` not `idName`
-9. **Inline styles everywhere** - Hard to maintain; use external stylesheet
-10. **Not using browser DevTools** - Missing the best debugging tool
-11. **Confusing padding and margin** - Padding inside, margin outside
-12. **Not specifying units** - `padding: 20` should be `padding: 20px`
-13. **Overusing IDs for styling** - Classes are more flexible
-14. **Not testing on different browsers** - What works in Chrome may look different in Safari
-15. **Making images too large** - Use `max-width: 100%` for responsiveness
-
----
-
-## CSS Quick Reference
-
-### Selectors
+## Selectors
 
 ```css
 p { }              /* Element selector */
@@ -748,7 +551,7 @@ p { }              /* Element selector */
 #idName { }        /* ID selector */
 ```
 
-### Colors
+## Colors
 
 ```css
 color: red;                    /* Named color */
@@ -757,7 +560,7 @@ color: rgb(255, 0, 0);        /* RGB */
 color: rgba(255, 0, 0, 0.5);  /* RGBA with transparency */
 ```
 
-### Text
+## Text
 
 ```css
 font-family: Arial, sans-serif;
@@ -765,7 +568,7 @@ font-size: 16px;
 text-align: center;
 ```
 
-### Box Model
+## Box Model
 
 ```css
 padding: 20px;              /* All sides */
@@ -774,7 +577,7 @@ margin: 0 auto;             /* Centers block element */
 border: 1px solid black;    /* Width | Style | Color */
 ```
 
-### Common Properties
+## Common Properties
 
 ```css
 background-color: #f0f0f0;
@@ -785,6 +588,6 @@ display: block;
 
 ---
 
-## Practical Tags for Obsidian
+# Tags
 
 #CSS #WebDesign #Styling #Frontend #CascadingStyleSheets #WebDevelopment #BoxModel #CSSSelectors #Typography #ColorTheory #ResponsiveDesign #WebStyling #HTMLCSS #CSSBasics #VisualDesign #UserInterface #WebLayout #CSSProperties #Specificity #DeveloperTools
