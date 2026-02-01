@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "English/Introduction to the Pillars of English Linguistics.md",
+                "file": "English/Pillars/Linguistics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Introduction to the Pillars of English Linguistics"
+              "title": "Linguistics"
             }
           }
         ],
@@ -253,10 +253,12 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "080ab345b328b093",
+  "active": "315c83aaff31e835",
   "lastOpenFiles": [
+    "English/General Notes",
+    "English/Pillars",
     "Availability Zones.md",
-    "English/Introduction to the Pillars of English Linguistics.md",
+    "English/Pillars/Linguistics.md",
     "English",
     "Region.md",
     "Cloud Computing.md",
@@ -281,7 +283,6 @@
     "RDBMS.md",
     "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Raw AI - Agentic AI & TuringBots.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/4 - AI SQL Joins.md",
-    "Sault College/W26/Winter 2026/Databases I - CSD123/3 - AI The Relational Model.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/Untitled",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121",
@@ -293,7 +294,6 @@
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126",
     "Sault College/W26/Winter 2026/Databases I - CSD123",
     "Sault College/W26/Winter 2026",
-    "Sault College/W26/Spring 2025",
     "image 1 2.png",
     "image 2.png",
     "image 1 6.png",
