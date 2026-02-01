@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cloud Computing.md",
+                "file": "Sault College/W26/Winter 2026/Introduction to Web Development/1 - Architecture, Tools, & Setup.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cloud Computing"
+              "title": "1 - Architecture, Tools, & Setup"
             }
           }
         ],
@@ -241,6 +241,9 @@
   },
   "active": "daed6fd588eabafb",
   "lastOpenFiles": [
+    "Sault College/W26/Winter 2026/Introduction to Web Development/1 - Architecture, Tools, & Setup.md",
+    "Sault College/W26/Winter 2026/Introduction to Web Development/3 - AI Advanced HTML & Data.md",
+    "Cloud Computing.md",
     "Untitled.canvas",
     "English/Pillars/Word Classes.md",
     "English/Pillars/Linguistics.md",
@@ -249,7 +252,6 @@
     "Availability Zones.md",
     "English",
     "Region.md",
-    "Cloud Computing.md",
     "Outbound Data Transfer.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - AWS Pricing, Total Cost of Ownership, and Support.md",
     "Outbound Data Trnsfer.md",
@@ -269,7 +271,6 @@
     "SQL.md",
     "AWS SDKs.md",
     "RDBMS.md",
-    "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Raw AI - Agentic AI & TuringBots.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/Untitled",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121",

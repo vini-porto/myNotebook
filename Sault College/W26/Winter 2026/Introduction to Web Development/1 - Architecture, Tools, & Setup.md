@@ -1,24 +1,26 @@
-## The Internet vs. The Web
+# The Internet vs. The Web
 
-**The Internet**: The physical hardware infrastructure—cables, routers, servers, and satellites. It's the global network that connects computers.
+>[!NOTE] The Internet 
+>The physical hardware infrastructure: cables, routers, servers, and satellites. It's the global network that connects computers.
 
-**The Web (World Wide Web/WWW)**: The software layer—documents and pages connected by hyperlinks that run on top of the Internet.
+>[!NOTE] The Web (World Wide Web/WWW) 
+>The software layer—documents and pages connected by hyperlinks that run on top of the Internet.
 
-**Analogy**: The Internet is the train tracks; the Web is the trains running on them.
+The Internet is the train tracks; the Web is the trains running on them.
 
-## The Client-Server Model
+# The Client-Server Model
 
 **[[Client]]** (You): The browser that makes requests. It asks for information.
 
 **[[Server]]** (Amazon/Google/etc.): The computer that stores and serves information. It answers requests.
 
-**Analogy**: Think of it like a restaurant:
+>[!NOTE] Restaurant Analogy
+>
+>- You ([[Client]]) order food
+>- Kitchen ([[Server]]) prepares it
+>- Waiter ([[Network]]) brings it to you
 
-- You (Client) order food
-- Kitchen (Server) prepares it
-- Waiter (Network) brings it to you
-
-## The Request-Response Cycle
+# The Request-Response Cycle
 
 The [[Request-Response Cycle]] is the fundamental pattern of web communication:
 
@@ -27,20 +29,20 @@ The [[Request-Response Cycle]] is the fundamental pattern of web communication:
 3. **Response**: The server sends a status code (e.g., [[HTTP Status Code 200]] OK) plus the file
 4. **Rendering**: The browser draws/displays the content
 
-## HTTP vs. HTTPS
+# HTTP vs. HTTPS
 
 **[[HTTP]]** (Hypertext Transfer Protocol): The language of the web—the protocol that defines how messages are formatted and transmitted.
 
 **[[HTTPS]]** (HTTP Secure): The encrypted, secure version of HTTP.
 
-### Why HTTPS Matters
+## Why HTTPS Matters
 
 - Protects sensitive data like passwords and credit card information
 - Required for modern websites
 - Chrome and other browsers warn users if a site is not secure
 - Essential for user trust and [[SEO]] (Search Engine Optimization)
 
-## IP Addresses
+# IP Addresses
 
 Every device on the Internet needs a **[[Public IP Address]]** to communicate.
 
@@ -61,9 +63,9 @@ Every device on the Internet needs a **[[Public IP Address]]** to communicate.
 
 If DNS breaks, you can't find websites by name—you'd have to know their IP addresses.
 
-## Frontend vs. Backend
+# Frontend vs. Backend
 
-### Frontend (Client-Side)
+## Frontend (Client-Side)
 
 **[[Frontend Development]]** is what users see and interact with directly:
 
@@ -71,7 +73,7 @@ If DNS breaks, you can't find websites by name—you'd have to know their IP add
 - Runs in the browser
 - Technologies: [[HTML]], [[CSS]], [[JavaScript]]
 
-### Backend (Server-Side)
+## Backend (Server-Side)
 
 **[[Backend Development]]** is what happens behind the scenes:
 
@@ -79,7 +81,7 @@ If DNS breaks, you can't find websites by name—you'd have to know their IP add
 - Business logic and data processing
 - Technologies: [[Python]], [[PHP]], [[Java]], [[SQL]], [[Node.js]]
 
-## The 'Big Three' Languages of the Web
+# Languages of the Web
 
 **[[HTML]]** (HyperText Markup Language) defines the structure and content of web pages. It's the skeleton.
 
@@ -95,7 +97,8 @@ Browsers like [[Chrome]], [[Firefox]], and [[Safari]] are **[[Rendering Engines]
 - "Paint" pixels on the screen
 - Interpret HTML, CSS, and JavaScript
 
-**Important note**: Different browsers sometimes render things slightly differently. Web developers primarily test in Chrome/Edge (both [[Chromium]]-based browsers).
+>[!NOTE] Important note 
+>Different browsers sometimes render things slightly differently. Web developers primarily test in Chrome/Edge (both [[Chromium]]-based browsers).
 
 ## Developer Tools: View Source vs. Inspect
 
