@@ -1,4 +1,3 @@
-
 # Excel vs Databases
 ### Scale
 - Excel is not the most efficient tool to deal with data in large amounts. Database offer a significant advantage over spreadsheets.

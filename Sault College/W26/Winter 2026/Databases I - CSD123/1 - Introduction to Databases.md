@@ -112,9 +112,6 @@ Relational databases enforce three types of [[Data Integrity]]:
 # Relational Database Management Systems 
 
 ![[RDBMS#What is RDBMS]]
-
-
-![[rs]]
 ## Components of an RDBMS
 
 ### 1. The Relational Database
@@ -124,9 +121,9 @@ The actual collection of related data files, consisting of:
 - **[[Schema]]**: The structure or skeleton (table definitions, relationships, constraints)
 - **Data**: The actual information stored in the tables
 
-The database is usually stored as one or more files. **Important**: You should never manually edit these files—always access them through the [[DBMS]].
+The database is usually stored as one or more files. **Important**: You should never manually edit these files always access them through the [[DBMS]].
 
-### 2. Database Management System (DBMS)
+### 2. Database Management System 
 
 The [[DBMS]] is the system of programs that enables the management and execution of all aspects of an RDBMS. It's the "engine" that interprets and executes database commands.
 
@@ -145,13 +142,16 @@ Applications are programs used to interact with the database:
 - [[MS SQL Management Studio]]
 - [[pgAdmin]]
 
-**User Applications**: Used by end-users to perform application-specific tasks, storing and retrieving data from the database. May communicate with multiple databases.
+> [!NOTE] User Applications 
+> Used by end-users to perform application-specific tasks, storing and retrieving data from the database. May communicate with multiple databases.
 
 ### 4. Users
 
-Users interact with applications and have **permissions/roles** that govern how they may interact with the system. RDBMSs support **[[Multi-User Access]]**: many people can read and write to the database simultaneously without conflicts or data corruption.
+Users interact with applications and have **permissions/roles** that govern how they may interact with the system. 
 
-## RDBMS vs DBMS
+RDBMSs support **[[Multi-User Access]]**: many people can read and write to the database simultaneously without conflicts or data corruption.
+
+# RDBMS vs DBMS
 
 **DBMS** (Database Management System) is the software—the "engine."
 
@@ -161,15 +161,17 @@ Users interact with applications and have **permissions/roles** that govern how 
 
 **Important distinction**: A DBMS is NOT a database management application.
 
-**Example**: [[PostgreSQL]] is an RDBMS that consists of:
+> [!NOTE] Example 
+> 
+> [[PostgreSQL]] is an RDBMS that consists of:
+> 
+> - **PostgreSQL Server** (the DBMS)
+> - **[[pgAdmin]]** (a database management application for PostgreSQL)
+> - **[[DBeaver]]** (a database management application that can connect to various DBMSs, including PostgreSQL)
 
-- **PostgreSQL Server** (the DBMS)
-- **[[pgAdmin]]** (a database management application for PostgreSQL)
-- **[[DBeaver]]** (a database management application that can connect to various DBMSs, including PostgreSQL)
+# Common Database Application Architectures
 
-## Common Database Application Architectures
-
-### Desktop / Embedded Applications
+## Desktop / Embedded Applications
 
 In this architecture, the application and database run on the same machine:
 
@@ -177,7 +179,7 @@ In this architecture, the application and database run on the same machine:
 - Examples: [[Microsoft Access]], [[SQLite]], [[H2 Database]], [[MS SQL Express]]
 - Common for single-user applications or small-scale systems
 
-### Enterprise Applications
+## Enterprise Applications
 
 In this architecture, multiple applications connect to a centralized database server:
 
@@ -186,7 +188,7 @@ In this architecture, multiple applications connect to a centralized database se
 - Examples: [[MS SQL Server]], [[MySQL]], [[PostgreSQL]], [[Oracle Database]]
 - Common for business applications with many users
 
-### Web Applications
+## Web Applications
 
 **Architecture**:
 
@@ -194,9 +196,9 @@ In this architecture, multiple applications connect to a centralized database se
 - **Back end**: Server runs application logic
 - **Database**: Stores application data
 
-Multiple browsers connect to the same server, which manages all database interactions.
+>Multiple browsers connect to the same server, which manages all database interactions.
 
-### Mobile Applications
+## Mobile Applications
 
 **Architecture**:
 
@@ -204,94 +206,10 @@ Multiple browsers connect to the same server, which manages all database interac
 - **[[API Server]]**: Handles requests from mobile apps
 - **Database**: Stores application data
 
-Multiple mobile apps connect to an API server, which acts as an intermediary to the database.
+>Multiple mobile apps connect to an API server, which acts as an intermediary to the database.
 
-## Summary
 
-At a certain level of complexity, data in a system is best represented by multiple related tables rather than a single list. This approach:
-
-- **Eliminates modification problems** present in single-table designs
-- **Reduces redundancy** through normalization
-- **Enforces data integrity** through keys and constraints
-- **Enables powerful analysis** through SQL queries
-
-**Key points**:
-
-- [[Relational Databases]] are suitable for most applications
-- [[Non-Relational Databases]] are useful when processing extreme amounts of data or when data structure is not well-defined
-- An [[RDBMS]] consists of Databases, DBMS, Applications, and Users
-- Databases are a fundamental component of many modern software systems
-
----
-
-## Key Concepts to Review
-
-- [[SQL]]
-- [[Redundant Data]]
-- [[Normalization]]
-- [[Entity]]
-- [[Primary Key]]
-- [[Foreign Key]]
-- [[Null]]
-- [[ACID Principles]]
-- [[Atomicity]]
-- [[Consistency]]
-- [[Isolation]]
-- [[Durability]]
-- [[CRUD Applications]]
-- [[Data Integrity]]
-- [[Entity Integrity]]
-- [[Domain Integrity]]
-- [[Referential Integrity]]
-- [[Relational Database]]
-- [[Non-Relational Database]]
-- [[NoSQL Database]]
-- [[Horizontal Scalability]]
-- [[Vertical Scaling]]
-- [[Key-Value Stores]]
-- [[Wide Column Stores]]
-- [[Document Stores]]
-- [[Graph Databases]]
-- [[Search Databases]]
-- [[RDBMS]]
-- [[DBMS]]
-- [[Schema]]
-- [[Database Management Applications]]
-- [[Multi-User Access]]
-- [[API Server]]
-
-### Database Systems
-
-- [[PostgreSQL]]
-- [[MySQL]]
-- [[MariaDB]]
-- [[MS SQL Server]]
-- [[Oracle Database]]
-- [[Microsoft Access]]
-- [[H2 Database]]
-- [[MS SQL Express]]
-- [[SQLite]]
-- [[DynamoDB]]
-- [[Redis]]
-- [[Apache Cassandra]]
-- [[HBase]]
-- [[Couchbase]]
-- [[Firebase]]
-- [[MongoDB]]
-- [[Neo4j]]
-- [[Elasticsearch]]
-- [[Solr]]
-
-### Management Tools
-
-- [[DBeaver]]
-- [[MySQL Workbench]]
-- [[MS SQL Management Studio]]
-- [[pgAdmin]]
-
----
-
-## Review Questions
+# Review Questions
 
 1. What are the three modification problems (anomalies) that occur in poorly designed single-table databases? Explain each with an example.
     
@@ -325,5 +243,7 @@ At a certain level of complexity, data in a system is best represented by multip
 14. If you delete a row from the Walks table in a properly normalized database, why doesn't this affect the Clients or Dogs tables?
     
 15. What is the difference between horizontal and vertical scalability? Which type of database typically uses each approach?
+	
 # Tags
+
 #databases #data #computers #csd123 #saultcollege
