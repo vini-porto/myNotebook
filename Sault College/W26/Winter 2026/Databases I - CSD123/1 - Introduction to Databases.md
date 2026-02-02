@@ -1,14 +1,22 @@
+# Database
 
----
-A **database** is a structured collection of related data. Think of it as a highly efficient digital filing cabinet that lives on a computer. While you might use a spreadsheet like Excel for simple lists, databases are designed to handle massive amounts of data and allow you to find, update, or connect pieces of information almost instantly.
+A **[[database]]** is a structured collection of related data. Think of it as a highly efficient digital filing cabinet that lives on a computer. 
 
-## Why Databases Matter
+While you might use a spreadsheet like Excel for simple lists, databases are designed to handle massive amounts of data and allow you to find, update, or connect pieces of information almost instantly.
+
+# Why Databases Matter
+
 Databases are a core component of most modern information systems:
 
 - **Web applications and websites** - storing user accounts, content, and settings
+
 - **Mobile apps** - managing app data and user information
+
 - **Desktop applications** - organising local data efficiently
+
 - **Web browsers** - storing bookmarks, history, and cache
+
+---
 
 They provide a **robust way to store information** that is:
 
@@ -16,13 +24,9 @@ They provide a **robust way to store information** that is:
 - **Data integrity enforcing** - ensures data follows rules and remains accurate
 - **Powerful for analysis** - using query languages like [[SQL]]
 
-## The Problem with Spreadsheets
+# The Problem
 
-Imagine you run a dog-walking business and track everything in a spreadsheet with columns like: Client Name, Phone Number, Dog Name, and Walk Date.
-
-This approach leads to three critical **modification problems** (also called **anomalies**):
-
-### 1. The Updating Problem
+## 1. The Updating Problem
 
 **Problem**: What if Bob gets a new phone number?
 
@@ -31,9 +35,10 @@ When client information is repeated across multiple rows (because Bob has multip
 - **Error prone** - you might miss some instances
 - **Creates inconsistency** - if you miss some, you won't know which number is correct later
 
-**Root cause**: [[Redundant Data]] makes updates difficult and unreliable.
+>[!NOTE] Root cause
+>[[Redundant Data]] makes updates difficult and unreliable.
 
-### 2. The Inserting Problem
+## 2. The Inserting Problem
 
 **Problem**: How do you record information for clients whose dogs you haven't walked yet?
 
@@ -43,9 +48,10 @@ If you add just client information without walk data:
 - You must decide where to put these rows (beginning? end? mixed in?)
 - Adding a second dog for an existing client requires **repeating all their contact information**
 
-**Root cause**: Storing information about multiple entities (clients, dogs, walks) in a single table makes insertion awkward and redundant.
+>[!NOTE] Root cause 
+>Storing information about multiple entities (clients, dogs, walks) in a single table makes insertion awkward and redundant.
 
-### 3. The Deleting Problem
+## 3. The Deleting Problem
 
 **Problem**: What happens if you delete a row after realising the walk didn't actually happen?
 
@@ -54,13 +60,14 @@ When you delete the walk record:
 - You **accidentally delete the client information** too
 - Or you leave awkward empty cells if you only delete some fields
 
-**Root cause**: Deleting rows from a table that stores multiple types of information can remove more data than intended.
+>[!NOTE] Root cause 
+>Deleting rows from a table that stores multiple types of information can remove more data than intended.
 
-## The Solution: Multiple Tables
+# Multiple Tables
 
 The answer to modification problems is **breaking data into multiple related tables**. This process is called [[Normalization]].
 
-### Example: Three-Table Structure
+## Three-Table Structure
 
 Instead of one large table, create three separate tables:
 
@@ -82,62 +89,13 @@ Instead of one large table, create three separate tables:
 | ------ | ----- | ---------- |
 | 17235  | 22341 | 2026-06-01 |
 
-### How This Solves the Problems
+# Types of Databases
 
-**Updating**: Stuart's phone number? Change it in one place in the Clients table.
+## Relational Databases (SQL)
 
-**Inserting**: New client who hasn't had a walk yet? Just add them to the Clients table with no walks needed.
+![[Databases#Relational Databases]]
 
-**Deleting**: Remove a walk that didn't happen? Delete from the Walks table only—client and dog information remains safe.
-
-**Viewing all data together**: If you need to see everything in one big table, [[SQL]] (the language of relational databases) allows you to combine these tables in virtually any way you want.
-
-## Types of Databases
-
-### Relational Databases (SQL)
-
-A [[Relational Database]] stores and organizes data points that are related to one another. It structures data into **tables** (also called **relations**) consisting of rows and columns—like a collection of digital spreadsheets that can "talk" to each other.
-
-#### How Relational Databases Are Organized
-
-**Tables**: Each table represents an [[Entity]] (e.g., "Customers" or "Products")
-
-**Columns (Fields)**: Define the category of data, such as "Customer Name" or "Email"
-
-**Rows (Records)**: Each row is a unique entry in the table (e.g., a specific customer)
-
-#### The Power of Keys
-
-The "relational" part comes from how tables connect using **keys**:
-
-**[[Primary Key]]**: A unique identifier (like a barcode or Social Security number) that identifies a specific row in its own table. Every row must have one, and it cannot be empty ([[Null]]).
-
-**[[Foreign Key]]**: A Primary Key from one table that appears in another table to create a link. For example, an OrderID in an "Orders" table might include a CustomerID to show exactly who placed that order.
-
-#### ACID Properties
-
-Relational databases follow the [[ACID Principles]] to ensure data stays accurate even during power failures or system crashes:
-
-- **[[Atomicity]]**: Transactions are "all or nothing"—either everything completes or nothing does
-- **[[Consistency]]**: Data must follow predefined rules and constraints
-- **[[Isolation]]**: Multiple transactions don't interfere with each other
-- **[[Durability]]**: Once data is saved, it stays saved permanently
-
-#### When to Use Relational Databases
-
-**Well suited for:**
-
-- Most applications (if you're not sure, start with a relational database)
-- Applications requiring reliable and accurate information
-- Applications needing fast, flexible reporting capabilities
-- [[CRUD Applications]] (Create/Read/Update/Delete)
-
-**Not well suited for:**
-
-- Applications processing extreme amounts of data
-- Applications requiring loosely structured information
-
-#### Data Integrity in Relational Databases
+### Data Integrity in Relational Databases
 
 Relational databases enforce three types of [[Data Integrity]]:
 
@@ -147,78 +105,19 @@ Relational databases enforce three types of [[Data Integrity]]:
 
 **[[Referential Integrity]]**: You cannot have a Foreign Key that points to a Primary Key that doesn't exist. This prevents "orphaned" data.
 
-#### Popular Relational Databases
+## Non-Relational Databases (NoSQL)
 
-**Server-based:**
+![[Databases#Non-Relational Databases]]
 
-- [[MS SQL Server]]
-- [[MySQL]] (or [[MariaDB]])
-- [[Oracle Database]]
-- [[PostgreSQL]]
+# Relational Database Management Systems 
 
-**File-based:**
+![[RDBMS#What is RDBMS]]
 
-- [[Microsoft Access]]
-- [[H2 Database]]
-- [[MS SQL Express]]
-- [[SQLite]]
 
-### Non-Relational Databases (NoSQL)
+![[rs]]
+## Components of an RDBMS
 
-A [[Non-Relational Database]] (often called [[NoSQL Database]], meaning "Not Only SQL") stores data in formats other than traditional rows and columns. Think of it as more flexible—like a collection of folders or varied documents rather than rigid spreadsheets.
-
-#### Key Characteristics
-
-**Flexible Schema**: You don't need to define a strict structure before adding data. One record can have different fields than the next.
-
-**[[Horizontal Scalability]]**: Instead of making one server bigger ([[Vertical Scaling]]), you can easily add more servers to a cluster.
-
-**High Performance**: Optimized for specific data models (like simple lookups), they can be much faster than relational databases for certain tasks.
-
-#### When to Use Non-Relational Databases
-
-Consider a non-relational database when:
-
-- **Your data is unpredictable**: Data changes shape frequently or includes diverse types (images, text, numbers)
-- **You need massive scale**: Millions of users or terabytes of data that a single SQL server couldn't handle
-- **Speed is the priority**: Lightning-fast reads for simple data models (like a real-time leaderboard)
-
-#### Types of Non-Relational Databases
-
-**[[Key-Value Stores]]**: Simple lookup databases
-
-- [[DynamoDB]]
-- [[Redis]]
-
-**[[Wide Column Stores]]**: Optimized for large-scale analytical queries
-
-- [[Apache Cassandra]]
-- [[HBase]]
-
-**[[Document Stores]]**: Store data as JSON-like documents
-
-- [[Couchbase]]
-- [[Firebase]]
-- [[MongoDB]]
-
-**[[Graph Databases]]**: Optimized for relationship-heavy data
-
-- [[Neo4j]]
-
-**[[Search Databases]]**: Optimized for full-text search
-
-- [[Elasticsearch]]
-- [[Solr]]
-
-## Relational Database Management Systems (RDBMS)
-
-An [[RDBMS]] is the complete system that manages relational databases. It's the middleman between users and the raw data, ensuring that when you ask for information, you get it quickly and accurately.
-
-### Components of an RDBMS
-
-An RDBMS consists of four main components:
-
-#### 1. The Relational Database
+### 1. The Relational Database
 
 The actual collection of related data files, consisting of:
 
@@ -227,7 +126,7 @@ The actual collection of related data files, consisting of:
 
 The database is usually stored as one or more files. **Important**: You should never manually edit these files—always access them through the [[DBMS]].
 
-#### 2. Database Management System (DBMS)
+### 2. Database Management System (DBMS)
 
 The [[DBMS]] is the system of programs that enables the management and execution of all aspects of an RDBMS. It's the "engine" that interprets and executes database commands.
 
@@ -235,7 +134,7 @@ The [[DBMS]] is the system of programs that enables the management and execution
 
 **File-based DBMS**: Usually consists of a single shell or code library that interprets SQL (e.g., [[SQLite]], [[H2 Database]])
 
-#### 3. Applications
+### 3. Applications
 
 Applications are programs used to interact with the database:
 
@@ -248,11 +147,11 @@ Applications are programs used to interact with the database:
 
 **User Applications**: Used by end-users to perform application-specific tasks, storing and retrieving data from the database. May communicate with multiple databases.
 
-#### 4. Users
+### 4. Users
 
 Users interact with applications and have **permissions/roles** that govern how they may interact with the system. RDBMSs support **[[Multi-User Access]]**: many people can read and write to the database simultaneously without conflicts or data corruption.
 
-### RDBMS vs DBMS
+## RDBMS vs DBMS
 
 **DBMS** (Database Management System) is the software—the "engine."
 

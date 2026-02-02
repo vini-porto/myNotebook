@@ -30,6 +30,35 @@ Relational databases organize data into **tables** with predefined relationships
 
 - **Best For:** Financial systems, inventory management, and applications where data consistency is the top priority.
 
+### The Power of Keys
+
+The "relational" part comes from how tables connect using **keys**:
+
+**[[Primary Key]]**: A unique identifier (like a barcode or Social Security number) that identifies a specific row in its own table. Every row must have one, and it cannot be empty ([[Null]]).
+
+**[[Foreign Key]]**: A Primary Key from one table that appears in another table to create a link. For example, an OrderID in an "Orders" table might include a CustomerID to show exactly who placed that order.
+
+### ACID Properties
+
+Relational databases follow the [[ACID Principles]] to ensure data stays accurate even during power failures or system crashes:
+
+- **[[Atomicity]]**: Transactions are "all or nothing"—either everything completes or nothing does
+- **[[Consistency]]**: Data must follow predefined rules and constraints
+- **[[Isolation]]**: Multiple transactions don't interfere with each other
+- **[[Durability]]**: Once data is saved, it stays saved permanently
+
+### When to Use Relational Databases
+
+- Most applications (if you're not sure, start with a relational database)
+- Applications requiring reliable and accurate information
+- Applications needing fast, flexible reporting capabilities
+- [[CRUD Applications]] (Create/Read/Update/Delete)
+
+> [!NOTE] Not well suited for
+> 
+> - Applications processing extreme amounts of data
+> - Applications requiring loosely structured information
+
 ## Non-Relational Databases 
 
 NoSQL databases are "non-tabular" and store data differently than relational tables. 
@@ -46,6 +75,46 @@ NoSQL databases are "non-tabular" and store data differently than relational tab
 
 - **Best For:** Big Data, real-time web apps, content management, and social media feeds where data structures change frequently.
 
+### Key Characteristics
+
+**Flexible Schema**: You don't need to define a strict structure before adding data. One record can have different fields than the next.
+
+**[[Horizontal Scalability]]**: Instead of making one server bigger ([[Vertical Scaling]]), you can easily add more servers to a cluster.
+
+**High Performance**: Optimized for specific data models (like simple lookups), they can be much faster than relational databases for certain tasks.
+
+### When to Use Non-Relational Databases
+
+- **Your data is unpredictable**: Data changes shape frequently or includes diverse types (images, text, numbers)
+- **You need massive scale**: Millions of users or terabytes of data that a single SQL server couldn't handle
+- **Speed is the priority**: Lightning-fast reads for simple data models (like a real-time leaderboard)
+
+### Types of Non-Relational Databases
+
+**[[Key-Value Stores]]**: Simple lookup databases
+
+- [[DynamoDB]]
+- [[Redis]]
+
+**[[Wide Column Stores]]**: Optimized for large-scale analytical queries
+
+- [[Apache Cassandra]]
+- [[HBase]]
+
+**[[Document Stores]]**: Store data as JSON-like documents
+
+- [[Couchbase]]
+- [[Firebase]]
+- [[MongoDB]]
+
+**[[Graph Databases]]**: Optimized for relationship-heavy data
+
+- [[Neo4j]]
+
+**[[Search Databases]]**: Optimized for full-text search
+
+- [[Elasticsearch]]
+- [[Solr]]
 # How Databases Work
 
 ## [[Indexing]]

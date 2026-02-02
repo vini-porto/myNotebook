@@ -50,17 +50,31 @@
             }
           },
           {
-            "id": "91be9644e0b243fc",
+            "id": "3119b43d2cd2ff76",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
+                "file": "Sault College/W26/Winter 2026/Databases I - CSD123/1 - Introduction to Databases.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1 - Cloud Concepts Overview"
+              "title": "1 - Introduction to Databases"
+            }
+          },
+          {
+            "id": "2ccaf720fd300922",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Databases.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Databases"
             }
           },
           {
@@ -110,7 +124,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "css",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -239,8 +253,15 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "91be9644e0b243fc",
+  "active": "3119b43d2cd2ff76",
   "lastOpenFiles": [
+    "Databases.md",
+    "RDBMS.md",
+    "Sault College/W26/Winter 2026/Databases I - CSD123/1 - Introduction to Databases.md",
+    "Relational Database.md",
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - AWS Pricing, Total Cost of Ownership, and Support.md",
+    "Sault College/W26/Winter 2026/Databases I - CSD123/4 - AI SQL Joins.md",
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/3- AWS Global Infrastructure Overview.md",
     "AWS Cloud Adoption Framework.md",
     "Sault College/W26/Winter 2026/Introduction to Web Development/4 - The World of CSS.md",
@@ -249,13 +270,9 @@
     "Sault College/W26/Winter 2026/Introduction to Web Development/3 - Advanced HTML & Data.md",
     "Sault College/W26/Winter 2026/Introduction to Web Development/1 - Architecture, Tools, & Setup.md",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121/1 - Intoduction to Java.md",
-    "Databases.md",
     "Normalisation.md",
-    "RDBMS.md",
-    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
     "Servers.md",
     "IP Addresses and Networking.md",
-    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - AWS Pricing, Total Cost of Ownership, and Support.md",
     "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Agentic AI & TuringBots.md",
     "Sault College/W26/Winter 2026/Emerging Technology - CSD125/Untitled.md",
     "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Raw AI - Agentic AI & TuringBots.md",
@@ -269,9 +286,6 @@
     "English/Pillars",
     "Availability Zones.md",
     "English",
-    "Region.md",
-    "Outbound Data Transfer.md",
-    "Outbound Data Trnsfer.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/Untitled",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121",
