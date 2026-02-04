@@ -1,4 +1,4 @@
-# More Java Syntax
+# Java Syntax
 
 Programming languages consist of:
 
