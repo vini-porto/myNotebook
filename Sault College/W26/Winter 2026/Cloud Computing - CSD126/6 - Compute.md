@@ -227,6 +227,5 @@ To connect to a Windows instance, use the private key to obtain the administrato
 
 With Linux instances, at boot time, the public key content is placed on the instance. An entry is created in within~/.ssh/authorized_keys. To log in to your Linux instance (for example, by using SSH), you must provide the private key when you establish the connection.
 
-
 ## Amazon EC2 console view of a running EC2 instance
 
