@@ -67,12 +67,14 @@
             "id": "9b132a202f15bcf8",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.11.7"
+                "file": "Sault College/W26/Winter 2026/Databases I - CSD123/3 - AI The Relational Model.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.11.7"
+              "icon": "lucide-file",
+              "title": "3 - AI The Relational Model"
             }
           },
           {
@@ -287,6 +289,8 @@
   },
   "active": "9b132a202f15bcf8",
   "lastOpenFiles": [
+    "Sault College/W26/Winter 2026/Databases I - CSD123/2- AI raw generated text.md",
+    "Sault College/W26/Winter 2026/Databases I - CSD123/2 - Talking to Your Data - SQL Basics.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/6 - Compute.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/5 - Networking and Content Delivery.md",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121/3 - Designing Types.md",
@@ -298,7 +302,6 @@
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121/1 - Intoduction to Java.md",
     "Sault College/W26/Winter 2026/Introduction to Web Development/4 - The World of CSS.md",
     "Sault College/W26/Winter 2026/Introduction to Web Development/1 - Architecture, Tools, & Setup.md",
-    "Sault College/W26/Winter 2026/Databases I - CSD123/2 - Talking to Your Data - SQL Basics.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/4 - AI SQL Joins.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/3 - AI The Relational Model.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/1 - Introduction to Databases.md",
@@ -315,7 +318,6 @@
     "Normalisation.md",
     "Servers.md",
     "IP Addresses and Networking.md",
-    "Sault College/W26/Winter 2026/Emerging Technology - CSD125/1 - Agentic AI & TuringBots.md",
     "Untitled.canvas",
     "English/General Notes",
     "English/Pillars",
