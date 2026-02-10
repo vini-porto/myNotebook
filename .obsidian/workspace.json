@@ -64,6 +64,18 @@
             }
           },
           {
+            "id": "9b132a202f15bcf8",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.7"
+            }
+          },
+          {
             "id": "2ccaf720fd300922",
             "type": "leaf",
             "state": {
@@ -92,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       },
       {
         "id": "f408112036511975",
@@ -273,7 +285,7 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "3119b43d2cd2ff76",
+  "active": "9b132a202f15bcf8",
   "lastOpenFiles": [
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/6 - Compute.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/5 - Networking and Content Delivery.md",
