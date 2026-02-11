@@ -495,3 +495,135 @@ Amazon EKS automatically manages the availability and scalability of the cluster
 
 You may be wondering why Amazon offers both Amazon ECS and Amazon EKS, since they are both capable of orchestrating Docker containers. The reason that both services exist is to provide customers with flexible options. You can decide which option best matches your needs.
 
+## Amazon Elastic Container Registry (Amazon ECR)
+
+Amazon Elastic Container Registry (Amazon ECR)is a fully managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images. It is integrated with Amazon ECS, so you can store, run, and manage container images for applications that run on Amazon ECS. Specify the Amazon ECR repository in your task definition, and Amazon ECS will retrieve the appropriate images for your applications.
+
+Amazon ECR supports Docker Registry HTTP API version 2, which enables you to interact with Amazon ECR by using Docker CLI commands or your preferred Docker tools. Thus, you can maintain your existing development workflow and access Amazon ECR from any Docker environment—whether it is in the cloud, on premises, or on your local machine.
+
+You can transfer your container images to and from Amazon ECS via HTTPS. Your images are also automatically encrypted at rest using Amazon S3 server-side encryption.
+
+# Section 5: Introduction to AWS Lambda
+
+## AWS Lambda: Run code without servers
+
+As you saw in the earlier sections of this module, AWS offers many compute options. For example, Amazon EC2 provides virtual machines.As another example, Amazon ECS and Amazon EKS are container-based compute services.
+
+However, there is another approach to compute that does not require you to provision or manage servers. This third approach is often referred to as serverless computing. 
+
+AWS Lambda is an event-driven, serverless compute service. Lambda enables you to run code without provisioning or managing servers. 
+
+You create a Lambda function, which is the AWS resource that contains the code that you upload. You then set the Lambda function to be triggered, either on a scheduled basis or in response to an event. Your code only runs when it is triggered.
+
+You pay only for the compute time you consume—you are not charged when your code is not running.
+
+
+## Benefits of Lambda
+
+With Lambda, there are no new languages, tools, or frameworks to learn. Lambda supports multiple programming languages, including Java, Go, PowerShell, Node.js, C#, Python, and Ruby. Your code can use any library, either native or third-party.
+
+Lambda completely automates the administration. It manages all the infrastructure to run your code on highly available, fault-tolerant infrastructure, which enables you to focus on building differentiated backend services. Lambda seamlessly deploys your code; does all the administration, maintenance, and security patches; and provides built-in logging and monitoring through Amazon CloudWatch.
+
+Lambda provides built-in fault tolerance. It maintains compute capacity across multiple Availability Zones in each Region to help protect your code against individual machine failures or data center failures. There are no maintenance windows or scheduled downtimes.
+
+You can orchestrate multiple Lambda functions for complex or long-running tasks by building workflows with AWS Step Functions. Use Step Functions to define workflows. These workflows trigger a collection of Lambda functions by using sequential, parallel, branching, and error-handling steps. With Step Functions and Lambda, you can build stateful, long-running processes for applications and backends.
+
+With Lambda, you pay only for the requests that are served and the compute time that is required to run your code. Billing is metered in increments of 100 milliseconds, which make it cost-effective and easy to scale automatically from a few requests per day to thousands of requests per second.
+
+## AWS Lambda event sources
+
+An event source is an AWS service or a developer-created application that produces events that trigger an AWS Lambda function to run.
+
+Some services publish events to Lambda by invoking the Lambda function directly. These services that invoke Lambda functions asynchronously include, but are not limited to, Amazon S3, Amazon Simple Notification Service (Amazon SNS), and Amazon CloudWatch Events.
+
+Lambda can also poll resources in other services that do not publish events to Lambda. For example, Lambda can pull records from an Amazon Simple Queue Service (Amazon SQS) queue and run a Lambda function for each fetched message. Lambda can similarly read events from Amazon DynamoDB.
+
+Some services, such as Elastic Load Balancing (Application Load Balancer) and Amazon API Gateway can invoke your Lambda function directly.
+
+You can invoke Lambda functions directly with the Lambda console, the Lambda API, the AWS software development kit (SDK), the AWS CLI, and AWS toolkits. The direct invocation approach can be useful, such as when you are developing a mobile app and want the app to call Lambda functions. 
+
+AWS Lambda automatically monitors Lambda functions by using Amazon CloudWatch. To help you troubleshoot failures in a function, Lambda logs all requests that are handled by your function. It also automatically stores logs that are generated by your code through Amazon CloudWatch Logs.
+
+##  AWS Lambda function configuration
+
+Remember that a Lambda function is the custom code that you write to process events, and that Lambda runs the Lambda function on your behalf.
+
+When you use the AWS Management Console to create a Lambda function, you first give the function a name. Then, you specify:
+- The runtime environment the function will use (for example, a version of Python or Node.js)
+- An execution role (to grant IAM permission to the function so that it can interact with other AWS services as necessary
+
+Next, after you click Create Function, you configure the function. Configurations include:
+- Add a trigger(specify one of the available event sources from the previous slide)
+- Add your function code (use the provided code editor or upload a file that contains your code)
+- Specify the memoryin MB to allocate to your function (128 MB to 10,240 MB)
+- Optionally specify environment variables, description, timeout, the specific virtual private cloud (VPC) to run the function in, tags you would like to use, and other settings.
+
+All of the above settings end up in a Lambda deployment package which is a ZIP archive that contains your function code and dependencies.When you use the Lambda console to author your function, the console manages the package for you. However, you need to create a deployment package if you use the Lambda API to manage functions
+
+## Schedule-based Lambda function example: Start and stop EC2 instances
+
+Consider an example use case for a schedule-based Lambda function. Say that you are in a situation where you want to reduce your Amazon EC2 usage. You decide that you want to stop instances at a predefined time (for example, at night when no one is accessing them) and then you want to start the instances back up in the morning (before the workday starts).
+
+In this situation, you could configure AWS Lambda and Amazon CloudWatch Events to help you accomplish these actions automatically.
+
+Here is what happens at each step in the example:
+1. A CloudWatch event is scheduled to run a Lambda function to stop your EC2 instances at (for example) 22:00 GMT.
+2. The Lambda function is triggered and runs with the IAM role that gives the function permission to stop the EC2 instances. 
+3. The EC2 instances enter the stopped state.
+4. Later, at (for example) 05:00 AM GMT, a CloudWatch event is scheduled to run a Lambda function to start the EC2 instances.
+5. The Lambda function is triggered and runs with the IAM role that gives it permission to start the EC2 instances.
+6. The EC2 instances enter the running state.
+
+## Event-based Lambda function example: Create thumbnail images
+
+Now, consider an example use case for an event-based Lambda function. Suppose that you want to create a thumbnail for each image (.jpg or .png object) that is uploaded to an S3 bucket.
+
+To build a solution, you can create a Lambda function that Amazon S3 invokes when objects are uploaded. Then, the Lambda function reads the image object from the source bucket and creates a thumbnail image in a target bucket. Here’s how it works:
+1. A user uploads an object to the source bucket in Amazon S3 (object-created event).
+2. Amazon S3 detects the object-created event.
+3. Amazon S3 publishes theobject-created event to Lambda by invoking the Lambda function and passing event data.
+4. Lambda runs the Lambda function by assuming the execution role that you specified when you created the Lambda function.
+5. Based the event data that the Lambda function receives, it knows the source bucket name and object key name. The Lambda function reads the object and creates a thumbnail by using graphics libraries, and saves the thumbnail to the target bucket.
+
+## AWS Lambda quotas
+
+AWS Lambda does have some quotas that you should know about when you create and deploy Lambda functions.
+
+AWS Lambda limits the amount of compute and storage resources that you can use to run and store functions. For example, as of this writing, the maximum memory allocation for a single Lambda function is 10,240 MB. It also has limits of 1,000 concurrent executions in a Region. Lambda functions can be configured to run up to 15 minutes per run. You can set the timeout to any value between 1 second and 15 minutes. If you are troubleshooting a Lambda deployment, keep these limits in mind.
+
+There are limits on the deployment package size of a function (250 MB). A layer is a ZIP archive that contains libraries, a custom runtime, or other dependencies. With layers, you can use libraries in your function without needing to include them in your deployment package. Using layers can help avoid reaching the size limit for deployment package. Layers are also a good way to share code and data between Lambda functions.
+
+For larger workloads that rely on sizable dependencies, such as machine learning or data intensive workloads, you can deploy your Lambda function to a container image up to 10 GB in size.
+
+Limits are either soft or hard. Soft limits on an account can potentially be relaxed by submitting a support ticket and providing justification for the request. Hard limits cannot be increased.
+
+# Section 6: Introduction to AWS Elastic Beanstalk 
+
+## AWS Elastic Beanstalk
+
+AWS Elastic Beanstalk is another AWS compute service option. It is a platform as a service (or PaaS) that facilitates the quick deployment, scaling, and management of your web applications and services.
+
+You remain in control. The entire platform is already built, and you only need to upload your code. Choose your instance type, your database, set and adjust automatic scaling, update your application, access the server log files, and enable HTTPS on the load balancer.
+
+You upload your code and Elastic Beanstalk automatically handles the deployment, from capacity provisioning and load balancing to automatic scaling and monitoring application health. At the same time, you retain full control over the AWS resources that power your application, and you can access the underlying resources at any time.
+
+There is no additional charge for AWS Elastic Beanstalk. You pay for the AWS resources (for example, EC2 instances or S3 buckets) you create to store and run your application. You only pay for what you use, as you use it. There are no minimum fees and no upfront commitments.
+
+## AWS Elastic Beanstalk deployments
+
+AWS Elastic Beanstalk enables you to deploy your code through the AWS Management Console, the AWS Command Line Interface (AWS CLI), Visual Studio, and Eclipse. It provides all the application services that you need for your application. The only thing you must create is your code. Elastic Beanstalk is designed to make deploying your application a quick and easy process.
+
+Elastic Beanstalk supports a broad range of platforms. Supported platforms include Docker, Go, Java, .NET, Node.js, PHP, Python, and Ruby.
+
+AWS Elastic Beanstalk deploys your code on Apache Tomcat for Java applications; Apache HTTP Server for PHP and Python applications; NGINX or Apache HTTP Server for Node.js applications; Passengeror Pumafor Ruby applications; and Microsoft Internet Information Services (IIS) for .NET applications, Java SE, Docker, and Go.
+
+## Benefits of Elastic Beanstalk
+
+Elastic Beanstalk is fast and simple to start using. Use the AWS Management Console, a Git repository, or an integrated development environment (IDE) such as Eclipse or Visual Studio to upload your application. Elastic Beanstalk automatically handles the deployment details of capacity provisioning, load balancing, automatic scaling, and monitoring application health.
+
+You can improve your developer productivity by focusing on writing code instead of managing and configuring servers, databases, load balancers, firewalls, and networks. AWS updates the underlying platform that runs your application with patches and updates.
+
+Elastic Beanstalk is difficult to outgrow. With Elastic Beanstalk, your application can handle peaks in workload or traffic while minimizing your costs. It automatically scales your application up or down based on your application's specific needs by using easily adjustable automatic scaling settings. You can use CPU utilization metrics to trigger automatic scaling actions.
+
+You have the freedom to select the AWS resources—such as Amazon EC2 instance type—that are optimal for your application. Elastic Beanstalk enables you to retain full control over the AWS resources that power your application. If you decide that you want to take over some (or all) of the elements of your infrastructure, you can do so seamlessly by using the management capabilities that are provided by Elastic Beanstalk.
+
