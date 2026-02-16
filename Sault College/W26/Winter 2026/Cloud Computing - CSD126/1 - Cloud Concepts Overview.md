@@ -1,6 +1,5 @@
 
 ![[Cloud Computing#What is Cloud Computing]]
-
 # Infrastructure as Software
 
 Cloud computing fundamentally changes how we think about IT infrastructure.
