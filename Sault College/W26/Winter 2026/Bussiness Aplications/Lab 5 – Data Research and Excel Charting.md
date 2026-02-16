@@ -47,48 +47,7 @@
 
 **Key insight:** Pie charts answer "what percentage of the total?" rather than "how many?"
 
-## Analytical Thinking
-
-### Comparative Analysis
-
-The lab asks you to make meaningful comparisons:
-
-- **Geographic comparison:** Which cities have more or fewer locations?
-- **Brand comparison:** How do Tim Hortons, Starbucks, and Country Style differ in market presence?
-- **Cost comparison:** Which franchise requires the highest investment? Which charges the most in ongoing fees?
-
-### Pattern Recognition
-
-The lab includes a critical thinking question about **why** North Bay might show higher per capita ratios. This pushes you to think beyond numbers:
-
-- Market factors (competition, demographics, consumer preferences)
-- Geographic factors (highway access, tourism, regional culture)
-- Economic factors (disposable income, employment patterns)
-
----
-
-## Chart Selection Strategy
-
-|Goal|Chart Type|Reason|
-|---|---|---|
-|Compare counts across cities|3D Column Chart|Shows magnitude differences clearly|
-|Show proportional distribution|Pie Chart|Emphasizes parts-of-whole relationships|
-|Compare multiple variables|Grouped Column Chart|Allows side-by-side comparison|
-|Highlight market saturation|Per Capita Pie Chart|Normalizes for population differences|
-
----
-
-## Key Takeaways
-
-- **[[Primary Research]]** involves collecting your own original data through direct investigation
-- **[[Per Capita Analysis]]** normalizes data to make fair comparisons across different population sizes
-- **[[Data Visualization]]** transforms raw numbers into insights through appropriate chart selection
-- **[[Franchise Business Models]]** involve multiple cost structures: upfront fees, royalties, and advertising contributions
-- Different chart types serve different analytical purposes—columns for comparison, pies for proportion
-
----
-
-## Formulas Used
+# Formulas Used
 
 **Per Capita Calculation:**
 
@@ -104,6 +63,6 @@ Tim Hortons Per Capita (North Bay) = Tim Hortons Count / 52,662
 
 This produces a decimal representing stores per person (e.g., 0.00019 = approximately 1 store per 5,263 people).
 
----
+# Tags
 
 #business-applications #excel #data-visualization #primary-research #franchises #data-analysis #spreadsheets
