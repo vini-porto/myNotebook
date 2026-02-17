@@ -518,7 +518,7 @@ When defining an IAM user, select which type of access the user is permitted:
 
 # IAM Policy Example
 
-**Format**: IAM policy documents are written in JSON.
+**Format**: IAM policy documents are written in [[JSON]].
 
 **Example policy grants**:
 
@@ -794,101 +794,6 @@ When defining an IAM user, select which type of access the user is permitted:
 
 **Purpose**: Helps monitor costs and identify unexpected spending.
 
----
-
-## Key Concepts to Review
-
-### Security Fundamentals
-
-- [[AWS Security]]
-- [[Confidentiality]]
-- [[Integrity]]
-- [[Availability]]
-- [[AWS Shared Responsibility Model]]
-- [[Security of the Cloud]]
-- [[Security in the Cloud]]
-
-### Infrastructure Security (AWS Responsibility)
-
-- [[Physical Security of Data Centers]]
-- [[Hardware Infrastructure]]
-- [[Software Infrastructure]]
-- [[Hypervisor]]
-- [[Network Infrastructure]]
-- [[AWS Regions]]
-- [[Availability Zones]]
-- [[Edge Locations]]
-
-### Customer Security Responsibilities
-
-- [[Security Group]]
-- [[Access Control]]
-
-### Service Models
-
-- [[IaaS Security Model]]
-- [[PaaS Security Model]]
-- [[Managed Services]]
-- [[SaaS Security Model]]
-- [[DDoS Protection]]
-- [[AWS Trusted Advisor]]
-- [[AWS Shield]]
-- [[Amazon Chime]]
-- [[Managed Database]]
-
-### IAM Components
-
-- [[AWS IAM]]
-- [[Authentication]]
-- [[Authorization]]
-- [[Granular Access Control]]
-- [[IAM User]]
-- [[IAM Group]]
-- [[IAM Policy]]
-- [[IAM Role]]
-
-### Access Methods
-
-- [[Programmatic Access]]
-- [[Access Key ID]]
-- [[Secret Access Key]]
-- [[AWS Management Console Access]]
-- [[Multi-Factor Authentication]]
-- [[Virtual MFA Applications]]
-- [[U2F Security Key]]
-- [[Hardware MFA Device]]
-
-### Policy and Permissions
-
-- [[Policy Document]]
-- [[JSON]]
-- [[Implicit Deny]]
-- [[Explicit Deny]]
-- [[Principle of Least Privilege]]
-- [[Identity-Based Policies]]
-- [[Managed Policies]]
-- [[Inline Policies]]
-- [[Resource-Based Policies]]
-- [[NotResource Element]]
-- [[S3 Bucket Policy]]
-- [[Amazon S3 ACL]]
-- [[IAM Permissions Evaluation]]
-- [[No Nesting]]
-
-### IAM Roles
-
-- [[Temporary Security Credentials]]
-- [[Permissions Policy]]
-- [[Trust Policy]]
-
-### Account Security
-
-- [[AWS Account Root User]]
-- [[AWS CloudTrail]]
-- [[Operational Auditing]]
-- [[AWS Cost and Usage Report]]
-
----
 
 ## Review Questions
 
@@ -1070,8 +975,6 @@ Understand this decision flow:
 9. **No password policy** - Weak passwords compromise security
 10. **Not testing policies** - Use policy simulator before deployment
 
----
-
-## Practical Tags for Obsidian
+# Tags
 
 #AWS #Security #IAM #SharedResponsibility #CloudSecurity #AccessControl #Authentication #Authorization #AWSBestPractices #SecurityPolicies #MFA #CloudTrail #RootUser #IAMRoles #IAMPolicies #SecurityGroups #AWSCompliance #IdentityManagement #LeastPrivilege #SecurityAuditing #CloudGovernance #AWSSecurity #InfrastructureSecurity #DataProtection #SecurityArchitecture
