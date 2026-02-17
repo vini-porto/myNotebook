@@ -49,7 +49,7 @@ For certain services like [[Amazon EC2]] and [[Amazon RDS]], you can invest in *
 
 - Pay everything upfront
 - Receive the largest discount
-- Best for cost minimization
+- Best for cost minimizations
 
 **[[Partial Upfront Reserved Instance]]** (PURI):
 
@@ -177,7 +177,8 @@ Obs: you pay only for the resources created
 
 **[[AWS OpsWorks]]**: Application management service for deploying and operating applications of all sizes.
 
-**Obs**: you pay for underlying resources
+> [!NOTE]
+> You pay for underlying resources
 
 # Total Cost of Ownership (TCO)
 

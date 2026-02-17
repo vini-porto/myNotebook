@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
+                "file": "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - AWS Pricing, Total Cost of Ownership, and Support.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1 - Cloud Concepts Overview"
+              "title": "2 - AWS Pricing, Total Cost of Ownership, and Support"
             }
           },
           {
@@ -138,7 +138,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "on-premises",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -159,8 +159,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -268,8 +267,11 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "56cc834018be2fc1",
+  "active": "9b132a202f15bcf8",
   "lastOpenFiles": [
+    "Compute.md",
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/2 - AWS Pricing, Total Cost of Ownership, and Support.md",
+    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications/Lab 7 – SharePoint Study Notes.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications/Lab 6 - VLOOKUP and Charting.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications/Lab 5 – Data Research and Excel Charting.md",
@@ -280,7 +282,6 @@
     "Sault College/W26/Winter 2026/Bussiness Aplications/Lab 2 - PowerPoint Study Notes.md",
     "Sault College/W26/Winter 2026/Bussiness Aplications/Lab 01 - Email Management and Collaboration Tools.md",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121/3 - Designing Types.md",
-    "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/6 - Compute.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/5 - Networking and Content Delivery.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/3 - AI The Relational Model.md",
@@ -296,8 +297,6 @@
     "Sault College/W26/Winter 2026/Introduction to Web Development/1 - Architecture, Tools, & Setup.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/4 - AI SQL Joins.md",
     "Sault College/W26/Winter 2026/Databases I - CSD123/1 - Introduction to Databases.md",
-    "Databases.md",
-    "RDBMS.md",
     "Untitled.base",
     "Untitled.canvas",
     "English/General Notes",
