@@ -11,7 +11,8 @@
 - Protect **[[Availability]]** of systems and data
 - Maintain customer trust and confidence
 
-**Dual approach**: AWS security includes both controls in the AWS environment and products/features customers can use to meet their security objectives.
+> [!NOTE] **Dual approach**:
+> AWS security includes both controls in the AWS environment and products/features customers can use to meet their security objectives.
 
 # AWS Shared Responsibility Model
 
@@ -25,7 +26,8 @@
 - Provide flexibility and customer control
 - Enable deployment of customer solutions on AWS
 
-**Key distinction**: Security "**of**" the cloud vs. security "**in**" the cloud.
+> [!NOTE] **Key distinction**: 
+> Security "**of**" the cloud vs. security "**in**" the cloud.
 
 **Principle**: The customer remains responsible for some aspects of overall security despite AWS managing much of the infrastructure.
 
