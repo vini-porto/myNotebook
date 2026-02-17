@@ -22,8 +22,6 @@ Message rules (also called **email filters** or **inbox rules**) are automated i
 > - Deleting spam or promotional emails
 > 
 
----
-
 # Calendar Management and Meeting Scheduling
 
 **What is [[Digital Calendar Management]]?**
@@ -41,7 +39,6 @@ Digital calendaring involves using software to organize time, schedule events, c
 - **Meeting** – Involves other people; sends invites
 - **Appointment** – Personal reminder; no attendees
 
----
 
 # Email Recall Functionality
 
