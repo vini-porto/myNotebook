@@ -24,7 +24,8 @@
 
 **[[Data Residency]]**: When you store data in a specific Region, it is **not replicated outside that Region** unless you explicitly configure it.
 
-**Your responsibility**: You must replicate data across Regions if your business needs require it.
+> [!NOTE] Your responsibility 
+>You must replicate data across Regions if your business needs require it.
 
 ## Region Availability
 
@@ -272,8 +273,6 @@ The AWS Global Infrastructure provides the platform for a broad set of services:
 - **Networking and Content Delivery**
 - **Security, Identity, and Compliance**
 - **Storage**
-
-**Note**: This course focuses on services most likely to be covered in the [[AWS Certified Cloud Practitioner]] exam.
 
 # Storage Service Category
 
