@@ -1,4 +1,3 @@
-
 # Aggregate Functions (The Math)
 
 ### The Core Concept: Squashing Rows
@@ -357,6 +356,6 @@ HAVING SUM(p.Cost) > 100;
 7. A classmate writes `SELECT ModelName, Status, COUNT(*) FROM Bots GROUP BY ModelName`. What is wrong with this query?
 8. In what order does SQL process the clauses `WHERE`, `HAVING`, `GROUP BY`, and `SELECT`?
 
----
+# Tags
 
 #SQL #Databases #CSD123 #AggregateFunction #GroupBy #Having #ScalarFunctions #QueryOptimization #Week5
