@@ -10,7 +10,7 @@ Programming languages are generally categorized by how they are executed. Java i
 - **Interpreted Languages**: Code is executed directly by an interpreter at run-time (e.g., [[Python]], [[JavaScript]]). 
 - **Compiled Languages**: A compiler converts code into a machine-ready executable file for a specific platform (e.g., [[C++]], [[Rust]]). 
 
-## Java Way/
+## Java Way
 1. [[javac]] converts your code into an intermediate format called [[Bytecode]]
 2. [[Bytecode]] is then executed by the [[Java Virtual Machine]] (JVM)
 
