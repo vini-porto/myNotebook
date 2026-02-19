@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sault College/W26/Winter 2026/Programming Concepts - CSD121/1 - Intoduction to Java.md",
+                "file": "Sault College/W26/Winter 2026/Programming Concepts - CSD121/2 - Namespaces in Java.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1 - Intoduction to Java"
+              "title": "2 - Namespaces in Java"
             }
           },
           {
@@ -283,8 +283,8 @@
   },
   "active": "47f551d28a958fe6",
   "lastOpenFiles": [
-    "Rust.md",
     "Sault College/W26/Winter 2026/Programming Concepts - CSD121/1 - Intoduction to Java.md",
+    "Rust.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/1 - Cloud Concepts Overview.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/6 - Compute.md",
     "Sault College/W26/Winter 2026/Cloud Computing - CSD126/5 - Networking and Content Delivery.md",
