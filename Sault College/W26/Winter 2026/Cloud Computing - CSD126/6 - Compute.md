@@ -1,5 +1,3 @@
-I'm ready to help you understand this AWS compute services lecture content. I'll explain it in a clear, structured way optimized for Obsidian with proper linking and organization.
-
 # AWS Compute Services Overview
 
 ## Introduction to AWS Compute Options
@@ -78,8 +76,6 @@ The optimal compute service depends on your specific use case. Consider:
 
 **Example**: You might start with [[Amazon EC2]] for familiarity, then migrate to containers with [[Amazon ECS]] for better resource utilization, and eventually move some functions to [[AWS Lambda]] for event-driven workloads.
 
----
-
 # Amazon EC2 Deep Dive
 
 ## Understanding EC2
@@ -110,8 +106,6 @@ EC2 instances can host virtually any server workload:
 - File servers and mail servers
 - Computing servers for data processing
 
----
-
 ## EC2 Instance Fundamentals
 
 ### Operating Systems
@@ -130,8 +124,6 @@ The operating system running on a virtual machine is called the **[[guest operat
 - Launch within minutes
 - Control traffic with [[security groups]]
 - Integrate with other AWS services
-
----
 
 ## Launching an EC2 Instance
 
@@ -303,8 +295,6 @@ Security groups act as **virtual firewalls** controlling network traffic.
 
 **Critical**: Store your private key securely. If lost, you cannot access the instance.
 
----
-
 ## Managing EC2 Instances
 
 ### Instance Lifecycle States
@@ -359,8 +349,6 @@ Understanding the **[[EC2 instance lifecycle]]** helps manage instances effectiv
 
 **Note**: RAM metrics require additional configuration (not provided by default).
 
----
-
 ## Launching Instances Programmatically
 
 ### Using the [[AWS CLI]]
@@ -384,8 +372,6 @@ aws ec2 run-instances \
 - Consistent, repeatable deployments
 
 **Alternative approaches**: Use [[AWS SDKs]] in various programming languages (Python, Java, Node.js, etc.) for deeper integration.
-
----
 
 # EC2 Cost Optimization
 
@@ -483,8 +469,6 @@ AWS offers multiple pricing models to optimize costs:
 
 **Difference from Dedicated Hosts**: Less visibility into physical infrastructure, but still isolated at hardware level.
 
----
-
 ## The Four Pillars of Cost Optimization
 
 ### Pillar 1: Right-Sizing
@@ -550,8 +534,6 @@ Combine multiple pricing models based on workload patterns:
     - [[Amazon S3]] for object storage (files, backups) - often cheaper
     - Implement lifecycle policies to move data to cheaper tiers
 
----
-
 ## Continuous Improvement
 
 Cost optimization is ongoing, not one-time:
@@ -564,8 +546,6 @@ Cost optimization is ongoing, not one-time:
 4. **Leverage [[AWS Trusted Advisor]]**: Automated recommendations for cost savings
 5. **Assign ownership**: Designate individuals or teams responsible for cost optimization
 6. **Architect for cost**: Make cost a design consideration from the start
-
----
 
 # Container Services
 
@@ -593,7 +573,6 @@ Each container packages:
 
 **What they DON'T include**: Full operating system (they share the host OS kernel)
 
----
 
 ## Containers vs Virtual Machines
 
@@ -619,7 +598,6 @@ Each container packages:
 
 **Key advantage**: Dramatically better resource utilization - one large EC2 instance running hundreds of containers vs hundreds of EC2 instances each running one application.
 
----
 
 ## Docker Overview
 
@@ -645,8 +623,6 @@ Each container packages:
 - **[[Docker image]]**: Template defining container contents
 - **[[Docker container]]**: Running instance of an image
 - **[[Docker engine]]**: Software managing container lifecycle
-
----
 
 ## Amazon ECS (Elastic Container Service)
 
@@ -682,8 +658,6 @@ While you could manually install Docker on EC2 instances, [[Amazon ECS]] simplif
 - Schedule containers using built-in or third-party schedulers
 - Support for Spot and Reserved Instances
 
----
-
 ## ECS Cluster Options
 
 When creating an ECS cluster, choose from three options:
@@ -707,8 +681,6 @@ When creating an ECS cluster, choose from three options:
 - Same as EC2 Linux but for Windows containers
 
 **Decision factor**: Fargate removes infrastructure management burden; EC2 launch type provides more control and potentially lower costs for large, consistent workloads.
-
----
 
 ## Kubernetes and Amazon EKS
 
@@ -761,8 +733,6 @@ Both orchestrate Docker containers - why two services?
 
 **Choose based on**: Team expertise, portability requirements, existing investments.
 
----
-
 ## Amazon ECR (Elastic Container Registry)
 
 **[[Amazon ECR]]** is a fully managed Docker registry.
@@ -782,8 +752,6 @@ Both orchestrate Docker containers - why two services?
 - Fine-grained access control using IAM
 
 **Workflow**: Build image locally → Push to ECR → Deploy to ECS/EKS from ECR
-
----
 
 # AWS Lambda
 
@@ -806,8 +774,6 @@ A **[[Lambda function]]** is your custom code packaged as an AWS resource.
 - Your code (Python, Java, Node.js, C#, Go, PowerShell, Ruby)
 - Any libraries or dependencies
 - Configuration (memory, timeout, permissions)
-
----
 
 ## Benefits of Lambda
 
@@ -849,8 +815,6 @@ Build complex workflows:
 - Create sequential, parallel, or branching logic
 - Build long-running processes
 
----
-
 ## Lambda Event Sources
 
 Lambda functions are triggered by **[[event sources]]**:
@@ -886,8 +850,6 @@ Invoke Lambda directly from:
 - Mobile apps
 - Web applications
 - IoT devices
-
----
 
 ## Configuring Lambda Functions
 
@@ -926,8 +888,6 @@ Invoke Lambda directly from:
 - Keep deployment packages small
 - Maximum 5 layers per function
 
----
-
 ## Lambda Use Cases
 
 ### Example 1: Scheduled Start/Stop EC2 Instances
@@ -963,8 +923,6 @@ Invoke Lambda directly from:
 - Lambda function with image processing code
 - IAM role with S3 read/write permissions
 
----
-
 ## Lambda Limitations
 
 Understanding **[[Lambda quotas]]** helps avoid deployment issues:
@@ -988,8 +946,6 @@ Understanding **[[Lambda quotas]]** helps avoid deployment issues:
 - Request limit increases for soft limits
 
 **Hard limits** cannot be increased. **Soft limits** can potentially be raised through support tickets with justification.
-
----
 
 # AWS Elastic Beanstalk
 
@@ -1019,8 +975,6 @@ Understanding **[[Lambda quotas]]** helps avoid deployment issues:
 
 **Key point**: Full control available when needed, but automation handles routine tasks.
 
----
-
 ## Deploying with Elastic Beanstalk
 
 ### Supported Platforms
@@ -1044,8 +998,6 @@ Understanding **[[Lambda quotas]]** helps avoid deployment issues:
 4. **Git repository**: Direct deployment from version control
 
 **Speed**: Simple deployment possible in as few as 6 clicks accepting defaults.
-
----
 
 ## Benefits of Elastic Beanstalk
 
@@ -1087,8 +1039,6 @@ Understanding **[[Lambda quotas]]** helps avoid deployment issues:
 
 **Balance**: Convenience of automation with option for detailed control.
 
----
-
 ## Pricing
 
 **Elastic Beanstalk itself is free** - no additional charge for the service.
@@ -1100,8 +1050,6 @@ Understanding **[[Lambda quotas]]** helps avoid deployment issues:
 - Any other AWS resources used (databases, load balancers, etc.)
 
 **Pay-as-you-go**: Only pay for what you use, no upfront commitments.
-
----
 
 # Practice Questions
 
@@ -1126,6 +1074,7 @@ Understanding **[[Lambda quotas]]** helps avoid deployment issues:
 10. **Elastic Beanstalk Use Case**: When would Elastic Beanstalk be the right choice over managing EC2 instances directly? When would you choose EC2 instead?
     
 
----
+
+# Tags
 
 #aws #cloud-computing #compute-services #ec2 #lambda #containers #serverless #cost-optimization #ecs #elastic-beanstalk
