@@ -455,50 +455,6 @@ SELECT Name FROM Villains;
 
 ---
 
-## Key Concepts to Review
-
-### Foundational Concepts
-
-- [[Redundancy]]
-- [[Anomalies]]
-- [[SQL]]
-- [[Relational Model]]
-- [[JOIN]]
-- [[Normalization]]
-- [[Foreign Key]]
-
-### JOIN Types
-
-- [[INNER JOIN]]
-- [[LEFT JOIN]]
-- [[RIGHT JOIN]]
-- [[FULL OUTER JOIN]]
-- [[CROSS JOIN]]
-- [[OUTER JOINS]]
-- [[Self Joins]]
-
-### Syntax Elements
-
-- [[ON Clause]]
-- [[Dot Notation]]
-- [[Aliasing]]
-- [[Table Aliases]]
-- [[Ambiguous Column Name]]
-- [[Table Name Prefix]]
-- [[USING Shortcut]]
-- [[IS NULL]]
-- [[AS Keyword]]
-
-### Advanced Concepts
-
-- [[Cartesian Product]]
-- [[Recursive Relationships]]
-- [[UNION]]
-- [[UNION ALL]]
-- [[NULL]]
-
----
-
 ## Review Questions
 
 1. What were the problems with spreadsheets discussed in Week 1? What are anomalies?
