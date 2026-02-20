@@ -1,91 +1,94 @@
 # Introduction to Software Testing
 
-## What is Software Testing?
-
-**Software testing** means running your code — or parts of it — in controlled ways to verify it behaves as expected. Think of it like a quality check on a production line: before a product ships, you make sure it actually works.
-
----
+Software testing is the practice of running your code in specific ways to **verify it works as expected**. Think of it as double-checking your work before submitting it — except automated and repeatable.
 
 ## Why Test?
 
-There are three core reasons to test software:
+Three main reasons:
 
-- **Ensure software quality** — confirm the program does what it's supposed to do
-- **Identify bugs** — catch errors before users encounter them
-- **Detect [[Regression Testing|regressions]]** — make sure that new changes don't accidentally break things that were already working
+- **Ensure software quality** — confidence that your code does what it's supposed to
+- **Identify bugs** — catch mistakes early before they reach users
+- **Detect regressions** — make sure new changes don't accidentally break things that already worked
 
----
+## Kinds of Tests
 
-## Types of Tests
+There are many types of tests, organized by different criteria:
 
-Tests can be categorized in several ways. Here's a quick overview:
+**By Scope** — how much of the system is tested at once:
 
-### By Scope
+|Type|What it tests|Examples|
+|---|---|---|
+|Unit|Individual functions/classes|JUnit, pytest|
+|Integration|How components interact|API endpoint tests|
+|End-to-end / System|The entire application|UI flows|
+|Acceptance|Whether client requirements are met|UAT|
 
-|Type|What it tests|
+**By Execution Pattern** — how the tests are run:
+
+|Type|Description|
 |---|---|
-|**[[Unit Testing]]**|Individual functions or classes|
-|**[[Integration Testing]]**|How components interact with each other|
-|**[[End-to-End Testing]]**|The entire system as a whole|
-|**[[Acceptance Testing]]**|Whether the system meets client requirements|
+|Manual|A human performs the test|
+|Automatic|Scripts/code run the tests|
+|Continuous|Automated tests in a CI/CD pipeline (e.g. GitHub Actions)|
 
-Think of it like building a car: unit tests check individual parts (the engine, the brakes), integration tests check that those parts work together, and end-to-end tests check that the whole car actually drives.
+**By Context:**
 
-### By Execution Pattern
+- **Static** — inspect code _without_ running it (code reviews, linters)
+- **Dynamic** — tests that run during execution (most tests fall here)
 
-- **Manual** — a human runs the test (e.g., exploratory testing)
-- **Automatic** — code runs the tests for you (e.g., [[JUnit]], Selenium)
-- **[[Continuous Integration]] (CI)** — automated tests that run every time you push new code (e.g., GitHub Actions)
+**By Testing Purpose:**
 
-### By Context
+|Type|Purpose|
+|---|---|
+|Functional|Tests desired behaviours (login, file upload)|
+|Non-functional|Tests qualities like performance or security|
+|Regression|Ensures new changes don't break old features|
+|Smoke/Sanity|Quick check — does it even start?|
+|Alpha/Beta|Early user testing before full release|
 
-- **Static testing** — examining code _without_ running it (e.g., code reviews, linters)
-- **Dynamic testing** — testing that happens _during_ execution (most tests fall here)
+**By Special Focus:**
 
-### By Purpose
-
-- **[[Functional Testing]]** — does the system do what it should? (e.g., login works)
-- **[[Non-functional Testing]]** — does it do it _well_? (e.g., load times, security)
-- **[[Regression Testing]]** — does the new code break old features?
-- **Smoke/Sanity** — does the app even start? Can a user log in?
-- **Alpha/Beta** — early user testing before broad release
-
-### By Special Focus
-
-- **[[Performance Testing]]** — speed and scalability under load
-- **[[Security Testing]]** — vulnerability checks, penetration testing
-- **Compatibility** — does it work across browsers/devices/OS?
-- **Usability** — is it easy to use?
-- **Recovery/Failover** — does it survive crashes gracefully?
-
----
+- **Performance** — speed and scalability (load, stress tests)
+- **Security** — vulnerabilities (penetration testing, fuzzing)
+- **Compatibility** — works across browsers/OS/devices
+- **Usability** — ease of use and UX
+- **Recovery/Failover** — resilience under failure (simulated crashes)
 
 ## When Should You Test?
 
-**Early and often.** Two common philosophies:
+> **Early and often!**
 
-- **[[Test-Driven Development]] (TDD)** — write the tests _before_ writing the code. This forces you to think about what the code should do before you write it, often leading to cleaner, more modular designs.
-- **Bug-Driven Development (BDD)** — write a test each time a bug is discovered, so that bug can never silently return.
+Two popular philosophies:
 
----
+- **TDD (Test-Driven Development)** — write tests _before_ writing the code. This sounds backwards but leads to cleaner, more modular code.
+- **BDD (Bug-Driven Development)** — write a test whenever you find a bug, to prevent it from coming back.
 
 ## Testing Frameworks
 
-Most platforms have frameworks that make writing and running tests much easier:
+Most languages have a framework to make testing easier:
 
 |Platform|Framework(s)|
 |---|---|
-|Java|[[JUnit]], TestNG|
-|Python|[[pytest]]|
+|Java|JUnit, TestNG|
+|Python|pytest|
 |JavaScript|Jest, Mocha|
-|C# / .NET|xUnit, NUnit|
+|C#/.NET|xUnit, NUnit|
 |PHP|PHPUnit|
+|Go|go test (built-in)|
 
----
+See also: [[Software Engineering]]
+
+## Why Automated Tests?
+
+Manual testing is slow, error-prone, and easy to forget. Automated tests let you:
+
+- Re-run _all_ tests instantly after any change
+- Catch regressions immediately
+- Have clear pass/fail feedback
 
 ## Unit Testing with JUnit
 
-[[JUnit]] is the most popular testing framework for Java. To use it in a [[Maven]] project, add it as a dependency in `pom.xml`:
+JUnit is the most widely used unit testing framework for Java. To add it to a Maven project, put this in your `pom.xml`:
 
 ```xml
 <dependencies>
@@ -93,14 +96,22 @@ Most platforms have frameworks that make writing and running tests much easier:
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter</artifactId>
     <version>6.0.2</version>
-    <scope>test</scope>
+    <scope>test</scope>  <!-- only included during test runs -->
   </dependency>
 </dependencies>
 ```
 
-The `<scope>test</scope>` means this library is only included when running tests — not in your final application.
+### Writing a JUnit Test
 
-### Anatomy of a JUnit Test
+Suppose you have this method:
+
+```java
+public static boolean isPrime(int n) {
+    // ... implementation
+}
+```
+
+Here's how you'd test it:
 
 ```java
 import org.junit.jupiter.api.Test;
@@ -110,76 +121,134 @@ class TestIntUtils {
 
     @Test
     public void testThatPrimesArePrime() {
-        assertTrue(IntUtils.isPrime(2));   // boundary: lowest prime
-        assertTrue(IntUtils.isPrime(3));   // typical prime
-        assertTrue(IntUtils.isPrime(251)); // another typical prime
+        assertTrue(IntUtils.isPrime(2));    // boundary: smallest prime
+        assertTrue(IntUtils.isPrime(3));
+        assertTrue(IntUtils.isPrime(251));
         assertTrue(IntUtils.isPrime(2147483647)); // large prime
+    }
+
+    @Test
+    public void testThatNonPrimesAreNotPrime() {
+        assertFalse(IntUtils.isPrime(0));   // edge case
+        assertFalse(IntUtils.isPrime(1));   // edge case
+        assertFalse(IntUtils.isPrime(-1));  // negative numbers
+        assertFalse(IntUtils.isPrime(-2));
+        assertFalse(IntUtils.isPrime(4));   // typical non-prime
+        assertFalse(IntUtils.isPrime(15));
+        assertFalse(IntUtils.isPrime(2019));
     }
 }
 ```
 
-Key elements:
+Key points:
 
-- The **test class** is named after the class being tested (e.g., `TestIntUtils`)
-- Each **test method** is annotated with `@Test`
-- Methods use **[[Assertions]]** like `assertTrue()`, `assertFalse()`, `assertEquals()`, `assertNull()` to check expected outcomes
-- A single test method can (and should) contain **multiple assertions** that relate to the same theme
+- The test class is typically named `TestX` or `XTest` where X is the class being tested
+- Each test method gets the `@Test` annotation
+- Method names should clearly describe what's being tested
+- One test can (and should) have **multiple assertions**
+- One class should have **multiple test methods** covering different scenarios
 
----
+When you run tests in IntelliJ IDEA, you'll see green checkmarks for passing tests and red X marks for failures — including the expected vs. actual value and the exact failing line.
 
-## Choosing What to Test
+## Testing Classes (Instance Methods)
 
-You can't test every possible input, so focus on:
-
-- **Valid inputs** — do correct inputs produce correct outputs?
-- **[[Boundary Conditions]]** — test values at the very edge of acceptable ranges (e.g., the smallest/largest valid value)
-- **Special cases** — values that trigger unique code paths (e.g., `null`, empty string `""`, zero, negative numbers)
-- **Invalid inputs** — what happens when bad data is passed? Does the code handle it gracefully?
-- **[[Exception Handling]]** — if certain inputs should throw an error, verify that they actually do
-
-### Code Coverage
-
-**[[Code Coverage]]** measures what percentage of your code is actually executed during tests. Ideally 100%, but in large projects that's rarely feasible. Prioritize testing:
-
-- Critical components that affect program correctness
-- Frequently used parts of the system
-- Components that many other components depend on
-
-### Practical Mindset
-
-> Write tests for valid inputs — but also think about _how your code could break_, and write tests that try to trigger those scenarios.
-
----
-
-## Testing Classes (Not Just Functions)
-
-When testing a class, you should:
-
-- **Test constructors** — verify instance variables are initialized correctly
-- **Test each method** — create an object, configure its state, then call the method and assert the result
+For testing objects, create an instance and configure it, then assert expected behaviour:
 
 ```java
-@Test
-public void testTakeDamage2() {
-    var hero = new Hero();
-    hero.takeDamage(110);
-    assertEquals(0, hero.getHealth(), "Health should never be negative");
+class HeroTest {
+
+    @Test
+    public void testConstructor() {
+        var hero = new Hero();
+        assertEquals(100, hero.getHealth()); // verify initial state
+    }
+
+    @Test
+    public void testTakeDamage() {
+        var hero = new Hero();
+        hero.takeDamage(10);
+        assertEquals(90, hero.getHealth());
+    }
+
+    @Test
+    public void testTakeDamage2() {
+        var hero = new Hero();
+        hero.takeDamage(110); // more than health
+        assertEquals(0, hero.getHealth(), "Health should never be negative");
+    }
 }
 ```
 
-This test checks a **special case**: what if damage exceeds current health? The hero's health should floor at 0, not go negative.
+Test constructors too — make sure instance variables are initialized correctly.
+
+## Choosing What to Test
+
+You can't always test every possible input (imagine testing every possible String!), so be strategic:
+
+**1. Input Validation**
+
+- Test that valid inputs produce correct results
+- Test that _invalid_ inputs are handled appropriately too
+- You don't need to test inputs outside precondition limits
+
+**2. Boundary Conditions**
+
+- Test values at the upper and lower bounds of acceptable ranges
+- Test `null`, empty strings, empty lists
+
+**3. Special Cases**
+
+- Test inputs that trigger specific branches in your code (conditionals, loops)
+- Think about zero values, empty collections, etc.
+
+**4. Exception Handling**
+
+- If certain inputs should throw an exception, write a test to confirm they do
+
+**Example — testing `titleCase(String s)`:**
+
+```java
+@Test
+void testValidInputs() {
+    assertEquals("Hello", titleCase("hello"));
+    assertEquals("Hello", titleCase("hElLo"));
+    assertEquals("Hello, World!", titleCase("hEllO, wOrLd!"));
+}
+
+@Test
+void nullRemainsNull() {
+    assertNull(titleCase(null));
+}
+
+@Test
+void emptyStringRemainsEmpty() {
+    assertEquals("", titleCase(""));
+}
+
+@Test
+void singleLetterIsCapitalized() {
+    assertEquals("A", titleCase("a"));
+    assertEquals("Z", titleCase("z"));
+}
+```
+
+### Code Coverage
+
+**Code coverage** = the percentage of your code that actually gets _executed_ by your tests. 100% is ideal but rarely practical in large projects. Instead, prioritize testing:
+
+- The most critical components
+- Frequently used functionality
+- Code that many other parts depend on
+
+> 💡 General rule: write tests that verify valid inputs work _and_ think about how your code could break — then write tests for those cases too.
 
 ---
 
-## Summary
+**Further reading:** [GeeksforGeeks – Software Testing](https://www.geeksforgeeks.org/software-testing-basics/) | [JUnit 5 Docs](https://junit.org/junit5/docs/current/user-guide/)
 
-- [[Software Testing]] verifies that code works as expected, catches bugs, and prevents regressions
-- Tests can be categorized by scope, execution pattern, context, purpose, and special focus
-- [[Unit Testing]] focuses on individual functions and classes
-- [[JUnit]] makes it easy to write and run unit tests in Java
-- Good tests cover valid inputs, boundary conditions, special cases, and error handling
-- Write tests early and think about how your code could fail
+Related: [[Software Engineering]] | [[Algorithms]] | [[Programming Languages]]
 
-# Tags
+---
+## Tags
 
-#software-testing #unit-testing #JUnit #Java #test-driven-development #code-quality #programming-fundamentals
+#computer_science #software_testing #unit_testing #junit #java #tdd #software_engineering #study_notes #automation #testing_frameworks
