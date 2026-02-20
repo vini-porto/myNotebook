@@ -29,7 +29,7 @@ Data can be stored in variables, and values are either **scalar** or **composite
 
 Let's say we are building a conference center event manager. An event has a title, start/end datetime, and a list of requested services.
 
-### Just Variables — Not Enough
+## Just Variables — Not Enough
 
 ```java
 String hackathon_title = "Hackathon";
@@ -39,7 +39,7 @@ String hackathon_end   = "2023-10-01T18:00:00";
 
 This falls apart as soon as you have multiple events — there's no structure connecting them.
 
-## Lists of Tuples — Fragile
+# Lists of Tuples — Fragile
 
 ```python
 events = [
@@ -51,7 +51,7 @@ def show_event_titles(event_list):
         print(event[0])  # You need to know title is at index 0 — brittle!
 ```
 
-## Maps — Better, but Still Problematic
+# Maps — Better, but Still Problematic
 
 ```python
 events = [
@@ -82,11 +82,7 @@ var event = new Event(
 );
 ```
 
-## Four Type-Definition Structures in Java
-
-Java gives you four ways to define types:
-
-
+# Four Type-Definition Structures in Java
 
 ## `class` — General Purpose Types
 
@@ -120,7 +116,7 @@ class Event {
 }
 ```
 
-### The `this` Keyword
+## The `this` Keyword
 
 > [!note] What does `this` mean? 
 > Inside a type definition, **`this`** refers to _the current instance_ being accessed.
@@ -129,7 +125,7 @@ class Event {
 > - When you call `e2.getDuration()`, `this` refers to `e2`
 > - `this` cannot be used in _class (static) methods_ — only instance methods
 
-## Types vs Objects
+# Types vs Objects
 
 > [!important] Key Distinction
 > 
@@ -156,7 +152,7 @@ house2.lightFire();
 
 Objects of the **same type** share the same _behaviour_ (methods) but can have different _state_ (variable values). Objects of **different types** have entirely different state and behaviour.
 
-## Constructors
+# Constructors
 
 - A constructor always has **the same name as the type**
 - It has **no explicit return type** (the return type is implicitly the type itself)
@@ -172,7 +168,7 @@ Objects of the **same type** share the same _behaviour_ (methods) but can have d
 > var c = new Counter(); // COMPILE ERROR — no default constructor!
 > ```
 
-### Overloading Constructors
+## Overloading Constructors
 
 You can create **multiple constructors** with different parameter lists (different _signatures_):
 
@@ -188,7 +184,7 @@ Event(String title, LocalDateTime start, Duration duration) {
 }
 ```
 
-### Calling One Constructor from Another
+## Calling One Constructor from Another
 
 Use `this(...)` inside a constructor to call another constructor of the same class:
 
@@ -207,8 +203,6 @@ class Point {
 }
 ```
 
----
-
 > [!warning] Common Error: Forgetting to Initialize Instance Variables
 > 
 > ```java
@@ -226,9 +220,7 @@ class Point {
 > List<Integer> list = List.of(); // initialized to an empty list
 > ```
 
----
-
-## Access Modifiers
+# Access Modifiers
 
 Access modifiers control _who can see_ a member of a type.
 
@@ -248,7 +240,7 @@ class Foo {
 
 Top-level type definitions can be package-private or `public`. Nested types can also be `private`.
 
-### Why Access Modifiers Matter
+## Why Access Modifiers Matter
 
 Access modifiers let type designers:
 
@@ -260,9 +252,7 @@ Access modifiers let type designers:
 > - **Abstraction** — focusing on essential details and ignoring irrelevant complexity. The user sees _what_ the type does, not _how_.
 > - **Encapsulation** — hiding the internal complexity behind a simple interface. The designer builds the complex internals; the user only sees the clean surface.
 
----
-
-## Common Pattern: Private Variables, Public Methods
+# Common Pattern: Private Variables, Public Methods
 
 ```java
 public class Counter {
@@ -303,9 +293,7 @@ c2.getCount(); // 1
 
 > [!tip] Type Design Tip: Minimize the Public Interface Every `public` member is a **promise**: "This will always be here." The less you expose, the more freedom you have to change internals later.
 
----
-
-## Accessors, Mutators, Getters, and Setters
+# Accessors, Mutators, Getters, and Setters
 
 |Term|What it does|
 |---|---|
@@ -314,11 +302,9 @@ c2.getCount(); // 1
 |**Getter**|Accessor that reads one specific instance variable; named `getX()`|
 |**Setter**|Mutator that sets one specific instance variable; named `setX()`|
 
----
+# Useful Methods to Implement
 
-## Useful Methods to Implement
-
-### `toString`
+## `toString`
 
 Converts an object to a human-readable string. Called automatically when an object is passed to `println`.
 
@@ -328,7 +314,7 @@ public String toString() {
 }
 ```
 
-### `equals`
+## `equals`
 
 Determines **value equality** (are the contents the same?) rather than **reference equality** (are they the same object in memory?).
 
@@ -342,7 +328,7 @@ public boolean equals(Object other) {
 }
 ```
 
-### `hashCode`
+## `hashCode`
 
 Used by hash-based collections like `HashMap`. Objects that are _equal_ according to `.equals` **must** return the same `hashCode`.
 
@@ -354,7 +340,7 @@ public int hashCode() {
 
 > [!important] Whenever you implement `.equals`, always implement `.hashCode` too!
 
-### Copy Constructor
+## Copy Constructor
 
 Creates a new object as a copy of an existing one:
 
@@ -369,8 +355,6 @@ public Event(Event other) {
 This is a _shallow copy_, but that is fine here because `String` and `LocalDateTime` are **immutable** — you cannot change them through the copy, so the original is safe.
 
 > [!tip] IDE Code Generation Most modern IDEs (like IntelliJ) can auto-generate boilerplate like getters, setters, `equals`, `hashCode`, `toString`, and constructors. Use the "Generate" menu to save time!
-
----
 
 ## `enum` — Fixed Sets of Values
 
@@ -411,8 +395,6 @@ opposite("NORTH");        // TYPE ERROR — wrong type entirely!
 > - The compiler ensures all values are handled in a `switch`
 > - Full type safety — you can't pass the wrong type by accident
 
----
-
 ## `record` — Data-Focused Types
 
 When you just need a type to hold a fixed set of data fields, use `record` instead of `class`.
@@ -438,8 +420,6 @@ A `record` automatically gives you:
 > [!tip] In Java, when you need a composite type that isn't a collection, **start with `record`** instead of `class`. Upgrade to `class` only if you need mutability or more complex behaviour.
 
 Both `enum` and `record` can have additional methods and class members attached to them just like a regular class.
-
----
 
 ## `interface` — Defining Behaviour
 
@@ -478,32 +458,12 @@ A class _implements_ an interface, promising to provide all the methods it defin
 > 
 > This allows types with completely different internal structure to be treated uniformly through a shared interface.
 
-More about interfaces in future lectures!
-
----
-
-## Summary
-
-|Use|When|
-|---|---|
-|`class`|General-purpose types with state and behaviour|
-|`record`|Primarily data containers (immutable, auto-generated methods)|
-|`enum`|Fixed set of named possible values|
-|`interface`|Defining behaviour that other types must implement|
-
-- Use **access modifiers** to minimize the public interface and encapsulate internals
-- Give your types `toString`, `equals`, `hashCode`, and copy constructors as needed
-- Keep the public interface small — the less you expose, the easier it is to change later
-
----
 
 External references:
 
 - [GeeksForGeeks — Java Classes and Objects](https://www.geeksforgeeks.org/classes-objects-java/)
 - [GeeksForGeeks — Java Enums](https://www.geeksforgeeks.org/enum-in-java/)
 - [GeeksForGeeks — Java Records](https://www.geeksforgeeks.org/record-classes-in-java/)
-
----
 
 ## Tags
 
