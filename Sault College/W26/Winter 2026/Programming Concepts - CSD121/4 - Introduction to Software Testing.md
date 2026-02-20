@@ -1,18 +1,13 @@
-# Introduction to Software Testing
-
 Related: [[Software Engineering]] | [[Programming Languages]] | [[Algorithms]]
 
----
+# What is Software Testing?
 
-## What is Software Testing?
-
-> [!note] Definition **Software testing** is the process of running software or software components in specific ways to verify that it works as expected.
+> [!note] Software testing 
+> Is the process of running software or software components in specific ways to verify that it works as expected.
 
 In simple terms: you give your program specific inputs, and check that it produces the right outputs. If it doesn't, something is broken and needs to be fixed.
 
----
-
-## Why Do We Test?
+# Why Do We Test?
 
 There are three main reasons to test software:
 
@@ -22,13 +17,11 @@ There are three main reasons to test software:
 
 > [!important] A **regression** is when a previously working feature breaks due to a new code change. Automated tests help catch these automatically.
 
----
-
-## Kinds of Tests
+# Kinds of Tests
 
 Tests can be categorized in many ways depending on what angle you're looking at them from.
 
-### By Scope
+## By Scope
 
 This refers to _how much_ of the system is being tested at once.
 
@@ -41,7 +34,7 @@ This refers to _how much_ of the system is being tested at once.
 
 > [!tip] Think of scope like zoom levels. Unit tests zoom in on one small piece. End-to-end tests zoom all the way out to view the whole system.
 
-### By Execution Pattern
+## By Execution Pattern
 
 This refers to _how_ the tests are run.
 
@@ -51,14 +44,14 @@ This refers to _how_ the tests are run.
 |**Automatic**|Code/scripts automatically perform tests|Unit tests, Selenium, Cypress|
 |**Continuous**|Automated tests that run in a CI/CD pipeline|GitHub Actions, Jenkins pipelines|
 
-### By Context
+## By Context
 
 |Type|Description|Examples|
 |---|---|---|
 |**Static**|Examine code/documentation _without_ execution|Code review, linters, static analyzers|
 |**Dynamic**|Testing performed _during_ execution|Almost all other kinds of tests|
 
-### By Testing Purpose
+## By Testing Purpose
 
 |Type|Tests that...|Examples|
 |---|---|---|
@@ -68,7 +61,7 @@ This refers to _how_ the tests are run.
 |**Smoke/Sanity**|Critical functions are working|Does it start? Can a user log in?|
 |**Alpha/Beta**|New features see early user testing before broad release|Internal alpha, public beta, A/B|
 
-### By Special Focus
+## By Special Focus
 
 |Type|Description|Examples|
 |---|---|---|
@@ -78,9 +71,7 @@ This refers to _how_ the tests are run.
 |**Usability**|Evaluates ease of use and UX quality|User feedback sessions|
 |**Recovery/Failover**|Verifies resilience under failure|Simulated crashes, network outages|
 
----
-
-## When Should You Test?
+# When Should You Test?
 
 > [!important] Test **early and often!** The sooner you catch a bug, the cheaper and easier it is to fix.
 
@@ -89,9 +80,7 @@ Two popular development philosophies around testing:
 - **Test-Driven Development (TDD)** — write the tests _before_ you write the code. This can lead to more robust and modular code if done consistently.
 - **Bug-Driven Development (BDD)** — write tests _in response to detected bugs_, so those bugs can never silently come back.
 
----
-
-## Testing Frameworks
+# Testing Frameworks
 
 Most programming platforms have dedicated testing frameworks that make writing and running tests much easier.
 
@@ -106,9 +95,7 @@ Most programming platforms have dedicated testing frameworks that make writing a
 
 > [!tip] For more on testing frameworks in Python, check out [GeeksforGeeks - Pytest](https://www.geeksforgeeks.org/pytest-tutorial/).
 
----
-
-## Writing Automated Tests
+# Writing Automated Tests
 
 You _could_ test your program manually every time — but that's slow, tedious, and easy to mess up. Instead, we write **automated tests**: separate programs that run our code and verify it produces the right output.
 
@@ -124,9 +111,7 @@ A good automated test suite:
 - Runs tests for the whole program end-to-end
 - Can be re-run quickly and easily after any code change
 
----
-
-## Unit Testing with JUnit
+# Unit Testing with JUnit
 
 **JUnit** is the most widely used unit testing framework for Java. To use it in a Maven project, add it as a dependency in `pom.xml`:
 
@@ -144,7 +129,7 @@ A good automated test suite:
 
 > [!note] The `<scope>test</scope>` tag means this dependency is **only included during test runs**, not in the final compiled program. The default scope is `compile`.
 
-### Anatomy of a JUnit Test
+## Anatomy of a JUnit Test
 
 Let's say we have this method we want to test:
 
@@ -214,7 +199,7 @@ public void testThatNonPrimesAreNotPrime() {
 }
 ```
 
-### Running Tests in IntelliJ IDEA
+## Running Tests in IntelliJ IDEA
 
 In IDEA, you can run:
 
@@ -243,11 +228,11 @@ When a test **fails**, the IDE tells you:
 
 ---
 
-## Choosing What to Test
+# Choosing What to Test
 
 You can't always test every possible input (imagine testing every possible string!). So you need to be strategic about _what_ to test.
 
-### Key Categories to Cover
+## Key Categories to Cover
 
 **1. Input validation**
 
@@ -271,9 +256,10 @@ You can't always test every possible input (imagine testing every possible strin
 
 > [!tip] Ask yourself: _"How could this code break or go wrong?"_ Then write tests that try to trigger exactly those circumstances.
 
-### Code Coverage
+## Code Coverage
 
-> [!note] Definition **Code coverage** is a percentage that indicates how much of your code is actually executed when your tests run. 100% means every line was touched by at least one test.
+> [!note] **Code coverage
+>  is a percentage that indicates how much of your code is actually executed when your tests run. 100% means every line was touched by at least one test.
 
 In large projects, 100% coverage is often not feasible. Instead, prioritize:
 
@@ -281,9 +267,7 @@ In large projects, 100% coverage is often not feasible. Instead, prioritize:
 - Components that are **frequently used**
 - Components that **many other parts depend on**
 
----
-
-## Testing Classes (Instance Methods & Constructors)
+# Testing Classes - Instance Methods & Constructors
 
 Testing instance methods works just like testing static methods — but you need to **create an object first** and configure it before calling the method.
 
@@ -331,9 +315,7 @@ class HeroTest {
 
 Notice that `testTakeDamage2` tests an **edge case** — what happens when damage exceeds health? The third argument to `assertEquals` is an optional message displayed if the assertion fails, which helps with debugging.
 
----
-
-## Another Full Example: `titleCase()`
+# Another Full Example: `titleCase()`
 
 ```java
 /**
@@ -382,8 +364,6 @@ void singleLetterIsCapitalized() {
 - [GeeksforGeeks — Software Testing](https://www.geeksforgeeks.org/software-testing-basics/)
 - [JUnit 5 Documentation](https://junit.org/junit5/docs/current/user-guide/)
 - [CS50 — Introduction to Programming Concepts](https://cs50.harvard.edu/)
-
----
 
 # Tags
 
