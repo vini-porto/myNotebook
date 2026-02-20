@@ -1,412 +1,389 @@
-Here is the full Obsidian note in **plain Markdown**, easy to **copy and paste** into a `.md` file.  
-No emojis, simple English, structured, and following your prompt exactly.
+# CS Study Notes: Maven, Testing, and Type Definitions
+
+These notes cover the three topics likely to appear on your written exam. Each section explains the concept from scratch and shows you exactly what you need to know.
 
 ---
 
-````markdown
-# Test Preparation – Maven Configuration, Test Design, and Type Definitions
+## 1. Maven Configuration
 
-These notes explain the three possible written questions in the test:
-1. Maven configuration  
-2. Selecting a thorough set of tests for a method  
-3. Writing a type definition (class / enum / record)
+[[Software Engineering]]
 
-Related topics: [[Software Engineering]], [[Programming Languages]], [[Algorithms]]
+Maven is a **build automation and project management tool** for Java projects. It handles compiling, testing, packaging, and managing dependencies — all through a single configuration file.
 
----
+> [!note] What is Maven? Maven uses a file called **`pom.xml`** (Project Object Model) to define everything about your project: its name, version, dependencies, plugins, and build instructions. Think of it as a recipe file for your project.
 
-## 1. Maven Configuration Question
+### The `pom.xml` Structure
 
-> [!note]
-> This question checks if you understand how to configure a Java project using Maven and the `pom.xml` file.
-
-Maven is a build and dependency management tool used in Java projects.  
-It helps with:
-- Downloading libraries (dependencies)
-- Compiling code
-- Running tests
-- Packaging the program (JAR file)
-
----
-
-### What is `pom.xml`?
-
-> [!note]
-> `pom.xml` (Project Object Model) is the main configuration file of a Maven project.
-
-It contains:
-- Project information
-- Dependencies
-- Java version
-- Plugins
-
-Basic structure:
+Every Maven project has a `pom.xml` at its root. Here is the essential skeleton:
 
 ```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <groupId>com.example</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
 
-  <dependencies>
-  </dependencies>
+    <!-- Project identity (the GAV coordinates) -->
+    <groupId>com.example</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <!-- Java version settings -->
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <!-- External libraries your project needs -->
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
 </project>
-````
-
----
-
-### Common things they may ask
-
-> [!important]  
-> Most Maven questions are about adding or modifying small parts of `pom.xml`.
-
-They may ask you to:
-
-- Add a dependency (for example, JUnit)
-    
-- Set Java version
-    
-- Configure a plugin
-    
-- Fix an incorrect configuration
-
-### Example: Adding JUnit dependency
-
-> [!example]  
-> JUnit is used for testing Java programs.
-
-```xml
-<dependency>
-  <groupId>org.junit.jupiter</groupId>
-  <artifactId>junit-jupiter</artifactId>
-  <version>5.10.0</version>
-  <scope>test</scope>
-</dependency>
 ```
 
-Explanation:
+### Key Concepts to Know
 
-- groupId: organization name
-    
-- artifactId: library name
-    
-- version: library version
-    
-- scope = test: used only for tests
-    
+**GAV Coordinates** — Every Maven artifact is identified by three things:
 
----
+- `groupId`: your organisation or package namespace (e.g. `com.example`)
+- `artifactId`: the name of the project/module (e.g. `my-app`)
+- `version`: the version string (e.g. `1.0.0`, `2.3.1-SNAPSHOT`)
 
-### Example: Setting Java version
+**Dependency scopes** control when a dependency is available:
+
+|Scope|When it is on the classpath|Typical use|
+|---|---|---|
+|`compile` (default)|Always|Core libraries|
+|`test`|Only during testing|JUnit, Mockito|
+|`runtime`|Run and test, not compile|JDBC drivers|
+|`provided`|Compile only, not packaged|Servlet API (container provides it)|
+
+> [!important] SNAPSHOT vs Release A version ending in `-SNAPSHOT` (e.g. `1.0.0-SNAPSHOT`) means the project is still in development. Maven will always try to fetch the latest snapshot. A release version (e.g. `1.0.0`) is fixed and immutable.
+
+**The `<properties>` block** is used to centralise repeated values:
 
 ```xml
 <properties>
-  <maven.compiler.source>17</maven.compiler.source>
-  <maven.compiler.target>17</maven.compiler.target>
+    <java.version>17</java.version>
+    <junit.version>5.10.0</junit.version>
 </properties>
+
+<!-- Then reference them like this: -->
+<version>${junit.version}</version>
 ```
 
-This means:
+**Plugins** extend Maven's build lifecycle. The most important one for testing is the Surefire plugin:
 
-- Code is compiled using Java 17
-    
-
----
-
-> [!tip]  
-> In the exam, write only the part of `pom.xml` they ask for. Do not rewrite the whole file unless required.
-
-> [!warning]  
-> Common mistakes:
-> 
-> - Missing closing XML tags
->     
-> - Wrong dependency name
->     
-> - Forgetting `<scope>test</scope>` for testing libraries
->     
-
-External reference:  
-[https://www.geeksforgeeks.org/maven-tutorial/](https://www.geeksforgeeks.org/maven-tutorial/)  
-[https://cs50.harvard.edu](https://cs50.harvard.edu/)
-
----
-
-## 2. Selecting a Thorough Set of Tests for a Method
-
-> [!note]  
-> This question checks if you can think like a tester and choose good test cases for a method.
-
-You will be given a method, for example:
-
-```java
-int divide(int a, int b)
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.1.2</version>
+        </plugin>
+    </plugins>
+</build>
 ```
 
-And asked:  
-“Which tests would you write?”
-
-You are not required to write full JUnit code.  
-You must describe which test cases are important.
-
----
-
-### Types of test cases you must think about
-
-> [!important]  
-> A thorough test set must include more than one simple example.
-
-You should consider:
-
-- Normal cases (valid input)
-    
-- Edge cases (boundary values)
-    
-- Invalid input
-    
-- Exception cases
-    
-- Special values (0, null, negative numbers)
-
-
-### Example: Method `divide(int a, int b)`
-
-> [!example]
-
-1. Normal case
-    
-    - divide(10, 2) = 5
-        
-2. Zero case
-    
-    - divide(0, 5) = 0
-        
-3. Negative numbers
-    
-    - divide(-10, 2) = -5
-        
-    - divide(10, -2) = -5
-        
-4. Exception case
-    
-    - divide(10, 0) → should throw an exception
-        
-
-### Example: Method `isEven(int n)`
-
-> [!example]
-
-- isEven(2) → true
-    
-- isEven(3) → false
-    
-- isEven(0) → true
-    
-- isEven(-2) → true
-
-
-### How to answer in the exam
-
-> [!important]  
-> Organize your answer clearly.
-
-Example format:
-
-- Test 1: valid input
-    
-- Test 2: edge case
-    
-- Test 3: invalid input
-    
-- Test 4: exception
-    
-
-This shows:
-
-- Logical thinking
-    
-- Software testing knowledge
-    
-- Understanding of method behavior
-    
-
-> [!tip]  
-> Always ask:
+> [!tip] Common Maven commands to know
 > 
-> - What happens with 0?
->     
-> - What happens with negative values?
->     
-> - What happens with invalid input?
->     
-> - Should an exception be thrown?
->     
+> - `mvn compile` — compiles source code
+> - `mvn test` — runs all tests
+> - `mvn package` — compiles, tests, and packages (e.g. into a `.jar`)
+> - `mvn clean` — deletes the `target/` directory
+> - `mvn clean install` — the classic full rebuild
 
-Related note: [[Software Engineering]]
-
-External reference:  
-[https://www.geeksforgeeks.org/software-testing-basics/](https://www.geeksforgeeks.org/software-testing-basics/)
-
-## 3. Writing a Type Definition (class / enum / record)
-
-> [!note]  
-> This question checks if you can design a data type correctly in Java.
-
-They will describe something like:  
-“Define a type representing a Student with name and grade.”
-
-You must decide whether to use:
-
-- class
-    
-- record
-    
-- enum
-
-### When to use each type
-
-|Type|Use when|
-|---|---|
-|class|Object with fields and methods|
-|record|Simple data container (immutable)|
-|enum|Fixed set of values|
+> [!warning] Common mistake Forgetting to set `<scope>test</scope>` on test dependencies like JUnit means they get bundled into your production artifact, which is unnecessary and can cause issues.
 
 ---
 
-### Example: Class
+## 2. Selecting a Thorough Set of Tests
 
-> [!example]
+[[Algorithms]]
+
+When asked to design tests for a method, the goal is **maximum coverage with minimum redundancy**. You want to test all the meaningful distinct behaviours.
+
+> [!note] What makes a test "thorough"? A thorough test suite covers: normal inputs, edge cases, boundary values, invalid inputs, and any special conditions specific to the method's logic.
+
+### A Framework for Choosing Tests
+
+Think about these categories every time:
+
+**1. Normal / happy path cases** Test typical inputs that should produce correct, expected output.
+
+**2. Boundary values** Test the edges of valid input ranges. If a method accepts integers 1–100, test 1, 100, and something in the middle like 50.
+
+**3. Edge cases**
+
+- Empty collections (empty list, empty string)
+- Single-element collections
+- Collections with duplicate values
+- `null` inputs (if applicable)
+- Zero, negative numbers, `Integer.MAX_VALUE`
+
+**4. Invalid / exceptional inputs** Inputs that should throw an exception. Test that the _right_ exception is thrown.
+
+**5. Special domain logic** Think about what the method actually does and test cases that exercise different branches of its logic.
+
+> [!example] Example: Testing a method `int max(List<Integer> list)` This method returns the largest integer in a list, or throws `IllegalArgumentException` if the list is null or empty.
+> 
+> A thorough set of tests:
+> 
+> |Test case|Input|Expected outcome|
+> |---|---|---|
+> |Single element|`[5]`|`5`|
+> |Multiple elements, max at end|`[1, 3, 2]`|`3`|
+> |Multiple elements, max at start|`[9, 1, 2]`|`9`|
+> |All elements equal|`[4, 4, 4]`|`4`|
+> |Negative numbers|`[-3, -1, -5]`|`-1`|
+> |Mix of positive and negative|`[-2, 0, 3]`|`3`|
+> |Empty list|`[]`|throws `IllegalArgumentException`|
+> |Null input|`null`|throws `IllegalArgumentException`|
+
+> [!example] Example: Testing a method `boolean isPalindrome(String s)`
+> 
+> |Test case|Input|Expected|
+> |---|---|---|
+> |Classic palindrome|`"racecar"`|`true`|
+> |Non-palindrome|`"hello"`|`false`|
+> |Single character|`"a"`|`true`|
+> |Empty string|`""`|`true`|
+> |Two same chars|`"aa"`|`true`|
+> |Two different chars|`"ab"`|`false`|
+> |Null (if applicable)|`null`|exception or `false`|
+> |Even-length palindrome|`"abba"`|`true`|
+
+### Writing Tests in JUnit 5 (Java)
 
 ```java
-public class Student {
-    private String name;
-    private int grade;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-    public Student(String name, int grade) {
-        this.name = name;
-        this.grade = grade;
+class MaxTest {
+
+    @Test
+    void singleElement() {
+        assertEquals(5, max(List.of(5)));
     }
 
-    public String getName() {
-        return name;
+    @Test
+    void maxAtEnd() {
+        assertEquals(3, max(List.of(1, 2, 3)));
     }
 
-    public int getGrade() {
-        return grade;
+    @Test
+    void emptyListThrows() {
+        assertThrows(IllegalArgumentException.class,
+            () -> max(List.of()));
+    }
+
+    @Test
+    void nullThrows() {
+        assertThrows(IllegalArgumentException.class,
+            () -> max(null));
     }
 }
 ```
 
-Explanation:
+> [!tip] Equivalence partitioning Group inputs into _classes_ where every input in a class behaves the same way. Pick one representative from each class. This prevents you from writing ten nearly-identical tests while still missing a whole category.
 
-- Fields are private
-    
-- Constructor initializes values
-    
-- Getters allow access
-    
+> [!warning] Common mistake Only testing the "happy path" (typical valid input) and missing empty, null, boundary, or error cases. Examiners specifically look for whether you've thought about these.
 
 ---
 
-### Example: Record (Java 16+)
+## 3. Writing Type Definitions: Class, Enum, and Record
 
-> [!example]
+[[Programming Languages]]
+
+Java gives you several ways to define a new data type. Choosing the right one depends on what the data represents.
+
+> [!note] The three main options
+> 
+> - **`class`** — a general-purpose type with mutable or immutable fields and behaviour
+> - **`record`** — a concise, _immutable_ data carrier (Java 16+)
+> - **`enum`** — a fixed set of named constants
+
+---
+
+### When to use `record`
+
+Use a `record` when you are modelling **simple immutable data** — data that is just a bundle of values with no complex behaviour.
 
 ```java
-public record Student(String name, int grade) {}
+// A 2D point with x and y coordinates
+public record Point(double x, double y) {}
 ```
 
-This is used when:
+That one line gives you:
 
-- The object only stores data
-    
-- No complex behavior is needed
-    
+- A constructor `new Point(3.0, 4.0)`
+- Accessor methods `point.x()` and `point.y()`
+- `equals()`, `hashCode()`, and `toString()` — all auto-generated
+
+> [!example] Record: Representing a student "Define a type to hold a student's ID number and full name."
+> 
+> ```java
+> public record Student(int id, String name) {}
+> ```
+> 
+> Usage:
+> 
+> ```java
+> Student s = new Student(12345, "Alice Smith");
+> System.out.println(s.name()); // "Alice Smith"
+> System.out.println(s);        // Student[id=12345, name=Alice Smith]
+> ```
+
+You can add custom methods to a record, but you **cannot change the fields** after construction — records are always immutable.
 
 ---
 
-### Example: Enum
+### When to use `enum`
 
-> [!example]
+Use an `enum` when a variable can only hold **one of a fixed set of values**.
 
 ```java
-public enum OrderStatus {
-    PENDING,
-    SHIPPED,
-    DELIVERED
+public enum Direction {
+    NORTH, SOUTH, EAST, WEST
 }
 ```
 
-Enums are used for:
+Enums can also carry data and methods:
 
-- Fixed choices
-    
-- States
-    
-- Categories
-    
+```java
+public enum Planet {
+    MERCURY(3.303e+23, 2.4397e6),
+    VENUS  (4.869e+24, 6.0518e6),
+    EARTH  (5.976e+24, 6.37814e6);
 
----
+    private final double mass;   // in kilograms
+    private final double radius; // in metres
 
-> [!important]  
-> The description in the question tells you which type to use.
+    Planet(double mass, double radius) {
+        this.mass = mass;
+        this.radius = radius;
+    }
 
-If the question says:
+    public double surfaceGravity() {
+        final double G = 6.67300E-11;
+        return G * mass / (radius * radius);
+    }
+}
+```
 
-- “represents a state” → use enum
-    
-- “represents data” → use record or class
-    
-- “needs behavior” → use class
-    
-
----
-
-> [!warning]  
-> Common mistakes:
+> [!example] Enum: Days of the week, traffic light states, card suits "Define a type representing the suit of a playing card."
 > 
-> - Forgetting constructor in class
->     
-> - Using enum for objects with fields
->     
-> - Missing access modifiers (public)
->     
+> ```java
+> public enum Suit {
+>     HEARTS, DIAMONDS, CLUBS, SPADES
+> }
+> ```
 
-Related note: [[Programming Languages]]
-
-External reference:  
-[https://www.w3schools.com/java/java_classes.asp](https://www.w3schools.com/java/java_classes.asp)  
-[https://developer.mozilla.org](https://developer.mozilla.org/)
+> [!tip] Enum with an interface Enums can implement interfaces, which is useful when each constant needs to behave differently.
 
 ---
 
-## Study Strategy Summary
+### When to use `class`
 
-> [!tip]  
-> To prepare for the test:
+Use a `class` when you need **mutable state**, complex behaviour, inheritance, or things that don't fit neatly into a record or enum.
+
+```java
+public class BankAccount {
+    private final String owner;
+    private double balance;
+
+    public BankAccount(String owner, double initialBalance) {
+        this.owner = owner;
+        this.balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        if (amount <= 0) throw new IllegalArgumentException("Amount must be positive");
+        balance += amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+```
+
+> [!example] Class: Modelling a mutable entity "Define a type representing a temperature sensor that records the current reading and can be updated."
 > 
-> - Practice writing small pom.xml sections
->     
-> - Practice listing test cases for simple methods
->     
-> - Practice defining class, record, and enum from descriptions
->     
+> ```java
+> public class TemperatureSensor {
+>     private final String location;
+>     private double currentReading;
+> 
+>     public TemperatureSensor(String location, double initialReading) {
+>         this.location = location;
+>         this.currentReading = initialReading;
+>     }
+> 
+>     public void updateReading(double newReading) {
+>         this.currentReading = newReading;
+>     }
+> 
+>     public double getReading() {
+>         return currentReading;
+>     }
+> 
+>     public String getLocation() {
+>         return location;
+>     }
+> }
+> ```
 
-Focus on:
+---
 
-- Clear structure
-    
-- Simple explanations
-    
-- Correct Java syntax
-    
-- Logical thinking
-    
+### Quick Decision Guide
+
+> [!important] Choosing between class, record, and enum
+> 
+> |Question|Answer|Use|
+> |---|---|---|
+> |Is it a fixed set of named constants?|Yes|`enum`|
+> |Is it just a bundle of immutable data with no complex behaviour?|Yes|`record`|
+> |Does it need mutable state or complex behaviour?|Yes|`class`|
+> |Does it need to extend another class?|Yes|`class`|
+
+> [!warning] Records cannot be mutable If the description mentions that a field "can be updated" or "changes over time", you cannot use a `record`. You need a `class`.
+
+> [!warning] Enums are not for large or dynamic sets If the set of possible values is not known at compile time (e.g., user-defined categories), use a `class` or `enum`-like pattern instead.
+
+---
+
+## Putting It All Together
+
+When you sit the exam:
+
+For the **Maven question**, focus on what goes inside `pom.xml`: GAV coordinates, `<dependencies>` with correct scopes, `<properties>` for versions, and the compiler plugin for setting the Java version.
+
+For the **testing question**, go through your checklist: normal cases, boundary values, empty/null inputs, exception cases, and any special logic branches in the method.
+
+For the **type definition question**, read the description carefully. Ask: is this a fixed set of values (enum)? Is it just immutable data (record)? Does it have changing state or behaviour (class)?
+
+---
+
+## External Resources
+
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/index.html)
+- [GeeksForGeeks: Java Records](https://www.geeksforgeeks.org/records-in-java/)
+- [GeeksForGeeks: Java Enums](https://www.geeksforgeeks.org/enum-in-java/)
+- [W3Schools Java Classes](https://www.w3schools.com/java/java_classes.asp)
 
 ---
 
 ## Tags
 
-#computer_science #software_engineering #programming #testing #maven #java #study_notes
+#computer_science #java #maven #testing #junit #unit_testing #records #enums #classes #type_definitions #software_engineering #study_notes #exam_prep
