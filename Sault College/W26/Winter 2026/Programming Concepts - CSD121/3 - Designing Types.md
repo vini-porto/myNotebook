@@ -340,7 +340,7 @@ public int hashCode() {
 
 > [!important] Whenever you implement `.equals`, always implement `.hashCode` too!
 
-## Copy Constructor
+# Copy Constructor
 
 Creates a new object as a copy of an existing one:
 
@@ -356,7 +356,7 @@ This is a _shallow copy_, but that is fine here because `String` and `LocalDateT
 
 > [!tip] IDE Code Generation Most modern IDEs (like IntelliJ) can auto-generate boilerplate like getters, setters, `equals`, `hashCode`, `toString`, and constructors. Use the "Generate" menu to save time!
 
-## `enum` — Fixed Sets of Values
+# `enum` — Fixed Sets of Values
 
 Sometimes a type should only have a specific, limited set of possible values.
 
@@ -395,7 +395,7 @@ opposite("NORTH");        // TYPE ERROR — wrong type entirely!
 > - The compiler ensures all values are handled in a `switch`
 > - Full type safety — you can't pass the wrong type by accident
 
-## `record` — Data-Focused Types
+# `record` — Data-Focused Types
 
 When you just need a type to hold a fixed set of data fields, use `record` instead of `class`.
 
@@ -421,7 +421,7 @@ A `record` automatically gives you:
 
 Both `enum` and `record` can have additional methods and class members attached to them just like a regular class.
 
-## `interface` — Defining Behaviour
+# `interface` — Defining Behaviour
 
 While `record` defines a type in terms of _data_, an `interface` defines a type in terms of _behaviour_ — a set of methods that implementing types **must** provide.
 
