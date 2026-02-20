@@ -1,112 +1,77 @@
-# Introduction to Data Modeling
+Related: [[Data Structures]] | [[Programming Languages]] | [[Software Engineering]] | [[Algorithms]]
 
-When you write a program, you need to **represent the real-world data** your program works with. This is called [[Data Modeling]].
+# Why Do We Need to Model Data?
 
-Think about different types of programs:
+Every program operates on data. Depending on the domain, that data looks very different:
 
-- **E-commerce**: needs to represent customers, products, orders, employees
-- **Personal finance app**: needs accounts, transactions, loans, assets
-- **Video game**: needs players, NPCs, items, inventory
-- **Web browser**: needs pages, links, bookmarks, URLs
-- **IDE**: needs code files, commands, plugins, undo history
+|Domain|Example data to represent|
+|---|---|
+|E-commerce|Customer, Product, Order|
+|Personal finances|Account, Transaction, Loan|
+|Video game|Player, NPC, Item|
+|Web browser|Page, Link, Bookmark, URL|
+|IDE|Code file, Undo history, Plugin|
 
-All of these examples involve **complex data** that has multiple properties and relationships. The question is: how do we model this data effectively in code?
+Data can be stored in variables, and values are either **scalar** or **composite**.
 
-# Scalar vs Composite Values
+## Scalar vs Composite Values
 
-## [[Scalar Values]]
+> [!note] Definitions
+> - **Scalar** — a single, indivisible value. Examples: `int`, `boolean`, `char`
+> - **Composite** — made up of multiple parts. Examples: `String`, Lists, Maps, Objects with multiple properties
 
-A **scalar value** is a single, indivisible piece of data.
+## Flat vs Nested Data
 
-**Examples:**
+- **Flat**: one level of sub-components — e.g. a list of integers, or a `Point(x, y, z)`
+- **Nested**: multiple levels — e.g. a list of lists, or a list of `Point` objects
 
-- Integer: `42`
-- Boolean: `true`
-- Character: `'A'`
+# The Problem with Simple Approaches
 
-### [[Composite Values]]
+Let's say we are building a conference center event manager. An event has a title, start/end datetime, and a list of requested services.
 
-A **composite value** consists of multiple parts combined together.
-
-**Examples:**
-
-- String: `"Hello"` (composed of multiple characters)
-- Lists: `[1, 2, 3, 4]`
-- Maps: `{"name": "Alice", "age": 30}`
-- Objects with multiple properties
-
-## Flat vs Nested Data Structures
-
-### [[Flat Data Structures]]
-
-**One level** of sub-components.
-
-**Examples:**
-
-- List of integers: `[1, 2, 3]`
-- Point in 3D space: `Point(x, y, z)`
-
-### [[Nested Data Structures]]
-
-**Multiple levels** of sub-components (structures within structures).
-
-**Examples:**
-
-- List of lists: `[[1, 2], [3, 4], [5, 6]]`
-- List of Points: `[Point(1, 2, 3), Point(4, 5, 6)]`
-
-## The Problem: How to Model Complex Data?
-
-Let's use a real example: modeling **events at a conference center**.
-
-Each event has:
-
-- A title
-- Start and end dates/times
-- A list of requested services (WiFi, catering, security, etc.)
-
-### Approach 1: Just Variables
+### Just Variables — Not Enough
 
 ```java
 String hackathon_title = "Hackathon";
 String hackathon_start = "2023-10-01T10:00:00";
-String hackathon_end = "2023-10-01T18:00:00";
-List<String> hackathon_services = List.of("wifi");
+String hackathon_end   = "2023-10-01T18:00:00";
 ```
 
-**Problem:** This doesn't scale. What if you need to manage multiple events? You'd need dozens of separate variables.
+This falls apart as soon as you have multiple events — there's no structure connecting them.
 
-### Approach 2: Lists of Tuples
+## Lists of Tuples — Fragile
 
-```java
-List<Object> events = List.of(
-    List.of("Hackathon", "2023-10-01T10:00:00", "2023-10-01T18:00:00", List.of("wifi")),
-    List.of("Conference", "2023-10-02T09:00:00", "2023-10-02T17:00:00", List.of("catering"))
-);
+```python
+events = [
+    ("Hackathon", "2023-10-01T10:00:00", "2023-10-01T18:00:00", ["wifi"]),
+]
+
+def show_event_titles(event_list):
+    for event in event_list:
+        print(event[0])  # You need to know title is at index 0 — brittle!
 ```
 
-**Problem:** You need to remember that index 0 is the title, index 1 is start time, etc. This is error-prone and hard to read.
+## Maps — Better, but Still Problematic
 
-### Approach 3: Maps (Dictionaries)
+```python
+events = [
+    { "title": "Hackathon", "start": "...", "end": "...", "services": ["wifi"] },
+]
 
-```java
-List<Map<String, Object>> events = List.of(
-    Map.of("title", "Hackathon", "start", "2023-10-01T10:00:00", "end", "2023-10-01T18:00:00"),
-    Map.of("title", "Conference", "start", "2023-10-02T09:00:00", "end", "2023-10-02T17:00:00")
-);
+for event in events:
+    print(event["title"])  # Better... but typos cause run-time errors
 ```
 
-**Better**, because you can access data by meaningful names like `event.get("title")`.
+> [!warning] Problems with Maps for Complex Data
+> 
+> - Typos in key names (`"titl"` instead of `"title"`) are only caught at **run time**
+> - When you rename or add a field, every place that uses those keys must be updated manually
+> - The IDE/compiler cannot help you catch these issues ahead of time
 
-**But still problems:**
 
-- **Typos in key names** cause runtime errors (not caught by compiler)
-- If you rename a key, you must find and update **every** place it's used
-- No help from your IDE or compiler
+# The Solution: Define Your Own Types
 
-## The Solution: Custom Types
-
-Instead of using generic data structures like maps, **define your own types** that match your data!
+In statically typed languages like Java, you can define **custom types** so the **compiler helps you catch errors** at compile time rather than at run time.
 
 ```java
 var event = new Event(
@@ -117,52 +82,38 @@ var event = new Event(
 );
 ```
 
-**Why this is better:**
+## Four Type-Definition Structures in Java
 
-- The **compiler verifies correctness**
-- **Refactoring is safer** (IDE can find all uses of a method)
-- **Type checking** prevents many bugs
+Java gives you four ways to define types:
 
-## Four Ways to Define Types in Java
 
-Java provides four structures for defining custom types:
 
-1. **[[Class]]** - for general-purpose types with behavior
-2. **[[Record]]** - for simple data containers (immutable)
-3. **[[Enum]]** - for types with a fixed set of values
-4. **[[Interface]]** - for defining contracts (covered later)
+## `class` — General Purpose Types
 
-## Defining Types with Classes
-
-The **class** structure is the most flexible way to define types.
-
-### Basic Class Structure
+The basic structure of a Java class:
 
 ```java
 class <TypeName> {
-    // Instance variables (the data)
-    // Constructors (how to create instances)
-    // Instance methods (the behavior)
+    // instance variables (state)
+    // constructors
+    // instance methods (behaviour)
 }
 ```
 
-### Example: Event Class
+> [!example] Example: Event class
 
 ```java
 class Event {
-    // Instance variables
     String title;
     LocalDateTime startTime;
     LocalDateTime endTime;
-    
-    // Constructor
+
     Event(String title, LocalDateTime startTime, LocalDateTime endTime) {
         this.title = title;
         this.startTime = startTime;
         this.endTime = endTime;
     }
-    
-    // Instance method
+
     Duration getDuration() {
         return Duration.between(startTime, endTime);
     }
@@ -171,352 +122,229 @@ class Event {
 
 ### The `this` Keyword
 
-The **[[this Keyword]]** refers to "the current instance being accessed."
+> [!note] What does `this` mean? 
+> Inside a type definition, **`this`** refers to _the current instance_ being accessed.
+> 
+> - When you call `e1.getDuration()`, `this` inside `Event` refers to `e1`
+> - When you call `e2.getDuration()`, `this` refers to `e2`
+> - `this` cannot be used in _class (static) methods_ — only instance methods
+
+## Types vs Objects
+
+> [!important] Key Distinction
+> 
+> - **Type** = the _blueprint_. The code that defines the variables and methods.
+> - **Object** = a _thing made from the blueprint_. A live, in-memory instance at runtime.
 
 ```java
-var e1 = new Event(...);
-e1.getDuration(); // Inside getDuration, 'this' refers to e1
-
-var e2 = new Event(...);
-e2.getDuration(); // Inside getDuration, 'this' refers to e2
-```
-
-**Important:** `this` only works in instance methods, not in [[Static Methods]] (class methods).
-
-## Types vs Objects: Understanding the Distinction
-
-### [[Type]]
-
-The **blueprint** or **template**. The code that defines what all instances will look like and how they'll behave.
-
-### [[Object]]
-
-An actual **instance** created from that blueprint. A real thing in memory at runtime.
-
-**Analogy:** A house blueprint (type) vs. actual houses built from that blueprint (objects).
-
-### Example
-
-```java
+// Type definition (blueprint)
 class House {
     boolean isDoorOpen = false;
     boolean isFireLit = false;
-    
-    void openDoor() {
-        isDoorOpen = true;
-    }
-    
-    void lightFire() {
-        isFireLit = true;
-    }
+
+    void openDoor() { isDoorOpen = true; }
+    void lightFire() { isFireLit = true; }
 }
 
+// Creating two separate object instances
 House house1 = new House();
 House house2 = new House();
 house2.openDoor();
 house2.lightFire();
+// house1 is unaffected — each object has its own state!
 ```
 
-**Key insight:**
-
-- All `House` objects have the **same behavior** (methods `openDoor()` and `lightFire()`)
-- But they can have **different state** (house1's door is closed, house2's door is open)
+Objects of the **same type** share the same _behaviour_ (methods) but can have different _state_ (variable values). Objects of **different types** have entirely different state and behaviour.
 
 ## Constructors
 
-A **[[Constructor]]** is a special method that creates and initializes a new object.
+- A constructor always has **the same name as the type**
+- It has **no explicit return type** (the return type is implicitly the type itself)
+- Java auto-inserts a no-argument constructor **only if no constructor is defined**
 
-### Constructor Rules
+> [!warning] Common Gotcha with Constructors If you define _any_ constructor, Java will **not** add a default no-arg constructor automatically.
+> 
+> ```java
+> class Counter {
+>     int count;
+>     Counter(int initialCount) { count = initialCount; }
+> }
+> var c = new Counter(); // COMPILE ERROR — no default constructor!
+> ```
 
-1. **Same name as the type**
-2. **No explicit return type** (implicitly returns the type)
-3. Can have **parameters** to initialize the object
+### Overloading Constructors
 
-```java
-class Event {
-    String title;
-    LocalDateTime startTime;
-    LocalDateTime endTime;
-    
-    Event(String title, LocalDateTime startTime, LocalDateTime endTime) {
-        this.title = title;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
-}
-```
-
-### Default Constructor Behavior
-
-- If you define **no constructors**, Java automatically provides a **no-parameter constructor**
-- If you define **any constructor**, Java does NOT provide the default one
+You can create **multiple constructors** with different parameter lists (different _signatures_):
 
 ```java
-class Counter {
-    int count;
-    
-    Counter(int initialCount) {
-        count = initialCount;
-    }
-}
+// Constructor 1: explicit start and end times
+Event(String title, LocalDateTime startTime, LocalDateTime endTime) { ... }
 
-var c1 = new Counter();      // ERROR! No default constructor
-var c2 = new Counter(10);    // OK
-```
-
-## Method Overloading
-
-**[[Method Overloading]]** means defining multiple methods with the **same name** but **different parameters** (different [[Method Signature]]).
-
-### Example: Overloaded Constructors
-
-```java
-class Event {
-    String title;
-    LocalDateTime startTime;
-    LocalDateTime endTime;
-    
-    // First constructor
-    Event(String title, LocalDateTime startTime, LocalDateTime endTime) {
-        this.title = title;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
-    
-    // Second constructor (overloaded)
-    Event(String title, LocalDateTime start, Duration duration) {
-        this.title = title;
-        this.startTime = start;
-        this.endTime = start.plus(duration);
-    }
+// Constructor 2: start time + duration
+Event(String title, LocalDateTime start, Duration duration) {
+    this.title = title;
+    this.startTime = start;
+    this.endTime = start.plus(duration);
 }
 ```
 
 ### Calling One Constructor from Another
 
-Use `this(...)` to call another constructor:
+Use `this(...)` inside a constructor to call another constructor of the same class:
 
 ```java
 class Point {
     int x, y;
-    
+
     Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
-    
+
     Point() {
-        this(12, 34);  // Call the other constructor with defaults
+        this(12, 34); // calls the other constructor with default values
     }
 }
 ```
 
-## Common Errors: Uninitialized Instance Variables
+---
 
-### The Problem
+> [!warning] Common Error: Forgetting to Initialize Instance Variables
+> 
+> ```java
+> class Foo {
+>     List<Integer> list; // never initialized!
+>     void add(int x) {
+>         list.add(x); // NullPointerException at runtime!
+>     }
+> }
+> ```
+> 
+> **Fix:** always initialize your instance variables:
+> 
+> ```java
+> List<Integer> list = List.of(); // initialized to an empty list
+> ```
 
-```java
-class Foo {
-    List<Integer> list;
-    
-    void add(int x) {
-        list.add(x);  // CRASH! NullPointerException
-    }
-}
-
-var f = new Foo();
-f.add(10);  // Error here
-```
-
-**Why?** The `list` variable was never initialized—it's still `null`!
-
-### The Solution
-
-```java
-class Foo {
-    List<Integer> list = List.of();  // Initialize when declared
-    
-    void add(int x) {
-        list.add(x);  // Now it works
-    }
-}
-```
+---
 
 ## Access Modifiers
 
-**[[Access Modifiers]]** control who can see and use different parts of your code.
+Access modifiers control _who can see_ a member of a type.
 
-### Three Levels of Access
-
-|Modifier|Who Can Access|
+|Modifier|Accessible from|
 |---|---|
-|`private`|Only within the same class|
-|(package-private, default)|Any code in the same package|
-|`public`|Any code anywhere|
-
-### Example
+|`private`|Only within the same type definition|
+|_(none — package-private)_|Any file within the same package|
+|`public`|Any file, anywhere|
 
 ```java
 class Foo {
-    int a;              // Package-private (default)
-    private int b;      // Private
-    public int c;       // Public
+    int a;          // package-private (default)
+    private int b;  // only accessible inside Foo
+    public int c;   // accessible everywhere
 }
 ```
 
-### Access Modifiers on Type Definitions
+Top-level type definitions can be package-private or `public`. Nested types can also be `private`.
 
-- Top-level classes can be **package-private** or **public**
-- Nested classes can also be **private**
+### Why Access Modifiers Matter
 
-```java
-class TypeA { }              // Package-private
-public class TypeB { }       // Public
+Access modifiers let type designers:
 
-class TypeC {
-    private class Nested { } // Private nested class
-}
-```
+- **Expose a clean API** — `public` members form the _public interface_ of the type (also called **abstraction**)
+- **Hide internal details** — `private`/package-private members are _encapsulated_ implementation details
 
-### Access Modifiers on Constructors
+> [!important] Abstraction vs Encapsulation
+> 
+> - **Abstraction** — focusing on essential details and ignoring irrelevant complexity. The user sees _what_ the type does, not _how_.
+> - **Encapsulation** — hiding the internal complexity behind a simple interface. The designer builds the complex internals; the user only sees the clean surface.
 
-Constructors are usually `public`, but can be `private` to:
+---
 
-- Prevent direct instantiation (e.g., `Math` class)
-- Force use of factory methods (e.g., `LocalDateTime.of()`)
-
-## Why Access Modifiers? Abstraction and Encapsulation
-
-### [[Abstraction]]
-
-**Focus on essential details; ignore irrelevant complexity.**
-
-Like using a car: you don't need to know how the engine works internally—you just use the steering wheel, pedals, and gear shift.
-
-### [[Encapsulation]]
-
-**Hide complexity to expose a simpler interface.**
-
-- **Exposed abstraction:** what users interact with (public methods)
-- **Hidden complexity:** internal implementation details (private variables)
-
-### The Common Pattern: Private Variables, Public Methods
+## Common Pattern: Private Variables, Public Methods
 
 ```java
 public class Counter {
-    private int count;  // Hidden implementation
-    
-    public void increment() {  // Public interface
-        count++;
-    }
-    
-    public int getCount() {  // Public interface
-        return count;
-    }
+    private int count; // hidden detail
+
+    public void increment() { count++; }    // public interface
+    public int getCount() { return count; } // public interface
 }
+
+var c1 = new Counter();
+var c2 = new Counter();
+c1.increment();
+c1.increment();
+c1.getCount(); // 2
+c2.increment();
+c2.getCount(); // 1
 ```
 
-**Why this matters:**
+**Why not just make `count` public?** If you later want to change the internal implementation (say, store a list of timestamps instead of a plain integer), you can do so _without breaking any code that uses Counter_ — because the public interface (`increment()`, `getCount()`) stays the same.
 
-If the instance variable was public, users would access it directly. Then if you want to change the internal implementation later, **everyone's code breaks**.
+> [!example] Same public interface, different implementation
+> 
+> ```java
+> // Original
+> class Counter {
+>     private int count;
+>     public void increment() { count++; }
+>     public int getCount() { return count; }
+> }
+> 
+> // Refactored internally — users of Counter don't need to change anything!
+> class Counter {
+>     private List<Long> timestamps = new ArrayList<>();
+>     public void increment() { timestamps.add(System.currentTimeMillis()); }
+>     public int getCount() { return timestamps.size(); }
+> }
+> ```
 
-With private variables and public methods, you can change the implementation without affecting users:
+> [!tip] Type Design Tip: Minimize the Public Interface Every `public` member is a **promise**: "This will always be here." The less you expose, the more freedom you have to change internals later.
+
+---
+
+## Accessors, Mutators, Getters, and Setters
+
+|Term|What it does|
+|---|---|
+|**Accessor**|Reads values; never changes any state|
+|**Mutator**|Changes one or more values|
+|**Getter**|Accessor that reads one specific instance variable; named `getX()`|
+|**Setter**|Mutator that sets one specific instance variable; named `setX()`|
+
+---
+
+## Useful Methods to Implement
+
+### `toString`
+
+Converts an object to a human-readable string. Called automatically when an object is passed to `println`.
 
 ```java
-// Version 1
-class Counter {
-    private int count;
-    public int getCount() { return count; }
-}
-
-// Version 2 - different implementation, same public interface
-class Counter {
-    private List<Long> timestamps = new ArrayList<>();
-    public int getCount() { return timestamps.size(); }
+public String toString() {
+    return "Event %s starts at %s and ends at %s".formatted(title, start, end);
 }
 ```
 
-**Users' code doesn't need to change!**
+### `equals`
 
-## Getters, Setters, Accessors, and Mutators
-
-### [[Accessor Method]]
-
-A method that **reads** values without changing anything.
-
-### [[Mutator Method]]
-
-A method that **changes** one or more values.
-
-### [[Getter Method]]
-
-An accessor that returns the value of an instance variable. Named `get` + variable name.
-
-```java
-public int getCount() {
-    return count;
-}
-```
-
-### [[Setter Method]]
-
-A mutator that sets the value of an instance variable. Named `set` + variable name.
-
-```java
-public void setCount(int newCount) {
-    count = newCount;
-}
-```
-
-## Type Design Principle: Minimize the Public Interface
-
-**A public member is a promise:** "This will be available forever."
-
-- The **less you expose**, the more freedom you have to change implementation later
-- The **more you expose**, the harder it is to evolve your code
-
-**Rule of thumb:** Make everything `private` by default. Only make things `public` when necessary.
-
-## Useful Methods for Any Type
-
-### The `toString` Method
-
-Converts an object to a **string representation**. Automatically called when printing.
-
-```java
-class Event {
-    public String toString() {
-        return "Event %s starts at %s and ends at %s"
-            .formatted(title, start, end);
-    }
-}
-
-var e = new Event(...);
-IO.println(e);  // Calls toString automatically
-```
-
-### The `equals` Method
-
-Determines **value equality** between objects (not reference equality).
+Determines **value equality** (are the contents the same?) rather than **reference equality** (are they the same object in memory?).
 
 ```java
 public boolean equals(Object other) {
-    if (other == null || this.getClass() != other.getClass()) {
-        return false;
-    }
-    
-    Event otherEvent = (Event)other;
-    return title.equals(otherEvent.title) 
-        && start.equals(otherEvent.start) 
+    if (other == null || this.getClass() != other.getClass()) return false;
+    Event otherEvent = (Event) other;
+    return title.equals(otherEvent.title)
+        && start.equals(otherEvent.start)
         && end.equals(otherEvent.end);
 }
 ```
 
-### The `hashCode` Method
+### `hashCode`
 
-Returns an integer "hash" for use in hash-based collections like `HashMap`.
-
-**Critical rule:** Objects that are equal according to `equals()` **must** return the same `hashCode()`.
+Used by hash-based collections like `HashMap`. Objects that are _equal_ according to `.equals` **must** return the same `hashCode`.
 
 ```java
 public int hashCode() {
@@ -524,11 +352,11 @@ public int hashCode() {
 }
 ```
 
-**Always implement both `equals` and `hashCode` together!**
+> [!important] Whenever you implement `.equals`, always implement `.hashCode` too!
 
-### [[Copy Constructor]]
+### Copy Constructor
 
-Creates a new object as a copy of an existing one.
+Creates a new object as a copy of an existing one:
 
 ```java
 public Event(Event other) {
@@ -538,138 +366,145 @@ public Event(Event other) {
 }
 ```
 
-**Question:** Is this a deep or shallow copy?
+This is a _shallow copy_, but that is fine here because `String` and `LocalDateTime` are **immutable** — you cannot change them through the copy, so the original is safe.
 
-**Answer:** It's a **shallow copy**, but that's okay! Both `String` and `LocalDateTime` are [[Immutable Types]], so there's no way to accidentally modify the original through the copy.
+> [!tip] IDE Code Generation Most modern IDEs (like IntelliJ) can auto-generate boilerplate like getters, setters, `equals`, `hashCode`, `toString`, and constructors. Use the "Generate" menu to save time!
 
-## Enumerations (Enums)
+---
 
-Sometimes you need a type with a **fixed, limited set of possible values**.
+## `enum` — Fixed Sets of Values
 
-**Examples:**
+Sometimes a type should only have a specific, limited set of possible values.
 
-- Answer: Yes, No, Maybe
-- Status: Ordered, Shipped, Complete
-- Direction: North, South, East, West
+> [!warning] Don't Use Strings for This Using strings like `"NORTH"`, `"SOUTH"` etc. is error-prone — typos like `"nrht"` only cause errors at **run time**, and switches need a messy `default` case.
 
-### The Problem with Strings
+Instead, use an **enum**:
 
 ```java
-var answer = "Yes";  // or "No" or "Maybe"
-var direction = "North";
-
-// Typos cause runtime errors
-var answer = "Yse";      // Oops!
-var direction = "Nrth";  // Oops!
-```
-
-### The Solution: Enums
-
-**[[Enumeration]]** types define a specific set of named values.
-
-```java
-enum Answer { YES, NO, MAYBE }
 enum Direction { NORTH, SOUTH, EAST, WEST }
-enum Service { WIFI, CATERING, SECURITY }
+enum Answer    { YES, NO, MAYBE }
+enum Status    { ORDERED, SHIPPED, COMPLETE }
+enum Service   { WIFI, CATERING, SECURITY }
 
 var a = Answer.YES;
 var s = Service.WIFI;
 ```
 
-### Benefits of Enums
-
-**Type safety:**
-
-```java
-opposite("NORTH")           // Type Error!
-opposite(Direction.NRTH)    // Compile Error! (typo caught)
-opposite(Direction.NORTH)   // Works correctly
-```
-
-**Exhaustiveness checking:**
-
 ```java
 public static Direction opposite(Direction d) {
     return switch (d) {
-        case NORTH -> Direction.SOUTH;
-        case SOUTH -> Direction.NORTH;
-        case EAST -> Direction.WEST;
-        case WEST -> Direction.EAST;
-        // Compiler ensures all cases are covered!
+        case NORTH -> SOUTH;
+        case SOUTH -> NORTH;
+        case EAST  -> WEST;
+        case WEST  -> EAST;
+        // No default needed — compiler ensures all cases are handled!
     };
 }
+
+opposite(Direction.NRTH); // COMPILE ERROR — caught immediately!
+opposite("NORTH");        // TYPE ERROR — wrong type entirely!
 ```
 
-## Records
+> [!important] Enum advantages
+> 
+> - Typos are **compile-time** errors, not run-time surprises
+> - The compiler ensures all values are handled in a `switch`
+> - Full type safety — you can't pass the wrong type by accident
 
-A **[[Record]]** is a concise way to define a type that's primarily about storing data (not behavior).
+---
 
-### Example: Person Record
+## `record` — Data-Focused Types
+
+When you just need a type to hold a fixed set of data fields, use `record` instead of `class`.
 
 ```java
 public record Person(String name, int age) {}
 
 var person = new Person("Alice", 30);
-IO.println(person.name());  // Alice
-IO.println(person.age());   // 30
-```
+IO.println(person.name()); // Alice
+IO.println(person.age());  // 30
 
-### What Records Provide Automatically
-
-1. **Constructor** matching the properties
-2. **Getters** with the same name as properties (not `getName()`, just `name()`)
-3. **Immutability** (no setters)
-4. Automatic `toString()`, `equals()`, and `hashCode()` methods
-
-### Another Example
-
-```java
 public record Rectangle(int x, int y, int width, int height) {}
-
 var r = new Rectangle(10, 10, 100, 200);
-System.out.printf("x=%d, y=%d, width=%d, height=%d%n",
-    r.x(), r.y(), r.width(), r.height());
 ```
 
-### When to Use Records
+A `record` automatically gives you:
 
-**Use a record when:**
+- A constructor with all fields as parameters
+- Accessor methods with the same name as each field (note: no `get` prefix — just `name()`, not `getName()`)
+- `equals`, `hashCode`, and `toString` — all auto-generated
+- **Immutability** — no setters; fields cannot be changed after creation
 
-- You need a simple data container
-- The type is primarily about the values it holds
-- You don't need mutability (changing values after creation)
+> [!tip] In Java, when you need a composite type that isn't a collection, **start with `record`** instead of `class`. Upgrade to `class` only if you need mutability or more complex behaviour.
 
-**Use a class when:**
+Both `enum` and `record` can have additional methods and class members attached to them just like a regular class.
 
-- You need complex behavior
-- You need mutable state
-- You need inheritance
+---
 
-## Adding Methods to Enums and Records
+## `interface` — Defining Behaviour
 
-Even though enums and records have concise syntax, you can still add custom methods to them:
+While `record` defines a type in terms of _data_, an `interface` defines a type in terms of _behaviour_ — a set of methods that implementing types **must** provide.
 
 ```java
-enum Direction {
-    NORTH, SOUTH, EAST, WEST;
-    
-    public Direction opposite() {
-        return switch (this) {
-            case NORTH -> SOUTH;
-            case SOUTH -> NORTH;
-            case EAST -> WEST;
-            case WEST -> EAST;
-        };
-    }
+public interface Runnable {
+    void run();
 }
 
-public record Rectangle(int x, int y, int width, int height) {
-    public int area() {
-        return width * height;
-    }
+public interface Comparable<T> {
+    int compareTo(T other);
 }
 ```
 
-# Tags
+A class _implements_ an interface, promising to provide all the methods it defines. A class may implement multiple interfaces.
 
-#java #oop #types #classes #encapsulation #abstraction #data-modeling #software-design
+|Interface|Key method(s)|Implemented by|
+|---|---|---|
+|`Comparable`|`compareTo`|`Integer`, `LocalDateTime`, all enums|
+|`List`|`add`, `get`, `set`, etc.|`ArrayList`, `LinkedList`|
+|`Map`|`put`, `get`, `containsKey`, etc.|`HashMap`, `TreeMap`|
+|`Runnable`|`run`|`Thread`, `FutureTask`|
+
+> [!example] Why interfaces are powerful
+> 
+> ```java
+> // Any object whose type implements Runnable can be passed here —
+> // regardless of what it looks like internally
+> public void logTheRun(Runnable task) {
+>     IO.println("Starting...");
+>     task.run();
+>     IO.println("Done.");
+> }
+> ```
+> 
+> This allows types with completely different internal structure to be treated uniformly through a shared interface.
+
+More about interfaces in future lectures!
+
+---
+
+## Summary
+
+|Use|When|
+|---|---|
+|`class`|General-purpose types with state and behaviour|
+|`record`|Primarily data containers (immutable, auto-generated methods)|
+|`enum`|Fixed set of named possible values|
+|`interface`|Defining behaviour that other types must implement|
+
+- Use **access modifiers** to minimize the public interface and encapsulate internals
+- Give your types `toString`, `equals`, `hashCode`, and copy constructors as needed
+- Keep the public interface small — the less you expose, the easier it is to change later
+
+---
+
+External references:
+
+- [GeeksForGeeks — Java Classes and Objects](https://www.geeksforgeeks.org/classes-objects-java/)
+- [GeeksForGeeks — Java Enums](https://www.geeksforgeeks.org/enum-in-java/)
+- [GeeksForGeeks — Java Records](https://www.geeksforgeeks.org/record-classes-in-java/)
+
+---
+
+## Tags
+
+#computer_science #java #object_oriented #types #classes #encapsulation #abstraction #enums #records #interfaces #study_notes #programming
