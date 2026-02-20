@@ -706,66 +706,6 @@ public record Rectangle(int x, int y, int width, int height) {
 }
 ```
 
----
-
-## Key Concepts to Review
-
-- [[Data Modeling]]
-- [[Scalar Values]]
-- [[Composite Values]]
-- [[Flat Data Structures]]
-- [[Nested Data Structures]]
-- [[Class]]
-- [[Record]]
-- [[Enum]]
-- [[Interface]]
-- [[Constructor]]
-- [[this Keyword]]
-- [[Type]]
-- [[Object]]
-- [[Method Signature]]
-- [[Method Overloading]]
-- [[Access Modifiers]]
-- [[Abstraction]]
-- [[Encapsulation]]
-- [[Accessor Method]]
-- [[Mutator Method]]
-- [[Getter Method]]
-- [[Setter Method]]
-- [[Copy Constructor]]
-- [[Immutable Types]]
-- [[Enumeration]]
-- [[Static Methods]]
-
----
-
-## Review Questions
-
-1. **Why is using maps to model complex data problematic compared to using custom types?**
-    
-2. **What's the difference between a type and an object? Give a real-world analogy.**
-    
-3. **Explain the difference between `private`, package-private, and `public` access modifiers. When would you use each?**
-    
-4. **What is encapsulation, and why is the pattern of "private instance variables with public methods" so common?**
-    
-5. **If you define a constructor with parameters in a class, what happens to the default no-parameter constructor?**
-    
-6. **Why must you implement both `equals()` and `hashCode()` together?**
-    
-7. **What are the advantages of using an enum instead of strings for a fixed set of values?**
-    
-8. **When should you use a record instead of a class?**
-    
-9. **What is the purpose of the `this` keyword? Where can and can't it be used?**
-    
-10. **Why is minimizing the public interface of a type considered good design?**
-    
-11. **In the copy constructor example with `Event`, why is a shallow copy acceptable even though all instance variables are reference types?**
-    
-12. **What's the difference between an accessor method and a mutator method? Give examples of each.**
-    
-
----
+# Tags
 
 #java #oop #types #classes #encapsulation #abstraction #data-modeling #software-design
