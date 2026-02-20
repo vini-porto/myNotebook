@@ -12,8 +12,6 @@ Think about different types of programs:
 
 All of these examples involve **complex data** that has multiple properties and relationships. The question is: how do we model this data effectively in code?
 
----
-
 # Scalar vs Composite Values
 
 ## [[Scalar Values]]
@@ -37,8 +35,6 @@ A **composite value** consists of multiple parts combined together.
 - Maps: `{"name": "Alice", "age": 30}`
 - Objects with multiple properties
 
----
-
 ## Flat vs Nested Data Structures
 
 ### [[Flat Data Structures]]
@@ -58,8 +54,6 @@ A **composite value** consists of multiple parts combined together.
 
 - List of lists: `[[1, 2], [3, 4], [5, 6]]`
 - List of Points: `[Point(1, 2, 3), Point(4, 5, 6)]`
-
----
 
 ## The Problem: How to Model Complex Data?
 
@@ -110,8 +104,6 @@ List<Map<String, Object>> events = List.of(
 - If you rename a key, you must find and update **every** place it's used
 - No help from your IDE or compiler
 
----
-
 ## The Solution: Custom Types
 
 Instead of using generic data structures like maps, **define your own types** that match your data!
@@ -131,8 +123,6 @@ var event = new Event(
 - **Refactoring is safer** (IDE can find all uses of a method)
 - **Type checking** prevents many bugs
 
----
-
 ## Four Ways to Define Types in Java
 
 Java provides four structures for defining custom types:
@@ -141,8 +131,6 @@ Java provides four structures for defining custom types:
 2. **[[Record]]** - for simple data containers (immutable)
 3. **[[Enum]]** - for types with a fixed set of values
 4. **[[Interface]]** - for defining contracts (covered later)
-
----
 
 ## Defining Types with Classes
 
@@ -195,8 +183,6 @@ e2.getDuration(); // Inside getDuration, 'this' refers to e2
 
 **Important:** `this` only works in instance methods, not in [[Static Methods]] (class methods).
 
----
-
 ## Types vs Objects: Understanding the Distinction
 
 ### [[Type]]
@@ -235,8 +221,6 @@ house2.lightFire();
 
 - All `House` objects have the **same behavior** (methods `openDoor()` and `lightFire()`)
 - But they can have **different state** (house1's door is closed, house2's door is open)
-
----
 
 ## Constructors
 
@@ -279,8 +263,6 @@ class Counter {
 var c1 = new Counter();      // ERROR! No default constructor
 var c2 = new Counter(10);    // OK
 ```
-
----
 
 ## Method Overloading
 
@@ -329,8 +311,6 @@ class Point {
 }
 ```
 
----
-
 ## Common Errors: Uninitialized Instance Variables
 
 ### The Problem
@@ -361,8 +341,6 @@ class Foo {
     }
 }
 ```
-
----
 
 ## Access Modifiers
 
@@ -406,8 +384,6 @@ Constructors are usually `public`, but can be `private` to:
 
 - Prevent direct instantiation (e.g., `Math` class)
 - Force use of factory methods (e.g., `LocalDateTime.of()`)
-
----
 
 ## Why Access Modifiers? Abstraction and Encapsulation
 
@@ -462,8 +438,6 @@ class Counter {
 
 **Users' code doesn't need to change!**
 
----
-
 ## Getters, Setters, Accessors, and Mutators
 
 ### [[Accessor Method]]
@@ -494,8 +468,6 @@ public void setCount(int newCount) {
 }
 ```
 
----
-
 ## Type Design Principle: Minimize the Public Interface
 
 **A public member is a promise:** "This will be available forever."
@@ -504,8 +476,6 @@ public void setCount(int newCount) {
 - The **more you expose**, the harder it is to evolve your code
 
 **Rule of thumb:** Make everything `private` by default. Only make things `public` when necessary.
-
----
 
 ## Useful Methods for Any Type
 
@@ -572,8 +542,6 @@ public Event(Event other) {
 
 **Answer:** It's a **shallow copy**, but that's okay! Both `String` and `LocalDateTime` are [[Immutable Types]], so there's no way to accidentally modify the original through the copy.
 
----
-
 ## Enumerations (Enums)
 
 Sometimes you need a type with a **fixed, limited set of possible values**.
@@ -632,8 +600,6 @@ public static Direction opposite(Direction d) {
 }
 ```
 
----
-
 ## Records
 
 A **[[Record]]** is a concise way to define a type that's primarily about storing data (not behavior).
@@ -678,8 +644,6 @@ System.out.printf("x=%d, y=%d, width=%d, height=%d%n",
 - You need complex behavior
 - You need mutable state
 - You need inheritance
-
----
 
 ## Adding Methods to Enums and Records
 
